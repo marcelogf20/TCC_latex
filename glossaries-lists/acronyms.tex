@@ -1,0 +1,100 @@
+% Example for Glossary:
+% \newglossaryentry{latex}
+% {
+%     name=latex,
+%     description={Is a mark up language specially suited 
+%     for scientific documents}
+% }
+%
+% To include acronyms into the list of symbols, do as follow:
+% * add [parent=acronymslists] after every "\newacronym";
+% * Comment the line "\listadeacronimos" in file "thesis.tex";
+% * Remove the comment the following line:
+%\newglossaryentry{acronymslists}{name={Acronyms list},description={\glspar},sort=c}
+
+
+\newglossaryentry{maths}
+{
+    name=mathematic,
+    description={Mathematics is what mathematicians do}
+}
+
+% Example for Acronyms:
+% \newacronym{label}{Acronym}{Full name}
+\newacronym{rna}{RNA}{Rede Neural Artificial (\textit{Artificial Neural Network})}
+\newacronym{relu}{ReLU}{Unidade Linear Retificadora (\textit{Rectified Linear Unit})}
+%\newacronym{tanh}{}{Tangente Hiperbólica\textit(Hyperbolic tangent})}
+\newacronym{rnc}{RNC}{Rede Neural Convolucional (\textit{Convolutional Neural Network})}
+\newacronym{conv2d}{Conv2D}{convolução Bidimensional}
+
+\newacronym{conv2dlstm}{Conv2DLSTM}{LSTM Convolucional Bidimensional}
+
+\newacronym{rgb}{RGB}{Vermelho, Verde, Azul (\textit{Red, Green, Blue})}
+\newacronym{rnr}{RNR}{Rede Neural Recorrente (\textit{Recurrent Neural Network})}
+
+\newacronym{mlp}{MLP}{Perceptron Multicamadas (\textit{Multilayer Perceptron})}
+\newacronym{lstm}{LSTM}{Memória de Longo Prazo (\textit{Long Short-Term Memory})}
+\newacronym{fc-lstm}{FC-LSTM}{LSTM Totalmente Conectada (\textit{Fully-Conected LSTM})}
+\newacronym{ac}{AC}{Autocodificador (\textit{autoencoder})}
+\newacronym{vae}{VAE}{autocodificador variacional (\textit{variational autocoders})}
+\newacronym{codec}{CODEC}{Codificador/Decodificador (\textit{Encoder/Decoder})}
+\newacronym{jpeg}{JPEG}{Grupo de Especialistas em Fotografia (\textit{Joint Photographic Experts Group})}
+\newacronym{ccitt}{CCITT}{ \textit{Consultative Committee for International Telephony and Telegraphy}}
+\newacronym{itu}{ITU-T}{International Telecommunication Union}
+\newacronym{iso}{ISO}{International Organization for Standardisation}
+\newacronym{ycbcr}{YCbCr}{Luminância, Crominância Azul, Crominância Vermelho (\textit{Luminance, Blue Chrominance, Red Chrominance})}
+\newacronym{psnr}{PSNR}{Relação Pico-Sinal-Ruído (\textit{Peak Signal to Noise Ratio})}
+\newacronym{ssim}{SSIM}{Índice de Similaridade Estrutural (\textit{Structural Similarity Index})}
+\newacronym{msssim}{MS-SSIM}{Índice de Similaridade Estrutural em Multi-Escalas (\textit{Multi-scale Structural Similarity Index})}
+\newacronym{wavelet}{DWT}{Discrete Wavelet Transform}
+\newacronym{dct}{DCT}{Transformação Discreta de Cosseno (\textit{Discrete Cosine Transform})}
+
+\newacronym{idct}{IDCT}{Transformada Discreta de Cosseno Inversa (\textit{Inverse Discrete Cosine Transform})}
+
+\newacronym{rle}{RLE}{Codificação de Comprimento de Execução (\textit{Run-Length Encoding})}
+
+\newacronym{BPG}{BPG}{Better Portable Graphics}
+\newacronym{gan}{GAN}{ Redes Adversárias Generativas (\textit{Generative adversarial network})}
+
+\newacronym{mse}{MSE}{Erro Médio Quadrático (\textit{Mean Square Error})}
+
+
+\newacronym{cart}{CART}{Classification and Regression Trees}
+
+\newacronym{h264}{H.264/AVC}{H.264 Advanced Video Coding}
+\newacronym{h265}{H.265/HEVC}{H.265 High Efficiency Video Coding}
+
+
+\newacronym{ctu}{CTU}{Coding Tree Unit}
+\newacronym{ctb}{CTB}{Coding Tree Block}
+\newacronym{pu}{PU}{Prediction Unit}
+
+\newacronym{mpeg}{MPEG}{Moving Pictures Experts Group}
+\newacronym{ldf}{LDF}{Linear Discriminant Function}
+\newacronym{mvvd}{MVVD}{Motion Vector Variance Distance}
+\newacronym{mv}{MV}{Motion Vector}
+\newacronym{rhi}{RHI}{Residual Homogeneity Indicator}
+\newacronym{sar}{SAR}{Sum of Absolute Residual}
+\newacronym{qp}{QP}{Quantization Parameter}
+\newacronym{gop}{GOP}{Group Of Pictures}
+\newacronym{cu}{CU}{Coding Unit}
+\newacronym{rd}{RD}{Rate-Distortion}
+\newacronym{mi}{IM}{Informação Mútua}
+\newacronym{mb}{MB}{Macrobloco}
+
+\newacronym{bdrate}{BD-Rate}{Bj{\o}ntegaard Delta Bitrate}
+\newacronym{led}{LED}{Light Emiting Diode}
+\newacronym{ctc}{CTC}{Common Test Conditions}
+\newacronym{sbtvd}{SBTVD}{Sistema Brasileiro de Televisão Digital}
+
+% In the text:
+%     use \gls{label}, for an first time extend name, plus acronyms
+%     use \acrshort{label}, for an acronym only
+%     use \acrlong{label}, for a full name only
+% In the text , for plural:
+%     \glspl{duck}
+% In the text , for Caps and/or plural:
+%     \Gls{duck}
+%     \Glspl{duck}
+
+

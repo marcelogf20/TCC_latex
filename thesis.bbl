@@ -1,0 +1,370 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.6 }
+
+\bibitem{Variable2016Toderici}
+\abntrefinfo{Toderici et al.}{TODERICI et al.}{2015}
+{TODERICI, G. et al. {Variable Rate Image Compression with Recurrent Neural
+  Networks}. In:  \emph{International Conference on Learning Representations
+  ({ICLR})}. [s.n.], 2015. p. 1--12. Dispon{\'\i}vel em:
+  \url{http://arxiv.org/abs/1511.06085}.}
+
+\bibitem{FullResolution2017Toderici}
+\abntrefinfo{Toderici et al.}{TODERICI et al.}{2017}
+{TODERICI, G. et al. Full resolution image compression with recurrent neural
+  networks. In:  \emph{Proceedings of the {IEEE} Conference on Computer Vision
+  and Pattern Recognition ({CVPR})}. [S.l.: s.n.], 2017. p. 5306--5314.
+  Preprint available at \url{http://arxiv.org/abs/1608.05148}.}
+
+\bibitem{End2016Balle}
+\abntrefinfo{Ball{\'{e}}, Laparra e Simoncelli}{BALL{\'{E}}; LAPARRA;
+  SIMONCELLI}{2016}
+{BALL{\'{E}}, J.; LAPARRA, V.; SIMONCELLI, E.~P. {End-to-end Optimized Image
+  Compression}.
+\emph{ICLR}, nov 2016.
+ISSN 01973975.
+Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1611.01704}.}
+
+\bibitem{Variational2018Balle}
+\abntrefinfo{Ball{\'{e}} et al.}{BALL{\'{E}} et al.}{2018}
+{BALL{\'{E}}, J. et al. {Variational image compression with a scale
+  hyperprior}. In:  \emph{ICLR}. [s.n.], 2018. Dispon{\'\i}vel em:
+  \url{http://arxiv.org/abs/1802.01436 https://arxiv.org/abs/1802.01436}.}
+
+\bibitem{shalev2014understanding}
+\abntrefinfo{Shalev-Shwartz e Ben-David}{SHALEV-SHWARTZ; BEN-DAVID}{2014}
+{SHALEV-SHWARTZ, S.; BEN-DAVID, S. \emph{Understanding machine learning: From
+  theory to algorithms}. [S.l.]: Cambridge university press, 2014.}
+
+\bibitem{FrancoisDeepLearning}
+\abntrefinfo{CHOLLET}{CHOLLET}{2018}
+{CHOLLET, F. \emph{Deep Learning wiht Python}. [S.l.]: Maning Publications Co,
+  2018.
+ISBN 9781617294433.}
+
+\bibitem{Haykin}
+\abntrefinfo{Haykin}{HAYKIN}{2001}
+{HAYKIN, S. \emph{Redes Neurais Princípios e Prática}. [S.l.]: Prentice Hall,
+  2001.}
+
+\bibitem{lecun2015deep}
+\abntrefinfo{LeCun, Bengio e Hinton}{LECUN; BENGIO; HINTON}{2015}
+{LECUN, Y.; BENGIO, Y.; HINTON, G. Deep learning.
+\emph{nature}, Nature Publishing Group, v.~521, n.~7553, p. 436--444, 2015.}
+
+\bibitem{bengio2009learning}
+\abntrefinfo{Bengio et al.}{BENGIO et al.}{2009}
+{BENGIO, Y. et al. Learning deep architectures for ai.
+\emph{Foundations and trends{\textregistered} in Machine Learning}, Now
+  Publishers, Inc., v.~2, n.~1, p. 1--127, 2009.}
+
+\bibitem{Mitchell}
+\abntrefinfo{Mitchell}{MITCHELL}{1997}
+{MITCHELL, T.~M. \emph{Machine Learning}. [S.l.]: McGraw-Hill Science, 1997.}
+
+\bibitem{mcculloch1943logical}
+\abntrefinfo{McCulloch e Pitts}{MCCULLOCH; PITTS}{1943}
+{MCCULLOCH, W.~S.; PITTS, W. A logical calculus of the ideas immanent in
+  nervous activity.
+\emph{The bulletin of mathematical biophysics}, Springer, v.~5, n.~4, p.
+  115--133, 1943.}
+
+\bibitem{Goodfellow2016}
+\abntrefinfo{Goodfellow, Bengio e Courville}{GOODFELLOW; BENGIO;
+  COURVILLE}{2016}
+{GOODFELLOW, S.; BENGIO, Y.; COURVILLE, A. \emph{Deep Learning}. [S.l.]: MIT
+  Press, 2016. \url{http://www.deeplearningbook.org}.}
+
+\bibitem{nair2010rectified}
+\abntrefinfo{Nair e Hinton}{NAIR; HINTON}{2010}
+{NAIR, V.; HINTON, G.~E. Rectified linear units improve restricted boltzmann
+  machines. In:  \emph{Proceedings of the 27th international conference on
+  machine learning (ICML-10)}. [S.l.: s.n.], 2010. p. 807--814.}
+
+\bibitem{xu2015empirical}
+\abntrefinfo{Xu et al.}{XU et al.}{2015}
+{XU, B. et al. Empirical evaluation of rectified activations in convolutional
+  network.
+\emph{arXiv preprint arXiv:1505.00853}, 2015.}
+
+\bibitem{rumelhart1988learning}
+\abntrefinfo{Rumelhart et al.}{RUMELHART et al.}{1988}
+{RUMELHART, D.~E. et al. Learning representations by back-propagating errors.
+\emph{Cognitive modeling}, v.~5, n.~3, p.~1, 1988.}
+
+\bibitem{hornik1989multilayer}
+\abntrefinfo{Hornik, Stinchcombe e White}{HORNIK; STINCHCOMBE; WHITE}{1989}
+{HORNIK, K.; STINCHCOMBE, M.; WHITE, H. Multilayer feedforward networks are
+  universal approximators.
+\emph{Neural networks}, Elsevier, v.~2, n.~5, p. 359--366, 1989.}
+
+\bibitem{leshno1993multilayer}
+\abntrefinfo{Leshno et al.}{LESHNO et al.}{1993}
+{LESHNO, M. et al. Multilayer feedforward networks with a nonpolynomial
+  activation function can approximate any function.
+\emph{Neural networks}, Elsevier, v.~6, n.~6, p. 861--867, 1993.}
+
+\bibitem{geron2017hands}
+\abntrefinfo{G{\'e}ron}{G{\'E}RON}{2017}
+{G{\'E}RON, A. \emph{Hands-on machine learning with Scikit-Learn and
+  TensorFlow: concepts, tools, and techniques to build intelligent systems}.
+  [S.l.]: " O'Reilly Media, Inc.", 2017.}
+
+\bibitem{sumit}
+\abntrefinfo{Saha}{SAHA}{}
+{SAHA, S. \emph{A Comprehensive Guide to Convolutional Neural Networks — the
+  ELI5 way}.
+Dispon{\'\i}vel em:
+  \url{https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53}.}
+
+\bibitem{rumelhart1986learning}
+\abntrefinfo{Rumelhart, Hinton e Williams}{RUMELHART; HINTON; WILLIAMS}{1986}
+{RUMELHART, D.~E.; HINTON, G.~E.; WILLIAMS, R.~J. Learning representations by
+  back-propagating errors.
+\emph{Nature}, Nature Publishing Group, v.~323, n.~6088, p.~533, 1986.}
+
+\bibitem{ketkar2017deep}
+\abntrefinfo{Ketkar et al.}{KETKAR et al.}{2017}
+{KETKAR, N. et al. \emph{Deep Learning with Python}. [S.l.]: Springer, 2017.}
+
+\bibitem{lstm}
+\abntrefinfo{Hochreiter e Schmidhuber}{HOCHREITER; SCHMIDHUBER}{1997}
+{HOCHREITER, S.; SCHMIDHUBER, J. Long short-term memory.
+\emph{Neural Computation}, v.~9, n.~8, p. 1735--1780, 1997.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1162/neco.1997.9.8.1735}.}
+
+\bibitem{Olah}
+\abntrefinfo{Olah}{OLAH}{}
+{OLAH, C. \emph{Understanding LSTM Networks}.
+Dispon{\'\i}vel em:
+  \url{https://colah.github.io/posts/2015-08-Understanding-LSTMs/}.}
+
+\bibitem{xingjian2015convolutional}
+\abntrefinfo{Xingjian et al.}{XINGJIAN et al.}{2015}
+{XINGJIAN, S. et al. Convolutional lstm network: A machine learning approach
+  for precipitation nowcasting. In:  \emph{Advances in neural information
+  processing systems}. [S.l.: s.n.], 2015. p. 802--810.}
+
+\bibitem{ng2011sparse}
+\abntrefinfo{Ng et al.}{NG et al.}{2011}
+{NG, A. et al. Sparse autoencoder.
+\emph{CS294A Lecture notes}, Stanford University, v.~72, n.~2011, p. 1--19,
+  2011.}
+
+\bibitem{kullback1951information}
+\abntrefinfo{Kullback e Leibler}{KULLBACK; LEIBLER}{1951}
+{KULLBACK, S.; LEIBLER, R.~A. On information and sufficiency.
+\emph{The annals of mathematical statistics}, JSTOR, v.~22, n.~1, p. 79--86,
+  1951.}
+
+\bibitem{kingma2013auto}
+\abntrefinfo{Kingma e Welling}{KINGMA; WELLING}{2013}
+{KINGMA, D.~P.; WELLING, M. Auto-encoding variational bayes.
+\emph{arXiv preprint arXiv:1312.6114}, 2013.}
+
+\bibitem{rezende2014stochastic}
+\abntrefinfo{Rezende, Mohamed e Wierstra}{REZENDE; MOHAMED; WIERSTRA}{2014}
+{REZENDE, D.~J.; MOHAMED, S.; WIERSTRA, D. Stochastic backpropagation and
+  approximate inference in deep generative models.
+\emph{arXiv preprint arXiv:1401.4082}, 2014.}
+
+\bibitem{klys2018learning}
+\abntrefinfo{Klys, Snell e Zemel}{KLYS; SNELL; ZEMEL}{2018}
+{KLYS, J.; SNELL, J.; ZEMEL, R. Learning latent subspaces in variational
+  autoencoders. In:  \emph{Advances in Neural Information Processing Systems}.
+  [S.l.: s.n.], 2018. p. 6444--6454.}
+
+\bibitem{rolinek2019variational}
+\abntrefinfo{Rolinek, Zietlow e Martius}{ROLINEK; ZIETLOW; MARTIUS}{2019}
+{ROLINEK, M.; ZIETLOW, D.; MARTIUS, G. Variational autoencoders pursue pca
+  directions (by accident). In:  \emph{Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition}. [S.l.: s.n.], 2019. p.
+  12406--12415.}
+
+\bibitem{sonderby2016ladder}
+\abntrefinfo{S{\o}nderby et al.}{S{\O}NDERBY et al.}{2016}
+{S{\O}NDERBY, C.~K. et al. Ladder variational autoencoders. In:  \emph{Advances
+  in neural information processing systems}. [S.l.: s.n.], 2016. p.
+  3738--3746.}
+
+\bibitem{gonzalez2009processamento}
+\abntrefinfo{Gonzalez e Woods}{GONZALEZ; WOODS}{2009}
+{GONZALEZ, R.~C.; WOODS, R.~C. \emph{Processamento digital de imagens .}
+  [S.l.]: Pearson Educaci{\'o}n, 2009.}
+
+\bibitem{sayood2017introduction}
+\abntrefinfo{Sayood}{SAYOOD}{2017}
+{SAYOOD, K. \emph{Introduction to data compression}. [S.l.]: Morgan Kaufmann,
+  2017.}
+
+\bibitem{marques1999processamento}
+\abntrefinfo{Filho e Neto}{FILHO; NETO}{1999}
+{FILHO, O. M.; NETO, H.~V. \emph{Processamento digital de imagens}. [S.l.]:
+  Brasport, 1999.}
+
+\bibitem{richardson2010h}
+\abntrefinfo{Richardson}{RICHARDSON}{2010}
+{RICHARDSON, I.~E. \emph{The H. 264 Advanced Video Compression Standard}.
+  [S.l.]: John Wiley \& Sons Ltd, 2010.}
+
+\bibitem{salomon2007data}
+\abntrefinfo{Salomon}{SALOMON}{2007}
+{SALOMON, D. \emph{Data compression: the complete reference}. [S.l.]: Springer
+  Science \& Business Media, 2007.}
+
+\bibitem{hore2010image}
+\abntrefinfo{Hore e Ziou}{HORE; ZIOU}{2010}
+{HORE, A.; ZIOU, D. Image quality metrics: Psnr vs. ssim. In:  IEEE. \emph{2010
+  20th International Conference on Pattern Recognition}. [S.l.], 2010. p.
+  2366--2369.}
+
+\bibitem{wang2003multiscale}
+\abntrefinfo{Wang, Simoncelli e Bovik}{WANG; SIMONCELLI; BOVIK}{2003}
+{WANG, Z.; SIMONCELLI, E.~P.; BOVIK, A.~C. Multiscale structural similarity for
+  image quality assessment. In:  IEEE. \emph{The Thrity-Seventh Asilomar
+  Conference on Signals, Systems \& Computers, 2003}. [S.l.], 2003. v.~2, p.
+  1398--1402.}
+
+\bibitem{gersho2012vector}
+\abntrefinfo{Gersho e Gray}{GERSHO; GRAY}{2012}
+{GERSHO, A.; GRAY, R.~M. \emph{Vector quantization and signal compression}.
+  [S.l.]: Springer Science \& Business Media, 2012. v.~159.}
+
+\bibitem{santurkar2018generative}
+\abntrefinfo{Santurkar, Budden e Shavit}{SANTURKAR; BUDDEN; SHAVIT}{2018}
+{SANTURKAR, S.; BUDDEN, D.; SHAVIT, N. Generative compression. In:  IEEE.
+  \emph{2018 Picture Coding Symposium (PCS)}. [S.l.], 2018. p. 258--262.}
+
+\bibitem{Jiang1999}
+\abntrefinfo{Jiang}{JIANG}{1999}
+{JIANG, J. Image compression with neural networks--a survey.
+\emph{Signal processing: image Communication}, Elsevier, v.~14, n.~9, p.
+  737--760, 1999.}
+
+\bibitem{akbari2019dsslic}
+\abntrefinfo{Akbari, Liang e Han}{AKBARI; LIANG; HAN}{2019}
+{AKBARI, M.; LIANG, J.; HAN, J. Dsslic: deep semantic segmentation-based
+  layered image compression. In:  IEEE. \emph{ICASSP 2019-2019 IEEE
+  International Conference on Acoustics, Speech and Signal Processing
+  (ICASSP)}. [S.l.], 2019. p. 2042--2046.}
+
+\bibitem{nie2010efficient}
+\abntrefinfo{Nie et al.}{NIE et al.}{2010}
+{NIE, F. et al. Efficient and robust feature selection via joint l2, 1-norms
+  minimization. In:  \emph{Advances in neural information processing systems}.
+  [S.l.: s.n.], 2010. p. 1813--1821.}
+
+\bibitem{target}
+\abntrefinfo{Covell et al.}{COVELL et al.}{2017}
+{COVELL, M. et al. \emph{{Target-Quality Image Compression with Recurrent,
+  Convolutional Neural Networks}}.
+[S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1705.06687}.}
+
+\bibitem{boliek2000information}
+\abntrefinfo{Boliek, Christopoulos e Majani}{BOLIEK; CHRISTOPOULOS;
+  MAJANI}{2000}
+{BOLIEK, M.; CHRISTOPOULOS, C.; MAJANI, E. Information technology: Jpeg2000
+  image coding system.
+\emph{published by ISO/IEC as}, p. 15444--1, 2000.}
+
+\bibitem{SpatiallyAdaptive2018Minnen}
+\abntrefinfo{Minnen et al.}{MINNEN et al.}{2017}
+{MINNEN, D. et al. {Spatially adaptive image compression using a tiled deep
+  network}. In:  \emph{International Conference on Image Processing}. [s.n.],
+  2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1802.02629}.}
+
+\bibitem{Priming2017Johnston}
+\abntrefinfo{Johnston et al.}{JOHNSTON et al.}{2017}
+{JOHNSTON, N. et al. \emph{{Improved Lossy Image Compression with Priming and
+  Spatially Adaptive Bit Rates for Recurrent Networks}}.
+[S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1703.10114}.}
+
+\bibitem{Lossy2017Theis}
+\abntrefinfo{Theis et al.}{THEIS et al.}{2017}
+{THEIS, L. et al. \emph{{Lossy Image Compression with Compressive
+  Autoencoders}}.
+[S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1703.00395}.}
+
+\bibitem{zhao1901cae}
+\abntrefinfo{Zhao e Liao}{ZHAO; LIAO}{1901}
+{ZHAO, H.; LIAO, P. \emph{CAE-ADMM: Implicit Bitrate Optimization via
+  ADMM-based Pruning in Compressive Autoencoders.} 1901.}
+
+\bibitem{li2018learning}
+\abntrefinfo{Li et al.}{LI et al.}{2018}
+{LI, M. et al. Learning convolutional networks for content-weighted image
+  compression. In:  \emph{Proceedings of the IEEE Conference on Computer Vision
+  and Pattern Recognition}. [S.l.: s.n.], 2018. p. 3214--3223.}
+
+\bibitem{ye2018progressive}
+\abntrefinfo{Ye et al.}{YE et al.}{2018}
+{YE, S. et al. Progressive weight pruning of deep neural networks using admm.
+\emph{arXiv preprint arXiv:1810.07378}, 2018.}
+
+\bibitem{radford2015unsupervised}
+\abntrefinfo{Radford, Metz e Chintala}{RADFORD; METZ; CHINTALA}{2015}
+{RADFORD, A.; METZ, L.; CHINTALA, S. Unsupervised representation learning with
+  deep convolutional generative adversarial networks.
+\emph{arXiv preprint arXiv:1511.06434}, 2015.}
+
+\bibitem{GAN2017Rippel}
+\abntrefinfo{Rippel e Bourdev}{RIPPEL; BOURDEV}{2017}
+{RIPPEL, O.; BOURDEV, L. {Real-Time Adaptive Image Compression}. In:
+  \emph{ICML}. [s.n.], 2017. Dispon{\'\i}vel em:
+  \url{http://arxiv.org/abs/1705.05823}.}
+
+\bibitem{agustsson2019generative}
+\abntrefinfo{Agustsson et al.}{AGUSTSSON et al.}{2019}
+{AGUSTSSON, E. et al. Generative adversarial networks for extreme learned image
+  compression. In:  \emph{Proceedings of the IEEE International Conference on
+  Computer Vision}. [S.l.: s.n.], 2019. p. 221--231.}
+
+\bibitem{mirza2014conditional}
+\abntrefinfo{Mirza e Osindero}{MIRZA; OSINDERO}{2014}
+{MIRZA, M.; OSINDERO, S. Conditional generative adversarial nets.
+\emph{arXiv preprint arXiv:1411.1784}, 2014.}
+
+\bibitem{DeliverableJuly}
+\abntrefinfo{Hung et al.}{HUNG et al.}{2019}
+{HUNG, E.~M. et al. \emph{{A review of the state-of-the-art in AI-based image
+  codecs}}.
+[S.l.], 2019.}
+
+\bibitem{bib:clic}
+\abntrefinfo{Dataset\ldots}{DATASET\ldots}{}
+{DATASET of the {CVPR} Workshop and Challenge on Learned Image Compression
+  ({CLIC}). Online.
+\url{http://www.compression.cc}.}
+
+\bibitem{bib:div2k}
+\abntrefinfo{Agustsson e Timofte}{AGUSTSSON; TIMOFTE}{2017}
+{AGUSTSSON, E.; TIMOFTE, R. {NTIRE} 2017 challenge on single image
+  super-resolution: Dataset and study. In:  \emph{The {IEEE} Conference on
+  Computer Vision and Pattern Recognition ({CVPR}) Workshops}. [S.l.: s.n.],
+  2017. {DIV2K} dataset: {DIV}erse 2{K} resolution high quality images as used
+  for the challenges at {NTIRE} ({CVPR} 2017 and {CVPR} 2018) and at {PIRM}
+  ({ECCV} 2018), available from
+  \url{https://data.vision.ee.ethz.ch/cvl/DIV2K/}.}
+
+\bibitem{bib:ultraeye}
+\abntrefinfo{Nemoto et al.}{NEMOTO et al.}{2014}
+{NEMOTO, H. et al. {Ultra-Eye}: {UHD} and {HD} images eye tracking dataset. In:
+   \emph{Sixth International Workshop on Quality of Multimedia Experience
+  ({QoMEX})}. Singapore: [s.n.], 2014. Available from
+  \url{http://mmspg.epfl.ch/ultra-eye}. Dispon{\'\i}vel em:
+  \url{http://infoscience.epfl.ch/record/200190}.}
+
+\bibitem{kodak}
+\abntrefinfo{Kodak\ldots}{KODAK\ldots}{2019}
+{KODAK Image Dataset. 2019.
+Available from \url{http://www.cs.albany.edu/~xypan/research/snr/Kodak.html}.}
+
+\bibitem{su2017}
+\abntrefinfo{Su}{SU}{2017}
+{SU, P.-H. \emph{pytorch-ssim}. [S.l.]: GitHub, 2017.
+  \url{https://github.com/Po-Hsun-Su/pytorch-ssim}.}
+
+\end{thebibliography}

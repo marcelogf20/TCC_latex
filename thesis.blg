@@ -1,0 +1,81 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: abntex2-num.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: abntex2-options.bib
+Database file #2: bibliography.bib
+Warning--entry type for "Olah" isn't style-file defined
+--line 349 of file bibliography.bib
+Warning--entry type for "sumit" isn't style-file defined
+--line 360 of file bibliography.bib
+Repeated entry---line 558 of file bibliography.bib
+ : @misc{kodak
+ :            ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "2019:ciscoreport"
+Warning--I didn't find a database entry for "h264:book"
+Warning--I didn't find a database entry for "Phyu_surveyof"
+Warning--I didn't find a database entry for "Autoregressive2018Minnen"
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Warning--campo year vazio ou faltando em sumit
+Warning--campo year vazio ou faltando em Olah
+Warning--campo year vazio ou faltando em bib:clic
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-num.bst versão v-1.9.6           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://www.abntex.net.br/                               |
++---------------------------------------------------------+
+You've used 62 entries,
+            6714 wiz_defined-function locations,
+            1540 strings with 20404 characters,
+and the built_in function-call counts, 60639 in all, are:
+= -- 5747
+> -- 1732
+< -- 607
++ -- 1295
+- -- 516
+* -- 4169
+:= -- 7537
+add.period$ -- 238
+call.type$ -- 62
+change.case$ -- 714
+chr.to.int$ -- 101
+cite$ -- 64
+duplicate$ -- 4054
+empty$ -- 3859
+format.name$ -- 2700
+if$ -- 13866
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 1109
+newline$ -- 283
+num.names$ -- 236
+pop$ -- 1585
+preamble$ -- 1
+purify$ -- 265
+quote$ -- 0
+skip$ -- 4430
+stack$ -- 1
+substring$ -- 2467
+swap$ -- 1690
+text.length$ -- 62
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 29
+warning$ -- 3
+while$ -- 384
+width$ -- 0
+write$ -- 833
+(There was 1 error message)
