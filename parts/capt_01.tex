@@ -1,9 +1,10 @@
 \chapter{Fundamentação Teórica}
-Nesse capítulo, primeiro apresentaremos uma visão geral das redes neurais artificiais, desde o neurônio artificial, os principais tipos de arquitetura e chegando até os autocodificadores variacionais.
-No segundo momento, fundamentamos brevemente a teoria de compressão de dados, medida de informação e representação de imagens. Por fim, explicamos o funcionamento do \acrshort{jpeg}  e citamos as principais métricas objetivas para avaliar a qualidade entre imagens.    
+
+\resumodocapitulo{Neste capítulo, primeiro apresentaremos uma visão geral das redes neurais artificiais, desde o neurônio artificial, passando pelos principais tipos de arquitetura e chegando até os autocodificadores variacionais.
+	No segundo momento, fundamentamos brevemente a teoria de compressão de dados, métodos para medida de informação e representação de imagens. Por fim, explicamos o funcionamento do \acrshort{jpeg}  e citamos as principais métricas objetivas para avaliar a qualidade entre imagens.}    
 
 \section{Redes Neurais Artificiais}
-Nessa seção, descrevemos a ideia básica de qualquer \gls{rna}, suas vantagens e seu elemento essencial: o neurônio artificial. 
+Nessa seção, descrevemos a ideia básica de treinamento de qualquer \gls{rna}, suas vantagens e seu elemento essencial: o neurônio artificial. 
 
 %paradigma de programação capaz de encontrar representações úteis dos dados de entrada para facilitar tarefas de classificação e regressão. 
 
@@ -78,9 +79,11 @@ y_{k} = \phi(v_{k})
 
 Em que $x_{0}$ é uma entrada fictícia que será multiplicada pelo viés ou do inglês \textit{bias}, $w_{k0} = b_{k}$; $x_{1},x_{2}, ...,x_{m}$ são os valores reais de entrada, $w_{k1},x_{k2}, ...,x_{km}$ são os pesos sinápticos do neurônio k; $v_{k}$ é a saída do produto escalar entre os vetores $\textbf{w}$ e $ \textbf{x}$;  $\phi()$ é denominada função de ativação e $y_{k}$ é o sinal de saída do neurônio. O viés é um termo independente dos sinais de entrada e tem o objetivo de fornecer mais um grau de liberdade ao neurônio.
 
+%Elas são usadas em neurônios das camadas intermediárias ou na última para problemas de classificação binária ou regressão. 
+
 \subsubsection{Funções de ativação}
 A função de ativação é uma transformação matemática adicional que ocorre no perceptron. O seu uso permite a solução de problemas complexos e não-lineares, tais como tarefas de visão computacional e processamento de linguagem natural \cite{Mitchell}. 
-O neurônio com a função limiar foi utilizado no primeiro modelo de perceptron \cite{mcculloch1943logical,Haykin} e contém a propriedade ``tudo ou nada''.  As funções com formato de S e não-lineares são chamadas de sigmóides e amplamente usadas em \acrshort{rna}'s. Entre elas há a função logística que restringe a saída no intervalo [0,1] e a tangente hiperbólica cuja saída pertence ao intervalo [-1,1]. Elas são usadas em neurônios das camadas intermediárias ou na última para problemas de classificação binária ou regressão. 
+O neurônio com a função limiar foi utilizado no primeiro modelo de perceptron \cite{mcculloch1943logical,Haykin} e contém a propriedade ``tudo ou nada''.  As funções com formato de S e não-lineares são chamadas de sigmóides e amplamente usadas em \acrshort{rna}'s. Entre elas há a função logística que restringe a saída no intervalo [0,1] e a tangente hiperbólica cuja saída pertence ao intervalo [-1,1]. 
 A função \textit{softmax} também é uma função sigmóide usada para prever as probabilidades associadas a uma classificação multi-classe \cite{Goodfellow2016}.  Ela toma um vetor $K$-dimensional correspondentes aos $K$ neurônios de uma camada e produz outro vetor $K$-dimensional com valores reais no intervalo (0, 1) que somam 1.  A função \textit{softmax} é idealmente usada na camada de saída do classificador \cite{Goodfellow2016}.
 A \gls{relu} \cite{nair2010rectified}, é uma função não-linear que mapeia uma entrada para zero se ela for negativa ou retorna a própria entrada se ela for positiva. Diferentemente das funções sigmóides, ela é uma função não saturada e em decorrência disso possui duas vantagens principais: minimiza o problema denominado “gradiente de explosão e fuga” e acelerar a velocidade de convergência da rede \cite{xu2015empirical}.
 As equações das funções de ativações mencionadas aqui e a suas derivadas estão apresentadas na Tabela \ref{table:func_ativacoes}. 
@@ -196,7 +199,7 @@ A última camada é denominada camada de saída e as demais são camadas ocultas
 
 De forma análoga ao neurônio simples, em uma rede \textit{feedforward} há a fase de propagação (\textit{do inglês forward pass}), onde as entradas são passadas através da rede e as previsões obtidas. No passo para trás, do inglês \textit{backward pass}, primeiro calculamos o gradiente da função de perdas em relação aos pesos da última camada da rede.
 
-Nas camadas ocultas, o algoritmo de retropropagação não sabe qual saída cada neurônio deve fornecer. Portanto, aqui devemos calcular a derivada do erro da última camada em relação as pesos das camadas ocultas. Isso é obtido aplicando-se a regra da cadeia. É possível provar que o gradiente calculado na última camada é ``passado'' até chegar a primeira camada oculta.    
+Nas camadas ocultas, o algoritmo de retropropagação não sabe qual saída cada neurônio deve fornecer. Portanto, aqui, devemos calcular a derivada do erro da última camada em relação as pesos das camadas ocultas. Isso é obtido aplicando-se a regra da cadeia. É possível provar que o gradiente calculado na última camada é ``passado'' até chegar a primeira camada oculta.    
 Em redes com camadas ocultas a regra da cadeia possibilita computar o quanto um peso qualquer contribuiu para o sinal de erro calculado pela função de custo.  
 
 \subsubsection{Perceptron Multicamadas}
@@ -282,7 +285,7 @@ Se a entrada for uma imagem com múltiplos canais, por exemplo, \acrshort{rgb}, 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figuras/conv3D.pdf}
-	\caption[Convolução 2D em três mapa de recurso.]{Convolução de uma imagem  $5 \times 5 \times 3$, preenchido de zeros nas bordas, com um filtro K $3 \times 3 \times 1$. Para cada canal da imagem é feito uma convolução 2D com o respectivo canal do filtro. O resultado das convoluções são somados entre si e com o viés para fornecer a saída gradualmente.  O número de canais na saída é apenas 1 porque estamos utilizando 1 filtro \cite{sumit}.}
+	\caption[Convolução 2D em três mapas de recursos.]{Convolução de uma imagem  $5 \times 5 \times 3$, preenchido de zeros nas bordas, com um filtro K $3 \times 3 \times 1$. Para cada canal da imagem é feito uma convolução 2D com o respectivo canal do filtro. O resultado das convoluções são somados entre si e com o viés para fornecer a saída gradualmente.  O número de canais na saída é apenas 1 porque estamos utilizando 1 filtro \cite{sumit}.}
 	\label{fig:con3d}
 \end{figure}
 
@@ -296,7 +299,7 @@ Em uma rede convolucional, a unidade de processamento é representado por um fil
 
 \subsection{Redes Recorrentes}
 
-A \gls{rnr} \cite{rumelhart1986learning} é uma classe de redes neurais que incluem conexões de retroalimentação na sua arquitetura para processar dados sequenciais ou temporais. Para uma sequência $S = \{x_1,x_2,...,x_n\}$ a \acrshort{rnr} itera pelos seus elementos, mantendo um estado com informações relativas ao que foi visto até agora. Portanto, essa rede é projetada para ter memória \cite{FrancoisDeepLearning} e processar um conjunto de entrada arbitrariamente grande e de tamanho variável \cite{ketkar2017deep}.
+A \gls{rnr} \cite{rumelhart1986learning} é uma classe de redes neurais que inclui conexões de retroalimentação na sua arquitetura para processar dados sequenciais ou temporais. Para uma sequência $S = \{x_1,x_2,...,x_n\}$ a \acrshort{rnr} itera pelos seus elementos, mantendo um estado com informações relativas ao que foi visto até agora. Portanto, essa rede é projetada para ter memória \cite{FrancoisDeepLearning} e processar um conjunto de entrada arbitrariamente grande e de tamanho variável \cite{ketkar2017deep}.
 A Figura \ref{fig:rnr} apresenta uma rede recorrente genérica em que a saída atual é uma função das saídas anteriores.  Essa formulação recorrente resulta no compartilhamento de parâmetros através do tempo essencial para a viabilidade e eficácia dessa rede \cite{Goodfellow2016}.
 
 \begin{figure}[h]
@@ -335,7 +338,7 @@ Essas redes contém  têm ``células LSTM'' que possuem uma recorrência interna
 \end{aligned}
 \end{equation}
 Onde, $\textbf{x}_t$ é a entrada atual da sequência. As variáveis $\textbf{W}$, $\textbf{U}$ e $\textbf{b}$  são as matrizes de pesos e viés aprendidas por cada camada.  O vetor $\textbf{i}_{t}$ é a porta de entrada que nos diz quais novas informações vamos armazenar no estado da célula, $\textbf{c}_{t}$. 
-A porta do esquecimento, $\textbf{f}_{t}$, controla quais informações serão ``esquecidas'' do estado da célula anterior, $\textbf{c}_{t-1}$. A porta de saída $\textbf{o}_{t}$ é usada para fornecer a ativação para a saída, $\textbf{h}_{t}$. O vetor $\textbf{c}'_{t}$ é o estado da célula candidata e $\textbf{c}_{t}$ é o estado de célula atual.  Este último é o termo que contém a ``memória'' de longo prazo da \acrshort{lstm}. Nessa equação, o símbolo $\odot$ significa multiplicação ponto a ponto entre dois vetores. O cálculo do estado de célula é uma função recursiva que ocorre no interior da célula. Por fim, a saída é um o vetor $\textbf{h}_{t}$.
+A porta do esquecimento, $\textbf{f}_{t}$, controla quais informações serão ``esquecidas'' do estado da célula anterior, $\textbf{c}_{t-1}$. A porta de saída $\textbf{o}_{t}$ é usada para fornecer a ativação para a saída, $\textbf{h}_{t}$. O vetor $\textbf{c}'_{t}$ é o estado da célula candidata e $\textbf{c}_{t}$ é o estado de célula atual.  Este último é o termo que contém a ``memória'' de longo prazo da \acrshort{lstm}. Nessa equação, o símbolo $\odot$ significa multiplicação ponto a ponto entre dois vetores. O cálculo do estado de célula é uma função recursiva que ocorre no interior da célula. Por fim, a saída é um  vetor $\textbf{h}_{t}$.
 A função logística é adotada na ativação das 3 portas.  Dessa forma, as portas podem inibir uma informação na medida que seus elementos sejam próximos de zero (saturação inferior) ou mantê-la se os seus elementos são próximos a um (saturação superior). A lista a seguir detalha as variáveis da \acrshort{lstm} quando o vetor $\textbf{x}_t$ tem tamanho $d$ e escolhemos $h$ unidades ocultas.    
 
 
@@ -357,7 +360,7 @@ A função logística é adotada na ativação das 3 portas.  Dessa forma, as po
 A formulação da \acrshort{lstm} apresentada aqui é também denominada por \gls{fc-lstm}.
 
 A sua principal desvantagem, no tratamento de dados espaço-temporais, é o fato que não leva em consideração uma correlação espacial devido ao uso de conexões completas nas operações internas.  
-Para superar esse problema, defini-se a \gls{conv2dlstm} \cite{xingjian2015convolutional,FullResolution2017Toderici} na qual todas as entradas($x_1,..., x_t$), estados de células ($c_1,..., c_t$), estados ocultos($h_1,..., h_t$) e portas($i_t$, $f_t$, $o_t$) são tensores 3D cujas duas últimas dimensões são dimensões espaciais (linhas e colunas). Isso pode ser alcançado usando um operador de convolução nas transições de estado para estado e de entrada para estado. As principais equações do \acrshort{conv2dlstm} são mostradas abaixo, onde '*' denota o operador de convolução
+Para superar esse problema, defini-se a \gls{conv2dlstm} \cite{xingjian2015convolutional,FullResolution2017Toderici} na qual todas as entradas($x_1,..., x_t$), estados de células ($c_1,..., c_t$), estados ocultos($h_1,..., h_t$) e portas($i_t$, $f_t$, $o_t$) são tensores 3D cujas duas últimas dimensões são dimensões espaciais (linhas e colunas). Isso pode ser alcançado usando um operador de convolução nas transições de estado para estado e de entrada para estado. As principais equações do \acrshort{conv2dlstm} são mostradas abaixo, onde '*' denota o operador de convolução.
 
 \begin{equation}
 \label{eq:conlstm}
@@ -377,7 +380,7 @@ Para superar esse problema, defini-se a \gls{conv2dlstm} \cite{xingjian2015convo
 
 %O \textit{autoencoder}  é uma rede neural treinada  para tentar reconstruir os dados de entrada na saída.
 
-O \gls{ac}, é uma rede neural que mapeia a entrada $x$ para um espaço vetorial latente, $z$, por meio de um módulo de codificador $E$, e depois a decodifica de volta para uma saída $x'$ com as mesmas dimensões da entrada original, por meio de um módulo de decodificador $D$ \cite{FrancoisDeepLearning}. Esse processo é resumido por: 
+O \gls{ac}, é uma rede neural que mapeia a entrada $x$ para um espaço vetorial latente, $z$, por meio de um módulo de codificador $E$, e depois a decodifica para uma saída $x'$ com as mesmas dimensões da entrada original, por meio do módulo de decodificador $D$ \cite{FrancoisDeepLearning}. Esse processo é resumido por: 
 
 \begin{equation}
 \begin{aligned}[alignment]
@@ -396,7 +399,7 @@ Onde $d$ é uma função de perda que penaliza $D(E(x))$  por ser diferente de $
 %A rede pode ser vista como consistindo de duas partes: uma função de codificação, $\textbf{z} = E(\textbf{x})$ e um decodificador que produz a reconstrução $\textbf{f} = D(\textbf{z})$ \cite{Goodfellow2016}. 
 
 
-Um \acrshort{ac} é dito incompleto quando a dimensão de saída do codificador é menor que a dimensão de entrada \cite{Goodfellow2016}. Nesse caso, o codificador realiza sucessivas transformações de filtragens e reduções na dimensionalidade dos dados de entrada, em um processo chamado de subamostragem, do inglês (\textit{downsampling}), e produz o vetor latente. O vetor latente segue para o decodificador que irá aumentar a dimensionalidade dos dados na etapa de superamostragem (\textit{upsampling}) e produz uma versão aproximada dos dados de entrada. Aprender uma representação incompleta força o \textit{autoencoder}  a capturar os recursos mais destacados dos dados de treinamento \cite{Goodfellow2016}. 
+Um \acrshort{ac} é dito incompleto quando a dimensão de saída do codificador é menor que a dimensão de entrada \cite{Goodfellow2016}. Nesse caso, o codificador realiza sucessivas transformações de filtragens e reduções na dimensionalidade dos dados de entrada, em um processo chamado de subamostragem, do inglês (\textit{downsampling}), e produz o vetor latente. O vetor latente segue para o decodificador que irá aumentar a dimensionalidade dos dados na etapa de superamostragem (\textit{upsampling}) e produz uma versão aproximada da entrada. Aprender uma representação incompleta força o \textit{autoencoder}  a capturar os recursos mais destacados dos dados de treinamento \cite{Goodfellow2016}. 
 
 
 %Esses dois elementos são treinados de ponta a ponta, mas durante a implantação, o codificador e o decodificador são normalmente usados independentemente.
@@ -409,7 +412,7 @@ Um \acrshort{ac} é dito incompleto quando a dimensão de saída do codificador 
 
 %Uma maneira de obter recursos úteis do codificador automático é restringir h a ter uma dimensão menor que x.
 
-\subsubsection{Autocodificador Esparso}
+\subsubsection{Autocodificador Esparso} \label{sec:ac_es}
 
 Um \acrshort{ac} esparso possui um critério de treinamento que envolve uma penalidade de esparsidade $\Omega(z)$ na camada da representação do vetor latente, além do erro de reconstrução \cite{Goodfellow2016}:
 
@@ -540,7 +543,7 @@ Uma vez concluído o treinamento, a distribuição a \textit{posterior} aproxima
 \section{Compressão de dados}
 Nessa seção, apresentamos o problema da compressão de dados e o papel desempenhado pelo par \gls{codec}. Além disso, também é tratado, superficialmente, um desenvolvimento probabilístico proposto por Shanon para mensurar a informação e estabelecer, dentro das suas hipóteses, um valor mínimo ótimo de taxa de compressão sem perdas.
 
-A compressão de dados compreende o processo de reduzir o espaço em memória ocupado por dados que representam uma dada informação. Os dados são os meios pelos quais as informações são transmitidas \cite{gonzalez2009processamento}. Sejam $b$ e $b’$ o número de bits de duas representações das mesmas informações, a taxa de compressão $C$ e a redundância relativa de dados, $Rd$, da representação $b$ em relação a $b'$ são:
+A compressão de dados compreende o processo de reduzir o espaço em memória ocupada por dados que representam uma informação. Os dados são os meios pelos quais as informações são transmitidas \cite{gonzalez2009processamento}. Sejam $b$ e $b’$ o número de bits de duas representações das mesmas informações, a taxa de compressão $C$ e a redundância relativa de dados, $Rd$, da representação $b$ em relação a $b'$ são:
 
 \begin{equation}
 \label{eq:compressao}
@@ -563,11 +566,10 @@ O codificador é o algoritmo utilizado para explorar as redundâncias na informa
 \end{figure}
 
 
-Esses dois algoritmos formam o \acrshort{codec}. Ele pode ser projetado para tratar com categorias de informações específicas que incluem, por exemplo, imagens, áudios e vídeos. 
-
 %Embora seja verdade que as capacidades de armazenamento e transmissão estão aumentando constantemente com novas inovações tecnológicas, como um corolário da Primeira Lei de Parkinson, parece que a necessidade de armazenamento em massa e transmissão aumenta pelo menos duas vezes mais rápido que as capacidades de armazenamento e transmissão \cite{sayood2017introduction}.
 
-A compressão pode ser com perdas e sem perdas. No primeiro tipo o codificador introduz restrições que faz o decodificador recuperar dados que aproximam a representação da informação original ao passo que na compressão sem perdas os dados recuperados são exatamente iguais aos originais \cite{sayood2017introduction}. 
+Esses dois algoritmos formam o \acrshort{codec}. Ele pode ser projetado para tratar com categorias de informações específicas que incluem, por exemplo, imagens, áudios e vídeos. 
+A compressão pode ser com perdas e sem perdas. No primeiro tipo o codificador introduz restrições que faz o decodificador recuperar dados que aproximam a representação da informação original ao passo que na compressão sem perdas  eles são recuperados iguais aos originais \cite{sayood2017introduction}. 
 %No geral, as compressões com perdas apresentam a vantagem de alcançar taxas de compressão maiores que a compressão sem perdas ao custo de perder parte da informação. 
 
 \subsection{Medidas de informação}
@@ -609,16 +611,14 @@ Uma possibilidade para realizar essa estimação é observar distribuições con
 %Dessa forma, capturamos as dependências do elementos observando as distribuições conjuntas de sequências cada vez mais longas geradas pela fonte. Quando n tende ao infinito $H_n$ converge para a entropia real da fonte. 
 
 \section{Imagens}
-
+Nessa seção explicamos como as imagens digitais podem ser representadas, quais são as suas principais características que são exploradas pelos \acrshort{codec}s. Em seguida, apresentamos o algoritmo base do padrão \acrshort{jpeg} e as métricas objetivas para avaliar imagens comparativamente,
 
 Uma imagem pode ser definida como uma função bidimensional, $f(x,y)$, em que $x$ e $y$ são coordenadas espaciais (plano), e a amplitude de f em qualquer par de coordenadas $(x, y)$ é chamada de intensidade ou valor do \textit{pixel} nesse ponto \cite{gonzalez2009processamento}. Em uma imagem digital os valores de $x$,$y$ e $f$ são discretos e finitos. 
 Uma imagem monocromática requer apenas um número para indicar a intensidade de cada amostra espacial. As imagens coloridas, por outro lado, exigem pelo menos três números por posição de pixel para representar com precisão as cores \cite{richardson2010h}.
 
 \subsection{Espaço de Cores}
 
-As três características normalmente utilizadas para distinguir as cores entre si são:
-brilho ou luminância (\textit{brightness}), matiz (\textit{hue}) e saturação (\textit{saturation}). O brilho representa a noção de intensidade luminosa da radiação, o matiz é uma propriedade associada ao comprimento de
-onda predominante na combinação das várias ondas visíveis, enquanto a saturação expressa a pureza do matiz ou o grau de mistura do matiz original com a luz branca \cite{marques1999processamento}. O matiz e a saturação são denominados conjuntamente de cromaticidade.
+As três características normalmente utilizadas para distinguir as cores entre si são: brilho ou luminância (\textit{brightness}), matiz (\textit{hue}) e saturação (\textit{saturation}). O brilho representa a noção de intensidade luminosa da radiação, o matiz é uma propriedade associada ao comprimento de onda predominante na combinação das várias ondas visíveis, enquanto a saturação expressa a pureza do matiz ou o grau de mistura do matiz original com a luz branca \cite{marques1999processamento}. O matiz e a saturação são denominados conjuntamente de cromaticidade.
 O método escolhido para representar brilho e cor é descrito como um espaço de cores \cite{richardson2010h}. O objetivo dos modelos de cores é permitir a especificação de cores em um formato padronizado e aceito por todos \cite{gonzalez2009processamento}. 
 
 \subsubsection{RGB}
@@ -633,7 +633,7 @@ No espaço de cores \gls{rgb}, a imagem colorida é representada com três núme
 
 \subsubsection{YCbCr}
 
-O sistema visual humano é menos sensível à cor do que à luminância (Y). No espaço de cores \acrshort{rgb}, as três cores são igualmente importantes e, geralmente, armazenadas na mesma resolução. Contudo, é possível representar uma imagem colorida com mais eficiência, separando a luminância das informações de cores e representando Y com uma resolução maior que a cor \cite{richardson2010h}. O componente de luminância é calculado como uma média R, G e B ponderada pelos pesos $k_r$, $k_g$ e $k_b$, respectivamente.
+O sistema visual humano é menos sensível à cor do que à luminância (Y). No espaço de cores \acrshort{rgb}, as três cores são igualmente importantes e, geralmente, armazenadas na mesma resolução. Contudo, é possível representar uma imagem colorida com mais eficiência, separando a luminância das informações de cores e representando Y com uma resolução maior que a cor \cite{richardson2010h}. A componente de luminância é calculado como uma média entre R, G e B, ponderadas pelos pesos $k_r$, $k_g$ e $k_b$, respectivamente.
 
 \begin{equation}
 \begin{aligned}
@@ -657,7 +657,7 @@ Cg &= G - Y
 
 
 
-\subsection{Compressão de Imagens}
+\subsection{Compressão}
 
 %A tarefa de compressão de imagens é importante para promover reduções no espaço de memória ocupada para armazená-las e na largura de banda para transmitir os dados pela redes de comunicações. Da teoria de telecomunicações, sabe-se que se a taxa de transmissão de um sinal é reduzida então a largura de banda requisitada para transmitir os dados também será menor.
 
@@ -694,8 +694,8 @@ As principais etapas desse \acrshort{codec} estão descritas a seguir.
 	
 	Para $0 \leq i \leq n - 1$ e $0 \leq j \leq m - 1$. O primeiro coeficiente, $G_{00}$ é denominado coeficiente DC e os demais são chamados coeficientes AC. 
 	
-	\item O \acrshort{jpeg} usa quantização uniforme para quantificar os coeficientes da DCT. Os tamanhos das etapas do quantizador são organizados em uma tabela chamada tabela de quantização e podem ser vistos como a parte fixa da quantização \cite{sayood2017introduction}. 
-	Cada valor quantizado é representado por um rótulo $I_{ij}$ e obtido a partir do respectivos coeficiente $G_ij$ e do elemento da matriz de quantização $Q_{ij}$ conforme descrito pela próxima equação. 
+	\item O \acrshort{jpeg} usa quantização uniforme para quantificar os coeficientes da DCT. Os tamanhos das etapas do quantizador são organizados em uma tabela chamada tabela de quantização e podem ser vistos como a parte fixa desse processo \cite{sayood2017introduction}. 
+	Cada valor quantizado é representado por um rótulo $I_{ij}$ e obtido a partir dos respectivos coeficientes $G_ij$ e do elemento da matriz de quantização $Q_{ij}$, conforme descrito pela próxima equação. 
 	
 	\begin{equation}
 	\begin{aligned}
@@ -707,7 +707,7 @@ As principais etapas desse \acrshort{codec} estão descritas a seguir.
 	Os 64 coeficientes de frequência quantizados para cada unidade de dados são codificados usando uma combinação de codificação \gls{rle} e Huffman \cite{salomon2007data}. 
 	
 \end{enumerate}  
-O esquema de decodificação é o inverso dos passos da codificação \cite{sayood2017introduction}. Dessa forma, a partir do conjunto de bits efetuaremos: a decodificação de entropia, reescalonamento dos dados, transformada \acrshort{idct}, recuperação da imagem a partir dos blocos, superamostragem, somar $2^{P-1}$ em cada \textit{pixe}l e por fim transformar a imagem para o espaço de cor \acrshort{rgb}. A Figura \ref{fig:jpeg} resume o esquemático de codificação e decodificação de uma imagem usando o padrão \acrshort{jpeg}.
+O esquema de decodificação é o inverso dos passos da codificação \cite{sayood2017introduction}. Dessa forma, a partir do conjunto de bits efetuaremos: a decodificação de entropia, reescalonamento dos dados, transformada \acrshort{idct}, recuperação da imagem a partir dos blocos, superamostragem, somar $2^{P-1}$ em cada \textit{pixe}l e, por fim, transformar a imagem para o espaço de cor \acrshort{rgb}. A Figura \ref{fig:jpeg} resume o esquemático de codificação e decodificação de uma imagem usando o padrão \acrshort{jpeg}.
 
 
 \begin{figure}[h]
@@ -720,7 +720,7 @@ O esquema de decodificação é o inverso dos passos da codificação \cite{sayo
 
 \subsection{Métricas de Qualidade} 
 
-As métricas de qualidade são utilizadas para avaliar a fidelidade entre a informação que passou por um processo de compressão com perdas com a informação original.  A qualidade visual é inerentemente subjetiva e, portanto, é influenciada por muitos fatores subjetivos que dificultam a obtenção de uma medida de qualidade completamente precisa \cite{richardson2010h}.  Em imagens, as principais métricas objetivas (calculadas automaticamente) são a \gls{psnr}, \gls{ssim} e \gls{msssim} \cite{richardson2010h}. As duas últimas são métricas que levam em consideração a percepção humana.  
+As métricas de qualidade são utilizadas para avaliar a fidelidade entre a informação que passou por um processo de compressão com perdas com a informação original.  A qualidade visual é inerentemente subjetiva e, portanto, influenciada por muitos fatores subjetivos que dificultam a obtenção de uma medida de qualidade completamente precisa \cite{richardson2010h}.  Em imagens, as principais métricas objetivas (calculadas automaticamente) são a \gls{psnr}, \gls{ssim} e \gls{msssim} \cite{richardson2010h}. As duas últimas são métricas que tentam levar em consideração a percepção humana de qualidade. 
 
 
 \subsubsection{PSNR}
@@ -743,7 +743,7 @@ PSNR_{dB}(x,x') = 10 \log\frac{(2^{P} - 1)^{2}}{MSE(x,x')}
 %Um valor alto de \acrshort{psnr} indica, geralmente, uma alta semelhança perceptual entre as imagens.
 
 \subsubsection{SSIM}
-O \acrshort{ssim} foi projetado para modelar qualquer distorção da imagem como uma combinação da perda de correlação, distorção da luminância e do contraste \cite{hore2010image}. Ele é definido por:
+O \acrshort{ssim} foi projetado para modelar qualquer distorção da imagem como uma combinação da perda de correlação, distorções da luminância e do contraste \cite{hore2010image}. Ele é definido por:
 
 \begin{equation}
 \begin{aligned}
@@ -770,5 +770,5 @@ O \acrshort{ssim} varia de 0 a 1, onde 0 significa que não existe similaridade 
 
 
 \subsubsection{MS-SSIM}
-O \acrshort{msssim} \cite{wang2003multiscale} é uma variação do \acrshort{ssim} para várias escalas de imagem e conveniente para incorporar detalhes das imagens em diferentes resoluções. A imagem original e a reconstruída estão na escala 1. As imagens na escala 2 são obtidas após aplicar um filtro passa-baixas nas imagens da escala 1 (escala anterior). Esse filtro realiza subamostragem nas imagens por um fator de 2 \cite{wang2003multiscale}. Esse processo se repete até obtermos as imagens de escala $M$. 
+O \acrshort{msssim} \cite{wang2003multiscale} é uma variação do \acrshort{ssim} para várias escalas de imagens e conveniente para incorporar seus detalhes em diferentes resoluções. A imagem original e a reconstruída estão na escala 1. As imagens na escala 2 são obtidas após aplicar um filtro passa-baixas nas imagens da escala 1 (escala anterior). Esse filtro realiza subamostragem nas imagens por um fator de 2 \cite{wang2003multiscale}. Esse processo se repete até obtermos as imagens de escala $M$. 
 Essas imagens são usadas para compor o cálculo do \acrshort{msssim}. Essa métrica retorna valores entre 0 (ausência de similaridade) e 1 (reconstrução sem perdas). 

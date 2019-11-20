@@ -19,21 +19,6 @@
   and Pattern Recognition ({CVPR})}. [S.l.: s.n.], 2017. p. 5306--5314.
   Preprint available at \url{http://arxiv.org/abs/1608.05148}.}
 
-\bibitem{End2016Balle}
-\abntrefinfo{Ball{\'{e}}, Laparra e Simoncelli}{BALL{\'{E}}; LAPARRA;
-  SIMONCELLI}{2016}
-{BALL{\'{E}}, J.; LAPARRA, V.; SIMONCELLI, E.~P. {End-to-end Optimized Image
-  Compression}.
-\emph{ICLR}, nov 2016.
-ISSN 01973975.
-Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1611.01704}.}
-
-\bibitem{Variational2018Balle}
-\abntrefinfo{Ball{\'{e}} et al.}{BALL{\'{E}} et al.}{2018}
-{BALL{\'{E}}, J. et al. {Variational image compression with a scale
-  hyperprior}. In:  \emph{ICLR}. [s.n.], 2018. Dispon{\'\i}vel em:
-  \url{http://arxiv.org/abs/1802.01436 https://arxiv.org/abs/1802.01436}.}
-
 \bibitem{shalev2014understanding}
 \abntrefinfo{Shalev-Shwartz e Ben-David}{SHALEV-SHWARTZ; BEN-DAVID}{2014}
 {SHALEV-SHWARTZ, S.; BEN-DAVID, S. \emph{Understanding machine learning: From
@@ -228,21 +213,12 @@ Dispon{\'\i}vel em:
   Conference on Signals, Systems \& Computers, 2003}. [S.l.], 2003. v.~2, p.
   1398--1402.}
 
-\bibitem{gersho2012vector}
-\abntrefinfo{Gersho e Gray}{GERSHO; GRAY}{2012}
-{GERSHO, A.; GRAY, R.~M. \emph{Vector quantization and signal compression}.
-  [S.l.]: Springer Science \& Business Media, 2012. v.~159.}
-
-\bibitem{santurkar2018generative}
-\abntrefinfo{Santurkar, Budden e Shavit}{SANTURKAR; BUDDEN; SHAVIT}{2018}
-{SANTURKAR, S.; BUDDEN, D.; SHAVIT, N. Generative compression. In:  IEEE.
-  \emph{2018 Picture Coding Symposium (PCS)}. [S.l.], 2018. p. 258--262.}
-
-\bibitem{Jiang1999}
-\abntrefinfo{Jiang}{JIANG}{1999}
-{JIANG, J. Image compression with neural networks--a survey.
-\emph{Signal processing: image Communication}, Elsevier, v.~14, n.~9, p.
-  737--760, 1999.}
+\bibitem{Autoregressive2018Minnen}
+\abntrefinfo{Minnen, Ball{\'{e}} e Toderici}{MINNEN; BALL{\'{E}};
+  TODERICI}{2018}
+{MINNEN, D.; BALL{\'{E}}, J.; TODERICI, G. {Joint Autoregressive and
+  Hierarchical Priors for Learned Image Compression}. In:  \emph{NIPS}. [s.n.],
+  2018. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1809.02736}.}
 
 \bibitem{akbari2019dsslic}
 \abntrefinfo{Akbari, Liang e Han}{AKBARI; LIANG; HAN}{2019}
@@ -251,17 +227,65 @@ Dispon{\'\i}vel em:
   International Conference on Acoustics, Speech and Signal Processing
   (ICASSP)}. [S.l.], 2019. p. 2042--2046.}
 
-\bibitem{nie2010efficient}
-\abntrefinfo{Nie et al.}{NIE et al.}{2010}
-{NIE, F. et al. Efficient and robust feature selection via joint l2, 1-norms
-  minimization. In:  \emph{Advances in neural information processing systems}.
-  [S.l.: s.n.], 2010. p. 1813--1821.}
+\bibitem{Jiang1999}
+\abntrefinfo{Jiang}{JIANG}{1999}
+{JIANG, J. Image compression with neural networks--a survey.
+\emph{Signal processing: image Communication}, Elsevier, v.~14, n.~9, p.
+  737--760, 1999.}
+
+\bibitem{gersho2012vector}
+\abntrefinfo{Gersho e Gray}{GERSHO; GRAY}{2012}
+{GERSHO, A.; GRAY, R.~M. \emph{Vector quantization and signal compression}.
+  [S.l.]: Springer Science \& Business Media, 2012. v.~159.}
+
+\bibitem{End2016Balle}
+\abntrefinfo{Ball{\'{e}}, Laparra e Simoncelli}{BALL{\'{E}}; LAPARRA;
+  SIMONCELLI}{2016}
+{BALL{\'{E}}, J.; LAPARRA, V.; SIMONCELLI, E.~P. {End-to-end Optimized Image
+  Compression}.
+\emph{ICLR}, nov 2016.
+ISSN 01973975.
+Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1611.01704}.}
+
+\bibitem{santurkar2018generative}
+\abntrefinfo{Santurkar, Budden e Shavit}{SANTURKAR; BUDDEN; SHAVIT}{2018}
+{SANTURKAR, S.; BUDDEN, D.; SHAVIT, N. Generative compression. In:  IEEE.
+  \emph{2018 Picture Coding Symposium (PCS)}. [S.l.], 2018. p. 258--262.}
+
+\bibitem{Priming2017Johnston}
+\abntrefinfo{Johnston et al.}{JOHNSTON et al.}{2017}
+{JOHNSTON, N. et al. \emph{{Improved Lossy Image Compression with Priming and
+  Spatially Adaptive Bit Rates for Recurrent Networks}}.
+[S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1703.10114}.}
 
 \bibitem{target}
 \abntrefinfo{Covell et al.}{COVELL et al.}{2017}
 {COVELL, M. et al. \emph{{Target-Quality Image Compression with Recurrent,
   Convolutional Neural Networks}}.
 [S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1705.06687}.}
+
+\bibitem{Lossy2017Theis}
+\abntrefinfo{Theis et al.}{THEIS et al.}{2017}
+{THEIS, L. et al. \emph{{Lossy Image Compression with Compressive
+  Autoencoders}}.
+[S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1703.00395}.}
+
+\bibitem{Variational2018Balle}
+\abntrefinfo{Ball{\'{e}} et al.}{BALL{\'{E}} et al.}{2018}
+{BALL{\'{E}}, J. et al. {Variational image compression with a scale
+  hyperprior}. In:  \emph{ICLR}. [s.n.], 2018. Dispon{\'\i}vel em:
+  \url{http://arxiv.org/abs/1802.01436 https://arxiv.org/abs/1802.01436}.}
+
+\bibitem{zhao1901cae}
+\abntrefinfo{Zhao e Liao}{ZHAO; LIAO}{1901}
+{ZHAO, H.; LIAO, P. \emph{CAE-ADMM: Implicit Bitrate Optimization via
+  ADMM-based Pruning in Compressive Autoencoders.} 1901.}
+
+\bibitem{nie2010efficient}
+\abntrefinfo{Nie et al.}{NIE et al.}{2010}
+{NIE, F. et al. Efficient and robust feature selection via joint l2, 1-norms
+  minimization. In:  \emph{Advances in neural information processing systems}.
+  [S.l.: s.n.], 2010. p. 1813--1821.}
 
 \bibitem{boliek2000information}
 \abntrefinfo{Boliek, Christopoulos e Majani}{BOLIEK; CHRISTOPOULOS;
@@ -276,22 +300,11 @@ Dispon{\'\i}vel em:
   network}. In:  \emph{International Conference on Image Processing}. [s.n.],
   2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1802.02629}.}
 
-\bibitem{Priming2017Johnston}
-\abntrefinfo{Johnston et al.}{JOHNSTON et al.}{2017}
-{JOHNSTON, N. et al. \emph{{Improved Lossy Image Compression with Priming and
-  Spatially Adaptive Bit Rates for Recurrent Networks}}.
-[S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1703.10114}.}
-
-\bibitem{Lossy2017Theis}
-\abntrefinfo{Theis et al.}{THEIS et al.}{2017}
-{THEIS, L. et al. \emph{{Lossy Image Compression with Compressive
-  Autoencoders}}.
-[S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1703.00395}.}
-
-\bibitem{zhao1901cae}
-\abntrefinfo{Zhao e Liao}{ZHAO; LIAO}{1901}
-{ZHAO, H.; LIAO, P. \emph{CAE-ADMM: Implicit Bitrate Optimization via
-  ADMM-based Pruning in Compressive Autoencoders.} 1901.}
+\bibitem{DeliverableSeptember}
+\abntrefinfo{Hung et al.}{HUNG et al.}{2019}
+{HUNG, E.~M. et al. \emph{{Hybrid DPCM artificial intelligence based image
+  codec}}.
+[S.l.], 2019.}
 
 \bibitem{li2018learning}
 \abntrefinfo{Li et al.}{LI et al.}{2018}

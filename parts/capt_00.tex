@@ -1,0 +1,30 @@
+\chapter{Introdução}
+
+O século XXI tem sido marcado por grandes avanços tecnológicos que mudaram a forma do ser humano de se comunicar, relacionar, e informar, entreter, etc.
+
+Dentre os avanços, destacam-se o advento e popularização da rede mundial de computadores e das redes móveis para celulares. Hoje, elas superaram a distância física para prover  comunicações rápidas entre os seres humanos. Essencial também são os avanços dos \textit{smparthones} e computadores que dispões, cada vez mais, de recursos de \textit{hardware} e \textit{software} para processar grande volume de informação na forma de áudio, imagem, vídeo etc.
+
+Não é exagero dizer que esse cenário só foi possível com a digitalização e compressão da informação. O avanço nas qualidades de mídias como imagens e vídeo é, via de regra, seguindo por necessidade maior de dados. 
+ O aumento nos dados requer mais espaço de armazenamento, e na transmissão exigem mais consumo de energia e mais largura de banda. Todos esses recursos são escassos e dispendiosos. Uma solução viável é a elaboração  de algoritmos de compressão cada vez mais eficientes. Esses algoritmos têm melhor performance quando atuam sobre uma categoria específica de informação. como textos, vídeo ou imagens.    
+
+Para imagens, temos observado o surgimento de definições em altas resoluções, com as imagens em \textit{HD} ($1280 \times 720 pixels$) e chegando até imagens em 10k ($10240 \times 4320 pixels$). Aliado a isso, as imagens representam parte significativa no fluxo de informação que trafegam pela internet. 
+Portanto, faz se necessário o esforço da comunidade científica, empresas dessa área, e demais interessados no desenvolvimento de novos codificadores para imagens ou aperfeiçoamento dos existentes. Hoje, grande parte dos trabalhos que superam o estado da arte da compressão de imagens são baseados em redes neurais artificias. Elas são conhecidas por ser uma ferramenta para a solução de uma variedade de problema de classificação e regressão com desempenho, em muitos desses problemas, a cima dos métodos tradicionais.
+
+As redes neurais possui vantagens na compressão de imagens por efetuar funções extramente complexas e não-lineares. O problema de compressão  representar compactamente a informação é conhecido pela sua não linearidade.  Além disso, abordagens usando RNA são interessantes devido a sua flexibilidade para especialização em compressão de imagens com conteúdo específico.  O autocodificador é uma arquitetura de RNA  amplamente usada na tarefa de compressão de imagens. Nesse trabalho, tomamos como base uma arquitetura de autocodificador para compressão de imagens de alta resolução com camada recorrentes e convolucionais proposto em \cite{FullResolution2017Toderici} e realizamos algumas análises e alterações na tentativa de melhorar a sua performance. Considerando essa arquitetura, são objetivos desse trabalho:
+
+\begin{enumerate}
+	\item Analisar a performance da arquitetura em função da entropia e variabilidade da base de dados de treinamento;
+	\item Avaliar o desempenho pela alteração da função de custo;
+	\item Adicionar uma penalização que leva em consideração a estatística dos bits gerados a fim de reduzir a taxa de compressão em um passo seguinte.
+	\item Propor uma técnica para alocação dinâmica dos bits em uma etapa pós treinamento
+\end{enumerate}
+
+% Ele deve apresentar flexibilidade semelhante aos codecs modernos, atendendo aos seguintes requisitos:
+ 
+% \begin{enumerate}
+ %	\item Comprimir imagens de diferentes resoluções.
+% 	\item Fixar uma taxa nominal de bits por pixel a ser enviado do codifcador para o decodificador em estágios ou iterações que permite o %controle da taxa de compressão das imagens. 
+% 	\item Recuperar a imagem de forma progressivas, o que significa que quanto mais bits forem enviados, mais precisa será a reconstrução da imagem. 
+ %\end{enumerate}
+ 
+

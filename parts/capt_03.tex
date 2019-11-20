@@ -1,10 +1,14 @@
 \chapter{Metodologia}
-Nesse seção apresentamos a Metodologia.
 
-Usamos o modelo da rede convolucional-LSTM proposto por \cite{FullResolution2017Toderici} cuja arquitetura foi apresentada em \ref{fig:toderici3} com algumas modificações. 
 
-O método de reconstrução de uma imagem $x$ será aditivo e a rede aprende a reconstruir a informação residual. Além disso, em um dado estágio ou iteração $t$, o autocodificador recebe a diferença entre o resíduo da iteração anterior $r_{t-1}$ e a sua previsão $r'_{t-1}$. Essas duas características estão resumidas na próxima Equação, em um estágio:
+\resumodocapitulo{Neste capítulo explicaremos com mais detalhes a arquitetura do trabalho \cite{FullResolution2017Toderici}, o método para elaboração da base de dados de treinamento com base na entropia das imagens, e uma função de custo para promover esparsidade e baixa entropia no código binário. Além disso, abordamos um método simples para alocação de bits com base em uma alvo de qualidade}.     
 
+\section{Arquitetura}
+
+Nessa seção explicaremos o método para treinamento do modelo ao longo das iterações, os formatos dos tensores nas saídas de cada camada da rede, e como se dá a formação do código binário de uma imagem.   
+
+Usamos o autocodificador com camada LSTM-convolucional proposto por \cite{FullResolution2017Toderici} e apresentado na Figura \ref{fig:toderici3}. 
+Decidimos que a rede irá receber a informação residual do estágio anterior, dada por $ r_t = r_{t-1}$ - $r'_{t-1}$, e será treinada para reconstruí-la. Dessa forma, a reconstrução da uma imagem $x$ será progressivamente. Essas duas características estão resumidas na próxima Equação, em um estágio:
 \begin{equation}
 \label{eq:model_1it}
 \begin{aligned}
@@ -17,10 +21,18 @@ x'_t &= r'_{t-1} + x'_{t-1}
 \end{aligned}
 \end{equation}
 
+Esse método difere um pouco do apresentado em \cite{FullResolution2017Toderici} e descrito pela Equação \ref{eq:ae_full}  pois nele os autores usam o valor de $x-x'_{t-1}$ como a informação residual de entrada no estágio $t$, ou seja, o resíduo em relação a imagem original.
+Originalmente, esse método foi apresentado em \cite{Variable2016Toderici} para treinar autocodificadores de camadas não-recorrente. 
+A Figura \ref{fig:rede_toderici} mostra a rede ``desenrolada'' no tempo. Para simplificar a representação omitimos as camadas profundidade para espaço. 
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.90\textwidth]{figuras/redeTCC.pdf}
+	\caption[Autocodificador desenrolado no tempo]{Representação do autocodificador no decorrer de $n$ estágios. Os losangos verdes e laranjas representam as camadas Conv2d e \acrshort{conv2dlstm}, respectivamente.  Na primeira iteração os valores de $C_t e H_t$ para cada \acrshort{conv2dlstm} são zeros e as setas horizontais evidenciam o $loop$ dessas camadas. Em cada interação o autocodificador recebe o resíduo da reconstrução anterior como entrada e tenta reconstrói-lo ao final da iteração usando 0,125 bits por pixel.}
+	\label{fig:rede_toderici}
+\end{figure}
 
-
-Usamos as camadas Conv2DLSTM descritas pela Equação \ref{eq:conlstm} para capturar as dependências espaciais dos resíduos. A figura \ref{fig:convlstm} detalha essa camada com $k$ mapas de recursos. 
+Usamos as camadas \acrshort{conv2dlstm} descritas pela Equação \ref{eq:conlstm} para capturar as dependências espaciais do resíduos que formam uma sequência. A figura \ref{fig:convlstm} detalha essa camada com $k$ mapas de recursos. 
 
 \begin{figure}[ht]
 	\centering
@@ -29,16 +41,6 @@ Usamos as camadas Conv2DLSTM descritas pela Equação \ref{eq:conlstm} para capt
 	\label{fig:convlstm}
 \end{figure}
 
-A Figura \ref{fig:rede_toderici} mostra a rede ``desenrolada'' no tempo. Para simplificar a representação omitimos as camadas profundidade para espaço.
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.90\textwidth]{figuras/redeTCC.pdf}
-	\caption[Autocodificador desenrolado no tempo]{Representação do autocodificador no decorrer de $n$ estágios. Os losangos verdes e laranjas representam as camadas Conv2d e Conv2DLSTM, respectivamente.  Na primeira iteração os valores de $C_t e H_t$ para cada Conv2DLSTM são zeros e as setas horizontais evidenciam o $loop$ dessas camadas. Em cada interação o autocodificador recebe o resíduo da reconstrução anterior como entrada e tenta reconstrói-lo ao final da iteração usando 0,125 bits por pixel.}
-	\label{fig:rede_toderici}
-\end{figure}
-
-
 Por construção, a arquitetura da rede determina que a saída do codificador fornece um conjunto de bits da forma $\frac{H}{16} \times \frac{W}{16} \times 32$ por iteração em que $H$ e $W$ são, respectivamente, a altura e largura da imagem de entrada. Isso nos fornece $\frac{H \times W}{8}$ bits e podemos calcular a taxa nominal por iteração $R_{it}$ em bits por pixel:
 
 \begin{equation}
@@ -46,10 +48,7 @@ Por construção, a arquitetura da rede determina que a saída do codificador fo
 R_{it} = \frac{\frac{H \times W}{8}}{H \times W} =  \frac{1}{8}\text{ bpp} 
 \end{equation}
 
-Então, obtemos a taxa nominal $R$ na iteração $k>0$ como $R =\frac{k}{8} $.  Dessa forma podemos controlar a quantidade de bits por pixel que enviamos ao decodificador com o passo de $1/8$. 
-
-
-Aplicando a Equação \ref{eq:compressao} obtemos a  taxa compressão nominal $C$ na iteração $k$: 
+Então, obtemos a taxa nominal $R$ na iteração $k>0$ como $R =\frac{k}{8} $.  Dessa forma podemos controlar a quantidade de bits por pixel que enviamos ao decodificador com o passo de $1/8$. Aplicando a Equação \ref{eq:compressao} obtemos a taxa compressão nominal $C$ na iteração $k$: 
 
 \begin{equation}
 \label{eq:tc}
@@ -57,38 +56,54 @@ C = \frac{24 \times H \times W}{k \times \frac{H \times W}{8}} =  \frac{192}{k}
 \end{equation}
 
 
-Os detalhes do autocodificador podem ser consultados na Tabela \ref{table:aerc} considerada entradas formadas por blocos de imagens $32 \times 32 \times 3$. O tamanho do minilote está omitido dessa representação, contudo,  ele ocupa mais uma dimensão de valor fixo durante todas as operações realizadas pela rede.
+Os detalhes do autocodificador podem ser consultados na Tabela \ref{table:aerc} considerada entradas formadas por blocos de imagens $32 \times 32 \times 3$. O tamanho do lote está omitido dessa representação, contudo,  ele ocupa mais uma dimensão de valor fixo durante todas as operações realizadas pela rede.
 
 \begin{table}[htbp]
 	\caption{Parâmetros das operações no autocodificador.}
-	\begin{tabular}{|c|c|c|c|c|c|c|}
-		\hline
-		\rowcolor[HTML]{EFEFEF} 
-		\textbf{Camada} & \textbf{\begin{tabular}[c]{@{}c@{}}Formato de\\  saída\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Núcleo \\ Convolucioal\\ Normal/Oculto\end{tabular}} & \textbf{Passo} & \textbf{Preenchimento} & \textbf{\begin{tabular}[c]{@{}c@{}}Função de\\ Ativação\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Número de\\ Parâmetros\end{tabular}} \\ \hline
-		Conv2D          & 16x16x64                                                             & 3x3/-                                                                                   & 2              & ``Mesmo''                   & Identididade                                                          & 1728                                                                    \\ \hline
-		Conv2DLSTM      & 8x8x256                                                              & 3x3/1x1                                                                                 & 2              & ``Mesmo''                   & Sigmoid                                                               & 851968                                                                  \\ \hline
-		Conv2DLSTM      & 4x4x512                                                              & 3x3/1x1                                                                                 & 2              & ``Mesmo''                   & Sigmoid                                                               & 5767168                                                                 \\ \hline
-		Conv2DLSTM      & 2x2x512                                                              & 3x3/1x1                                                                                 & 2              & ``Mesmo''                   & Sigmoid                                                               & 10485760                                                                \\ \hline
-		Conv2D          & 2x2x32                                                               & 1x1/-                                                                                   & 1              & ``Válida''                  & Tanh                                                                  & 16384                                                                   \\ \hline
-		Binarizador     & 2x2x32                                                               & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
-		Conv2D          & 2x2x512                                                              & 1x1/-                                                                                   & 1              & ``Mesmo''                   & Identididade                                                          & 16384                                                                   \\ \hline
-		Conv2DLSTM      & 2x2x512                                                              & 3x3/1x1                                                                                 & 1              & ``Mesmo''                   & Sigmoid                                                               & 10485760                                                                \\ \hline
-		P.E             & 4x4x128                                                              & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
-		Conv2DLSTM      & 4x4x512                                                              & 3x3/1x1                                                                                 & 1              & ``Mesmo''                   & Sigmoid                                                               & 3407872                                                                 \\ \hline
-		P.E             & 8x8x128                                                              & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
-		Conv2DLSTM      & 8x8x256                                                              & 3x3/1x1                                                                                 & 2              & ``Mesmo''                   & Sigmoid                                                               & 1441792                                                                 \\ \hline
-		P.E             & 16x16x64                                                             & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
-		Conv2DLSTM      & 16x16x128                                                            & 3x3/1x1                                                                                 & 2              & ``Mesmo''                   & Sigmoid                                                               & 360448                                                                  \\ \hline
-		P.E             & 32x32x32                                                             & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
-		Conv2D          & 32x32x3                                                              & 1x1/-                                                                                   & 1              & ``Mesmo''                   & Tanh                                                                  & 96                                                                      \\ \hline
-		\multicolumn{6}{|c|}{Total de parâmetros}                                                                                                                                                                                                                                                          & 32835360                                                                \\ \hline
-	\end{tabular}\quad
+	\begin{adjustbox}{width=\columnwidth,center}
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			\rowcolor[HTML]{EFEFEF} 
+			\textbf{Camada} & \textbf{\begin{tabular}[c]{@{}c@{}}Formato de\\  saída\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Núcleo \\ Convolucioal\\ Normal/Oculto\end{tabular}} & \textbf{Passo} & \textbf{Preenchimento} & \textbf{\begin{tabular}[c]{@{}c@{}}Função de\\ Ativação\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Número de\\ Parâmetros\end{tabular}} \\ \hline
+			Conv2D          & 16x16x64                                                             & 3x3/-                                                                                   & 2              & ``Mesmo''                   & Identididade                                                          & 1728                                                                    \\ \hline
+			Conv2DLSTM      & 8x8x256                                                              & 3x3/1x1                                                                                 & 2              & ``Mesmo''                   & Sigmoid                                                               & 851968                                                                  \\ \hline
+			Conv2DLSTM      & 4x4x512                                                              & 3x3/1x1                                                                                 & 2              & ``Mesmo''                   & Sigmoid                                                               & 5767168                                                                 \\ \hline
+			Conv2DLSTM      & 2x2x512                                                              & 3x3/1x1                                                                                 & 2              & ``Mesmo''                   & Sigmoid                                                               & 10485760                                                                \\ \hline
+			Conv2D          & 2x2x32                                                               & 1x1/-                                                                                   & 1              & ``Válida''                  & Tanh                                                                  & 16384                                                                   \\ \hline
+			Binarizador     & 2x2x32                                                               & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
+			Conv2D          & 2x2x512                                                              & 1x1/-                                                                                   & 1              & ``Mesmo''                   & Identididade                                                          & 16384                                                                   \\ \hline
+			Conv2DLSTM      & 2x2x512                                                              & 3x3/1x1                                                                                 & 1              & ``Mesmo''                   & Sigmoid                                                               & 10485760                                                                \\ \hline
+			P.E             & 4x4x128                                                              & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
+			Conv2DLSTM      & 4x4x512                                                              & 3x3/1x1                                                                                 & 1              & ``Mesmo''                   & Sigmoid                                                               & 3407872                                                                 \\ \hline
+			P.E             & 8x8x128                                                              & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
+			Conv2DLSTM      & 8x8x256                                                              & 3x3/1x1                                                                                 & 2              & ``Mesmo''                   & Sigmoid                                                               & 1441792                                                                 \\ \hline
+			P.E             & 16x16x64                                                             & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
+			Conv2DLSTM      & 16x16x128                                                            & 3x3/1x1                                                                                 & 2              & ``Mesmo''                   & Sigmoid                                                               & 360448                                                                  \\ \hline
+			P.E             & 32x32x32                                                             & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
+			Conv2D          & 32x32x3                                                              & 1x1/-                                                                                   & 1              & ``Mesmo''                   & Tanh                                                                  & 96                                                                      \\ \hline
+			\multicolumn{6}{|c|}{Total de parâmetros}                                                                                                                                                                                                                                                          & 32835360                                                                \\ \hline
+		\end{tabular}\quad
+	\end{adjustbox}
 	\label{table:aerc}
 \end{table}
 
+\subsection{Binarização}
 
 O processo de binarização adotado foi o descrito na seção \ref{subsec:bin} e proposto em \cite{Variable2016Toderici}.
+Na prática, para tornar esse processo estocástico,  definimos um valor $u$ entre 0 e 1 obtido de uma distribuição uniforme, isto é,  $u \in \mathcal{U}[0,1]$ e podemos reescrever a Equação \ref{eq:quant2}  para obter o erro $\epsilon$ da quantização:
 
+\begin{equation}
+\label{eq:quant}
+\begin{aligned}
+\epsilon \ = \left\{
+\begin{array}{ll}
+1 - x, \text{ se $u$}  \leq \frac{1 + x}{2} \\
+-x - 1, \text{ se $u$} > \frac{1 + x}{2}
+\end{array}
+\right. \\
+\end{aligned}
+\end{equation}
+A binarização será feita com valores -1 ou 1, e usamos o truque apresentado em \ref{subsec:bin} para conseguir treinar o modelo com essa camada não diferenciável. 
 
 %\section{Taxas de compressão}
 
@@ -111,20 +126,28 @@ O processo de binarização adotado foi o descrito na seção \ref{subsec:bin} e
 
 
 
-\section{Formato do fluxo de bits}
+\subsection{Formato do fluxo de bits}
 
-A arquitetura é otimizada para reconstruir blocos de $32 \times 32 \times 3$ uma vez que foi treinada com imagens dessa dimensão. Portanto, dividimos nossa imagem para gerar blocos $32 \times 32$. Vamos nos referir a cada um dos blocos por $b_p$ em que $p \in \{0,...,n-1\}$ em que $n$ foi o número de blocos obtidos. 
-Considerando um lote de tamanho $l$ no qual vamos fazer $k$ iterações na rede.  Na primeira iteração da rede o codificador irá tomar os primeiros $l$ blocos na ordem direita para esquerda e de cima para baixo e passar pela rede do codificador para gerar o código binário parcial de formato $l \times 2 \times 2 \times 32$ conforme a tabela \ref{table:aerc}. Em seguida, decodificamos esse lote e computamos o resíduo. Esse resíduo é codificado para gerar um novo código binário $l \times 2 \times 2 \times 32$ que é concatenado com o anterior para formar $2 \times l \times 2 \times 2 \times 32$. 
-Esse processo se repete até concluirmos as $k$ iterações na rede, e ao final da codificação de um lote o nosso código binário é da forma $k \times l \times 2 \times 2 \times 32$. 
-O número de vezes que temos repetir o processo descrito acima para codificar a imagem inteira é de $\frac{n}{l}$. Portanto, o código binário final é da forma $\frac{n}{l} \times k \times l \times 2 \times 2 \times 32$. Obviamente, o número de bits desse código independe do tamanho de lote escolhido. 
+A arquitetura será otimizada para reconstruir blocos de $32 \times 32$ pixels, uma vez que os nosso modelos serão treinados com imagens com essa dimensão. Portanto, durante o teste do modelo em uma imagem, devemos dividi-lá com blocos dessa dimensão. 
+
+Considerando que o número de blocos gerados é igual a $n$ e desejamos agrupa-los em lotes de tamanho $l$ e reconstruídos passando $k$ vezes pela rede, então teremos:
+\begin{enumerate}
+	\item Na primeira iteração, o modelo irá tomar os primeiros $l$ blocos da imagem na ordem direita para esquerda e de cima para baixo. 	\item Eles são codificados pela rede do codificador para gerar o código binário parcial de formato $l \times 2 \times 2 \times 32$ conforme a tabela \ref{table:aerc};
+	\item Em seguida, decodificamos esse lote e computamos o resíduo;
+	\item  Esse resíduo é codificado para gerar um novo código binário $l \times 2 \times 2 \times 32$ que é concatenado com o anterior para formar $2 \times l \times 2 \times 2 \times 32$;
+	\item Esse processo se repete até concluirmos as $k$ iterações na rede, e ao final da codificação de um lote o nosso código binário é da forma $k \times l \times 2 \times 2 \times 32$. 
+\end{enumerate}
+
+O número de vezes que devemos realizar o processo descrito acima para codificar a imagem inteira é igual a $\frac{n}{l}$. Portanto, o código binário final é da forma $\frac{n}{l} \times k \times l \times 2 \times 2 \times 32$. Obviamente, o número de bits desse código independe do tamanho de lote escolhido. 
 
 
 \section {Base de Dados}
 
-Idealmente, desejamos obter uma base de dados de treinamento a fim de tornar o modelo capaz de comprimir satisfatoriamente (desempenho semelhante ao JPEG) imagens naturais com diferentes características de tamanho, componentes de frequência, entropia etc. Essa é uma das principais escolhas para treinar qualquer algoritmo de redes neurais.  
-Intuitivamente, formaremos a base de dados de treinamento com imagens que não passaram por nenhum processo de compressão com perdas. Dessa forma, acreditamos ela seja mais representativa por preservar todas as componentes de frequência das imagens naturais. A partir dela são construídas novas bases de dados com blocos de características distintas de entropia. A hipótese é, baseado em \cite{Variable2016Toderici,FullResolution2017Toderici}, que a performance do autocodificador está relacionado com essa característica. O processo de construção das bases de dados a seguir foram obtidas seguindo o relatório técnico em \cite{DeliverableJuly}.
+Nesta seção explicamos o processo de construção das bases de dados de treinamento seguindo um método utilizado em \cite{DeliverableJuly}.
 
-Primeiro, uma base de dados principal foi obtida usando todas as imagens dos seguintes conjuntos de dados:
+
+Idealmente, desejamos obter uma base de dados de treinamento a fim de tornar o modelo capaz de comprimir satisfatoriamente (desempenho semelhante ao JPEG200) imagens naturais com diferentes características de tamanho, componentes de frequência, entropia etc. Essa é uma das principais escolhas para treinar qualquer algoritmo de redes neurais.  
+Primeiro, selecionamos imagens de bases de dados distintas que não passaram por nenhum processo de compressão com perdas, assim, preservarmos as componentes de frequência das imagens naturais. Essa imagens foram obtidas dos seguintes conjuntos de dados:
 
 \begin{enumerate}
 	\item Conjunto de dados CLIC \cite{bib:clic} (\textit{Challenge on Learned Image Compression}) - Imagens de alta qualidade.
@@ -141,18 +164,8 @@ Primeiro, uma base de dados principal foi obtida usando todas as imagens dos seg
 	\subitem UHD: 40 imagens.
 \end{enumerate}
 
-As imagens foram separadas em blocos de $32 \times 32 \times 3$ os quais foram salvos usando compressão sem perdas no padrão PNG. Esse procedimento gerou 6.231.440 blocos.
-Apresentamos na Figura \ref{fig:histdatabase} um histograma do tamanho desses blocos. Essa medida será usado como uma estimativa da entropia do bloco.
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.80\textwidth]{figuras/hist.eps}
-	\caption{Histograma de todo o banco de dados}
-	\label{fig:histdatabase}
-\end{figure}
-
-O bloco que apresentou maior entropia foi definido como uma referência de entropia igual a 100\%. 
-A partir dessa referência, e tendo em mente que a entropia das imagens de treinamento impactaria na performance do modelo, separamos os blocos em 5 base de dados observando os seguintes critérios:
+Esse procedimento gerou 6.231.440 blocos. Apresentamos na Figura \ref{fig:histdatabase} um histograma do tamanho desses blocos. Essa medida é usada aqui como uma estimativa da entropia do bloco. 
+O bloco que apresentou maior entropia foi definido como uma referência de 100\% de entropia. A partir dessa referência, e tendo em mente que a entropia das imagens de treinamento poderia impactar na performance do modelo, separamos os blocos em 5 base de dados observando os seguintes critérios:
 
 \begin {enumerate}
 \label{list:bds}
@@ -165,90 +178,117 @@ A partir dessa referência, e tendo em mente que a entropia das imagens de trein
 \end{enumerate}
 
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.80\textwidth]{figuras/hist.eps}
+\caption[Histograma de todo o banco de dados]{Histograma de todo o banco de dados}
+\label{fig:histdatabase}
+\end{figure}
+
+
 Por construção, não há sobreposição entre os bancos de dados 0, 1 e 2. No entanto, existem sobreposições de informações entre os bancos de dados 3 e 4. Os histogramas dessas bases, exceto a 5, estão ilustrados nas Figuras \ref{fig:database0}, \ref{fig:database1}, \ref{fig:database2}, \ref{fig:database3} e \ref{fig:database4}.
-
-
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{figuras/hist0.eps}
-\caption{Histograma da baixa entropia DB0.}
+\caption[Histograma da baixa entropia DB0.]{Histograma da baixa entropia DB0.}
 \label{fig:database0}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.80\textwidth]{figuras/hist1.eps}
-\caption{Histograma do DB1 de entropia média.}
+\caption[Histograma do DB1 de entropia média.]{Histograma do DB1 de entropia média.}
 \label{fig:database1}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{figuras/hist2.eps}
-\caption{Histograma do DB2 de alta entropia.}
+\caption[Histograma do DB2 de alta entropia.]{Histograma do DB2 de alta entropia.}
 \label{fig:database2}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.80\textwidth]{figuras/hist3.eps}
-\caption{Histograma da entropia mista DB3.}
+\caption[Histograma da entropia mista DB3.]{Histograma da entropia mista DB3.}
 \label{fig:database3}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{figuras/hist4.eps}
-\caption{Histograma da entropia alta DB4.}
+\caption[Histograma da entropia alta DB4.]{Histograma da entropia alta DB4.}
 \label{fig:database4}
-\end{figure}		
+\end{figure}
 
-A base de dados da Kodak \cite{kodak} formada por 24 imagens naturais foi empregada nos testes do autocodificador.  
+Os testes consistiram em treinar a rede usando cada uma das bases e com os mesmos hiperparâmetros. Os modelos gerados são comparados entre si usando as métricas de qualidade.Veremos que a DB4 obteve o melhor resultado, e justificou a elaboração de uma nova base de dados obedecendo a regra:
+
+\begin {enumerate}
+\item Banco de Dados 5 (DB5). Todos os blocos cuja entropia varia de 50\% a 100\% em relação a nossa referência. Total: 2.287.520 blocos
+\end{enumerate}
+
+A base de dados da Kodak \cite{kodak} formada por 24 imagens naturais foi empregada em todos os testes realizados nesse trabalho.  
 
 \section {Função de Custo}
+Nessa seção, discutimos o procedimento para a escolha da função de custo (ou de perdas) da arquitetura. Em princípio, levamos em consideração apenas a distorção, em segundo momento adicionamos uma regularização na tentativa de controla a entropia do código latente gerado.
 
-A função de custo é outra escolha importante nos treinamento de RNA. No problema de compressão de imagens a escolha dessa função tem o agravante de não haver consenso entre os pesquisadores de uma métrica ideal para avaliar a qualidade entre uma imagem original e a sua versão reconstruída como relatado em \cite{Priming2017Johnston,End2016Balle}.  
+\subsection{Otimização por distorção}
+
 %Na hipótese de haver tal função, poderíamos definir uma função de erro em relação a métrica ideal como função de custo e minimizar o seu valor ao longo do aprendizado do modelo. 
-Algumas funções conhecidas apresentam relações da medida de distorção entre uma imagem e sua reconstrução, tais como $MSE$, $MAE$, e versões diferenciáveis de $1-SSIM$ e $1-MS-SSIM$. Em nossos testes, dedicamos atenção especial na escolha da função de custo conveniente para o problema de compressão de imagens. No primeiro momento,
-avaliamos a performance do modelo com  distorção das reconstruções.
 
-Vamos definir algumas variações e combinações dessas funções e comparar os resultados em treinamentos curtos.
-A função de custo $L$ é calculada em cada estágio e ao final das iterações computamos a sua média para finalmente aplicar os algoritmos de retropropagação e atualização dos pesos, isto é:
+A função de custo é uma escolha importante nos treinamento de \acrshort{rna}. No problema de compressão de imagens a escolha dessa função tem o agravante de não haver consenso entre os pesquisadores de uma métrica ideal para avaliar a qualidade entre uma imagem original e a sua versão reconstruída como relatado em \cite{Priming2017Johnston,End2016Balle}.   
+Em nossa análise, usamos as funções conhecidas para medir distorção entre uma imagem e sua reconstrução, tais como \acrshort{mse}, \acrshort{mae}, e uma versão diferenciável de 1-\acrshort{ssim}. Em dois testes, modificamos o espaço de cores dos blocos de \acrshort{rgb} para \acrshort{ycbcr}. Outra modificação foi alterar a formulação em \ref{eq:model_1it} para \ref{eq:ae_full}.  
+Para comparar a performance de cada função modelo realizamos treinamento curtos usando a base de dados 4. 
+
+A função de custo $L$ é calculada em cada estágio e, ao final das iterações, computamos a sua média para obter $L_{mean}$. É sobre esse sinal que aplica-se os algoritmos de retropropagação e atualização dos pesos, isto é:
 
 \begin{equation}
-l = \frac{1}{k} \sum_{t=0}^k L(r_t,r'_t) 
+L_{mean} = \frac{1}{k} \sum_{t=0}^k L(r_t,r'_t) 
 \end{equation}
 
 
-Até aqui, não estamos tendo controle sobre a entropia do código binário gerado. Se pudermos otimizar a rede para gerar a sequência de bits com baixa entropia teremos ganhos relevantes ao aplicador um codificador de entropia.
+%Vamos definir algumas variações e combinações dessas funções e comparar os resultados em treinamentos curtos.  
 
-Portanto, em um segundo momento adicionamos uma função de regularização $R$ para otimizar implicitamente a taxa do código binário, inspirado no trabalho \cite{zhao1901cae}. 
-Para calcula-lo fazemos uma cópia do código binário fornecido pela função de binarização em um dada iteração $t$, $B(E_t(r_{t-1}))$, para a variável $Z$. Nessa variável, substituímos os bits -1 por 0 e aplicamos a norma $L_1$ sobre $Z$. Ademais, empregamos a função MSE como um medida de distorção para obter a nova função de perdas $L$:   
+%Em nossos testes, dedicamos atenção especial na escolha da função de custo conveniente para o problema de compressão de imagens. No primeiro momento,
+%avaliamos a performance do modelo com  distorção das reconstruções.
+
+
+\subsection{Otimização por distorção e taxa}
+
+Até aqui, não estamos tendo controle sobre a entropia do código binário gerado. Se pudermos otimizar a rede para gerar um sequência de bits $z$ com baixa entropia teremos ganhos relevantes ao aplicador um codificador de entropia.
+Em um segundo momento, adicionamos uma função de regularização $R(z)$ para otimizar implicitamente a taxa do código binário, inspirado no trabalho \cite{zhao1901cae}. 
+
+Para calcula-lo em uma iteração, copiamos o código binário fornecido pela função de binarização  para a variável $Z$. Nessa variável, substituímos os bits -1 por 0 e aplicamos a norma $L_1$ sobre $Z$. Ademais, empregamos a função \acrshort{mse} como um medida de distorção para obter a função de perdas:   
 
 \begin{equation}
 \label{eq:rdo}
-L = MSE(r,r') + \lambda(t) \times \sum_{t=1}^{n} Z 
+L = \acrshort{mse}(r,r') + \lambda(t) \times \sum_{t=1}^{n} Z 
 \end{equation}
 
 
-onde $n$ é o número de bits do código binário por nível. Em nossa rede esse número é igual a 128 por bloco $32x32$. A ideia é que ao penalizarmos a ocorrência do bit 1 estamos, essencialmente, reduzindo a entropia de ordem 0 do código binário. Esperamos que isso reflita na redução da taxa ao aplicarmos um codificador de entropia.   
+onde $n$ é o número de bits do código binário por nível. Em nossa rede esse número é igual a 128 para cada bloco $32x32$. A ideia é que ao penalizarmos a ocorrência do bit 1 estamos, essencialmente, reduzindo a entropia de ordem 0 do código binário. Esperamos que isso reflita na redução da taxa ao aplicarmos um codificador de entropia.   
 
-O fator e $\lambda(t) >0$ é uma regularização que controla a proporção de $R$ sobre a função de custo e que depende da iteração. Em nossos testes, verificamos é interessante que $\lambda$ seja uma função decrescente da iteração $t$. Para um mini-lote de blocos de treinamento, à medida que as iterações prosseguem o resíduo reconstruído se torna cada vez menor e consequentemente a distorção medida pela MSE decaí. Todavia, tal comportamento não é esperado para a função $R$ e então controlamos o seu impacto em $L$ usando um valor de regularização menor. Dessa forma, tentamos balancear o impacto da distorção e taxa.  
-Nessa abordagem, aplicamos uma codificação sem perdas dada pelo GZIP para aproveitar a estatística de distribuição do bits que esperamos ser de baixa entropia. Portanto, na reconstrução de uma imagem existe a taxa nominal $r_n$ e fixa por iteração, caracterizando um método de taxa $r_r$ constante (do inglês \textit{Constant bitrate} (CBR))), e há a taxa real fornecida pelo GZIP. O ganho percentual de taxa em virtude da codificação de entropia é descrito pela Equação a seguir:
+O fator e $\lambda(t)>0$ é uma função de iteração da $t$ responsável por controlar a proporção de $R$ sobre a função de custo. Em nossos testes, definimos $\lambda(t)$ como uma função decrescente. Para um lote de blocos de treinamento, à medida que as iterações prosseguem o resíduo reconstruído se torna cada vez menor e consequentemente a distorção medida pela \acrshort{mse} decaí. Todavia, tal comportamento não ocorre, necessariamente, em $R$. Então controlamos o peso de $R$ sobre  $L$ através de um valor de regularização menor. Dessa forma, tentamos balancear o impacto da distorção e taxa. Podemos, encarar esse formulação com um autocodificador esparso, discutido em \ref{sec:ac_es}, onde bit -1 significa neurônio ``desativado'' e saída 1 ``ativada''. 
+
+   
+Nessa abordagem, aplicamos uma codificação sem perdas dada pelo GZIP para aproveitar a estatística de distribuição do bits que esperamos ser de baixa entropia. Portanto, na reconstrução de uma imagem existe a taxa nominal $r_n$ (fixa por iteração). Nessa configuração podemos falar em um método \gls{cbr}. Ao aplica a codificação de entropia perdemos o controle da taxa final, denominado nesse trabalho por taxa real.  O ganho percentual de taxa em virtude da codificação de entropia é descrito pela Equação a seguir:
+
 \begin{equation}
-\label{eq:gain_ce}
-G = 100 \times \frac{r_n-r_r}{r_n}
+	\label{eq:gain_ce}
+	G = 100 \times \frac{r_n-r_r}{r_n}
 \end{equation}
-
-
 
 
 \section{Alocação dinâmica de bits}\label{sec:adb}
-Uma desvantagem do modelo é que ele reserva um número fixo de bits para reconstruir qualquer bloco de imagem, independentemente da complexidade do seu conteúdo. Tal problema foi levantando em \cite{Priming2017Johnston} e descrito na revisão desse trabalho. Para tentar contornar essa desvantagem, propomos uma heurística simples e semelhante a \cite{Priming2017Johnston}.
 
-O método de alocação dinâmica de bits é uma etapa realizada após o treinamento da rede. Nele, ao final de cada iteração e para cada lote de blocos $32 \times 32$ que são passados pela rede do codificador e decodificador calculamos a sua média de PSNR e desse conjunto também obtemos a menor PSNR. Se essa média for maior ou igual a um alvo de qualidade ($P_{a}$) e a menor PSNR for maior ou igual a $P_{ct}$\% do valor desse alvo então interrompemos a reconstrução nesse ponto e passamos a codificar o próximo lote. Se chegarmos no número máximo iterações ($k_{max}$) codificaremos o próximo lote.
-Como veremos, essa prática gera imagens com artefatos de blocos que comprometam a qualidade perceptual ainda que a PSNR indique melhora. Por isso, adicionamos mais uma restrição: independentemente de $P_{a}$ haverá um número mínimo e máximo de iterações que os blocos estão sujeitos. O fluxograma na Figura \ref{fig:flux_vr} resume o método de alocação dinâmica de bits. 
+ Aproveitamos a arquitetura do \acrshort{codec} que é baseado na reconstrução por blocos de forma progressiva para apresentar uma proposta de alocação dinâmica de bits semelhante a \cite{Priming2017Johnston}. Nesse método, consideramos as regiões nas quais o modelo consegue reconstruir bem para economizar bits e nas regiões de mais difíceis usar mais bits. 
+
+
+Uma desvantagem do modelo do nosso modelo de \acrshort{cbr} é usar a mesma taxa independentemente da complexidade dos blocos. Tal problema foi levantado em \cite{Priming2017Johnston}. Para tentar contornar essa desvantagem, propomos uma heurística simples e semelhante a \cite{Priming2017Johnston}.
+O método de alocação dinâmica de bits é uma etapa realizada após o treinamento da rede. Nele, ao final de cada iteração e para cada lote de blocos $32 \times 32$ que são passados pela rede do codificador e decodificador calculamos a sua média de \acrshort{psnr} e desse conjunto também obtemos a menor \acrshort{psnr}. Se essa média for maior ou igual a um alvo de qualidade ($P_{a}$) e a menor \acrshort{psnr} for maior ou igual a $P_{ct}$\% do valor desse alvo então interrompemos a reconstrução nesse ponto e passamos a codificar o próximo lote. Se chegarmos no número máximo iterações ($k_{max}$) codificaremos o próximo lote.
+Como veremos, essa prática gera imagens com artefatos de blocos que comprometam a qualidade perceptual ainda que a \acrshort{psnr} indique melhora. Por isso, adicionamos mais uma restrição: independentemente de $P_{a}$ haverá um número mínimo e máximo de iterações que os blocos estão sujeitos. O fluxograma na Figura \ref{fig:flux_vr} resume o método de alocação dinâmica de bits. 
 
 
 \begin{figure}
