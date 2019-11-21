@@ -1,8 +1,12 @@
 
 \chapter{Resultados}
 Nessa seção apresentamos os principais resultados na elaboração desse trabalho. Eles são referentes a análise da base de dados, função de custo, autocodificador esparso e alocação dinâmica de bits. 
+
 %A nossa hipótese é que a performance do autoencoder está relacionado com características da entropia da base de dados utilizado no treinamento.
-Treinamos 5 modelos do autocodificador para cada base de dados apresentada em \ref{list:bds} e usando a função MAE sobre os resíduos como função de custo. Além disso, os seguintes hiper-parâmetros da rede foram adotados nesse experimento: 
+
+\section{Análise Base de Dados}
+
+Treinamos 5 modelos do autocodificador para cada base de dados apresentada em \ref{list:bds} e usando a função \acrshort{mae} sobre os resíduos como função de custo. Além disso, os seguintes hiper-parâmetros da rede foram adotados nesse experimento: 
 
 \begin{enumerate}
 	\label{enum:hiper_param}
@@ -10,7 +14,6 @@ Treinamos 5 modelos do autocodificador para cada base de dados apresentada em \r
 	\item Número de lotes de treinamento por época: 38 mil (aproximadamente);   
 	\item Número de iterações: 16;
 	\item Número de épocas: 1;
-	\item Otimizador: Adam;
 	\item Taxa de aprendizado: $5 \times {10}^{-4}$
 \end{enumerate}
 
@@ -33,8 +36,8 @@ Calculamos os valores médios de PSNR, SSIM e MS-SSIM das imagens da Kodak recon
 	\label{table:comp_datasets}
 \end{table}
 
-Conforme esperado, uma base de dados de alta entropia é indicada para melhorar a performance do modelo. A hipótese é que essa característica otimiza a rede a aprender padrões não triviais das imagens e evitar o sobre-ajuste do modelo. A base de dados 4, nessa tabela, obteve o melhor resultado por uma margem pequena em relação a BD2. 
-Para temos uma comparação mais ampla, calculamos as áreas abaixo das curvas de PSNR $\times$ taxa, SSIM $\times$ taxa e  MS-SSIM $\times$ taxa dos modelos treinados por DB2 e DB4. Em todas as curvas temos 16 pontos com taxas nominais no intervalo de 0,125 a 2,0 bpp com incrementos constantes de 0,125 bpp. A Figura \ref{fig:auc1} é mais um indicativo que o modelo treinado pela BD4 apresenta a melhor performance.    
+Conforme esperado, uma base de dados de alta entropia é indicada para melhorar a performance do modelo. A hipótese é que essa característica otimiza a rede a aprender padrões não triviais das imagens e evitar o sobre-ajuste do modelo. A base de dados 4, nessa tabela, obteve o melhor resultado, por uma pequena margem em relação à BD2. 
+Para temos uma comparação mais ampla, calculamos as áreas abaixo das curvas de PSNR $\times$ taxa, SSIM $\times$ taxa e  MS-SSIM $\times$ taxa dos modelos treinados por DB2 e DB4. Todas  as curvas têm 16 pontos, com taxas nominais no intervalo de 0,125 a 2,0 bpp e incrementos constantes de 0,125 bpp. A Figura \ref{fig:auc1} é mais um indicativo que o modelo treinado pela BD4 apresenta a melhor performance.    
 
 
 Por esse motivo, calculamos a área abaixo da curva   
@@ -49,7 +52,7 @@ Por esse motivo, calculamos a área abaixo da curva
 A BD4 obteve os melhores resultados nas 3 métricas nesse conjunto de teste e será aplicada nas próximas análises.
 
 O próximo passo foi analisar a performance no modelo à medida que aumentarmos o número de épocas de treinamento.
-Para isso, treinamos o modelo por 13 épocas usando somente a base de dados 4. Os parâmetros do novo treinamento foram definido conforme itens citados em \ref{enum:hiper_param}, exceto o número de épocas. A evolução do modelo ao passar das época pode ser vista na Figura \ref{fig:psnr_13epocas}. 
+Para isso, treinamos o modelo por 13 épocas usando somente a base de dados 4. Os parâmetros do novo treinamento foram definidos conforme itens citados em \ref{enum:hiper_param}, exceto o número de épocas. A evolução do modelo ao passar das épocas pode ser vista na Figura \ref{fig:psnr_13epocas}. 
 
 \begin{figure}
 	\centering
@@ -59,7 +62,7 @@ Para isso, treinamos o modelo por 13 épocas usando somente a base de dados 4. O
 \end{figure}		
 
 Usando o modelo obtido na 13ª época, plotamos as curvas de distorção nas métricas SSIM e MS-SSIM em conjunto com o JPEG(4:2:0) e o trabalho de Toderici et. al. \cite{FullResolution2017Toderici}. Essas Figuras estão disponíveis em \ref{fig:ssim_ae_jpeg_toderici} e   \ref{fig:msssim_ae_jpeg_toderici}. 
-Observamos que nessas métricas e na média das imagens da Kodak, o nosso modelo supera o trabalho de Toderici et. al. e o JPEG. Acreditamos que esse resultado se deve a escolha criteriosa da base de dados de treinamento que não passaram por processos de compressão com perdas e decimação.
+Observamos que nessas métricas e na média das imagens da Kodak, o nosso modelo supera o trabalho \cite{FullResolution2017Toderici} e o JPEG. Acreditamos que esse resultado se deve a escolha criteriosa da base de dados de treinamento que não passaram por processos de compressão com perdas e decimação.
 
 \begin{figure}
 	\centering
@@ -88,10 +91,10 @@ Todavia, a Figura \ref{fig:psnr_ae_jpeg} indica que na métrica PSNR o JPEG(4:2:
 \end{figure}	
 
 
-Pela figura \ref{fig:psnr_13epocas} verificamos uma tendência de saturação do modelo, em torno de 36 dB na taxa de 2 bpp, ao passar da épocas de treinamento. Dessa forma, exploraremos novas técnicas que podem gerar menores taxas de compressão sem impactar na qualidade das imagens reconstruídas pelo decodificador.
+Pela figura \ref{fig:psnr_13epocas} verificamos uma tendência de saturação do modelo, em torno de 36 dB na taxa de 2 bpp, ao passar das épocas de treinamento. Dessa forma, exploraremos novas técnicas que podem gerar menores taxas de compressão sem impactar na qualidade das imagens reconstruídas pelo decodificador.
 
 
-%A função de custo é outra escolha importante nos treinamento de RNA. No problema de compressão de imagens a escolha dessa função tem o agravante de não haver consenso entre os pesquisadores de uma métrica ideal para avaliar a qualidade entre uma imagem original e a sua versão reconstruída.  Na hipótese de haver tal função, poderíamos definir uma função de erro em relação a métrica ideal como função de custo e minimizar o seu valor ao longo do aprendizado do modelo. 
+%A função de custo é outra escolha importante nos treinamentos de RNA. No problema de compressão de imagens a escolha dessa função tem o agravante de não haver consenso entre os pesquisadores de uma métrica ideal para avaliar a qualidade entre uma imagem original e a sua versão reconstruída.  Na hipótese de haver tal função, poderíamos definir uma função de erro em relação a métrica ideal como função de custo e minimizar o seu valor ao longo do aprendizado do modelo. 
 %Contudo, algumas funções apresentam relações da medida de distorção entre uma imagem e sua reconstrução, tais como MSE, MAE, 1-SSIM, 1-MS-SSIM, etc. Vamos definir algumas variações dessas funções. 
 
 
@@ -105,7 +108,7 @@ Pela figura \ref{fig:psnr_13epocas} verificamos uma tendência de saturação do
 
 
 
-A Tabela \ref{table:comp_loss} apresenta resultados para 7 funções de custo que mensuram a distorção entre duas imagens.  Os valores foram calculados pela média das imagens da Kodak codificadas a 2 bpp. A rede foi treinada com a base de dados 4 e parâmetros listados em	\ref{enum:hiper_param}. Nessa tabela, $R$, $R'$, $X$ e $X'$ foram definidos na Equação \ref{eq:model_1it}, omitindo-se a dependência temporal. A medida $X-X'$ é o resíduo em relação a imagem como um todo, onde $X$ é fixo.  
+A Tabela \ref{table:comp_loss} apresenta resultados para 7 funções de custo que mensuram a distorção entre duas imagens.  Os valores foram calculados pela média das imagens da Kodak codificadas a 2 bpp. A rede foi treinada com a base de dados 4 e parâmetros listados em	\ref{enum:hiper_param}. Nessa tabela, $R$, $R'$, $X$ e $X'$ foram definidos na Equação \ref{eq:model_1it}, omitindo-se a dependência temporal. A medida $X-X'$ é o resíduo em relação à imagem original  $X$.  
 O subíndice \textit{y} e \textit{$C_bC_r$} são para indicar a componente de luminância e o par crominância azul e vermelho, respectivamente. Nos testes 3 e 4, modificamos o treinamento para rede operar no espaço $YC_bC_r$. O objetivo foi penalizar, predominante, o erro da componente de luminância (que contém informações mais sensíveis ao olho humano) no ajuste da rede, em comparação com as componentes de crominância.
 No teste 7, utilizamos uma medida de dissimilaridade estrutural entre duas imagens, obtida a partir da SSIM e implementada em \cite{su2017}.  A distorção calculada pela MSE forneceu os melhores resultados em todas as métricas avaliadas. 
 
@@ -114,17 +117,17 @@ No teste 7, utilizamos uma medida de dissimilaridade estrutural entre duas image
 	\centering
 	\caption{Comparação das funções de custo.}
 	\begin{adjustbox}{width=\columnwidth,center}	
-	\begin{tabular}{|l|l|l|l|l|l|l|}
-		\hline
-		\textbf{Teste} & \textbf{Função de custo}                                                                                        & \textbf{Espaco} & \textbf{PNSR (dB)} & \textbf{PNSR Y (dB)} & \textbf{SSIM}   & \textbf{MS-SIM} \\ \hline
-		\textbf{1}     & $MAE(R-R’)$                                                                                                     & RGB             & 33,0872            & 33,8443              & 0,9309          & 0,9876          \\ \hline
-		\textbf{2}     & $MAE^{2}(R-R’)$                                                                                                 & RGB             & 34,1766            & 34,9706              & 0,9444          & 0,9892          \\ \hline
-		\textbf{3}     & \begin{tabular}[c]{@{}l@{}}$MAE^{2}(R_{y}-R_{y}’) +$\\ $+ 0.25 \times MAE^{2}(R_{CbCr}-R_{CbCr}’)$\end{tabular} & YCbCr           & 33,3555            & 35,3253              & 0,9445          & 0,9857          \\ \hline
-		\textbf{4}     & \begin{tabular}[c]{@{}l@{}}$MSE(R_{y}-R_{y}’) +$\\ $+ 0.25 \times MSE(R_{CbCr}-R_{CbCr}’)$\end{tabular}         & YCbCr           & 33,5249            & 35,1863              & 0,9390          & 0,9858          \\ \hline
-		\textbf{5}     & $MSE(R-R’)$                                                                                                     & RGB             & \textbf{34,9259}   & \textbf{35,9066}     & \textbf{0,9474} & \textbf{0,9907} \\ \hline
-		\textbf{6}     & $MSE(X-X’)$                                                                                                     & RGB             & 33,7662            & 34,6014              & 0,9321          & 0,9866          \\ \hline
-		\textbf{7}     & $1 - SSIM (X -X’)$                                                                                              & RGB             & 33,2754            & 34,0755              & 0,9352          & 0,9896          \\ \hline
-	\end{tabular}
+		\begin{tabular}{|l|l|l|l|l|l|l|}
+			\hline
+			\textbf{Teste} & \textbf{Função de custo}                                                                                        & \textbf{Espaco} & \textbf{PNSR (dB)} & \textbf{PNSR Y (dB)} & \textbf{SSIM}   & \textbf{MS-SIM} \\ \hline
+			\textbf{1}     & $MAE(R-R’)$                                                                                                     & RGB             & 33,0872            & 33,8443              & 0,9309          & 0,9876          \\ \hline
+			\textbf{2}     & $MAE^{2}(R-R’)$                                                                                                 & RGB             & 34,1766            & 34,9706              & 0,9444          & 0,9892          \\ \hline
+			\textbf{3}     & \begin{tabular}[c]{@{}l@{}}$MAE^{2}(R_{y}-R_{y}’) +$\\ $+ 0.25 \times MAE^{2}(R_{CbCr}-R_{CbCr}’)$\end{tabular} & YCbCr           & 33,3555            & 35,3253              & 0,9445          & 0,9857          \\ \hline
+			\textbf{4}     & \begin{tabular}[c]{@{}l@{}}$MSE(R_{y}-R_{y}’) +$\\ $+ 0.25 \times MSE(R_{CbCr}-R_{CbCr}’)$\end{tabular}         & YCbCr           & 33,5249            & 35,1863              & 0,9390          & 0,9858          \\ \hline
+			\textbf{5}     & $MSE(R-R’)$                                                                                                     & RGB             & \textbf{34,9259}   & \textbf{35,9066}     & \textbf{0,9474} & \textbf{0,9907} \\ \hline
+			\textbf{6}     & $MSE(X-X’)$                                                                                                     & RGB             & 33,7662            & 34,6014              & 0,9321          & 0,9866          \\ \hline
+			\textbf{7}     & $1 - SSIM (X -X’)$                                                                                              & RGB             & 33,2754            & 34,0755              & 0,9352          & 0,9896          \\ \hline
+		\end{tabular}
 	\end{adjustbox}
 	\label{table:comp_loss}
 \end{table}
@@ -144,7 +147,6 @@ Além dessa modificação, usamos a base de dados 5 obtida conforme a regra da b
 	\item Número de iterações no treinamento: 28;
 	\item Número de iterações durante os testes: 22;
 	\item Número de épocas: 27;
-	\item Otimizador: Adam;
 	\item Taxa de aprendizado: $5 \times {10}^{-4}$ com decaimento por um fator de 0,5 caso a média da função de perdas em uma época seja maior que na época anterior.
 \end{enumerate}
 A Figura \ref{fig:gain_gzip_meida} compara o ganho proporcionado pela codificação de entropia do GZIP ao plotarmos as curvas de PNSR (a) e SSIM (b) em função da taxa usando as imagens da Kodak. Ao usarmos a taxa real as curvas se deslocam para esquerda. Observamos, que o ganho do GZIP é maior em taxas maiores. Isso é esperado tendo em vista que, em geral, os codificadores de entropia são mais eficientes em conjuntos maiores de dados. Nos próximos testes, as taxas empregadas serão sempre a real.    
@@ -156,14 +158,14 @@ A Figura \ref{fig:gain_gzip_meida} compara o ganho proporcionado pela codificaç
 	\label{fig:gain_gzip_meida}
 \end{figure}
 
-A Figura \ref{fig:taxa_bd} mostra como a performance em termos de taxa-BD (em relação ao jPEG) se comporta durante o treinado do modelo. O treinamento em várias épocas melhora significativamente o desempenho do modelo. É verdade também que a taxa com que o modelo apresenta melhores resultados se torna mais lenta ao passar das épocas. A economia da taxa na última época em relação a primeira é aproximadamente de 17\%. Nesse teste, a 26ª época gerou o modelo de melhor desempenho.  
+A Figura \ref{fig:taxa_bd} mostra como a performance em termos de taxa-BD (em relação ao jPEG) se comporta durante o treinado do modelo. O treinamento em várias épocas melhora, significativamente, o desempenho do modelo. É verdade também que a taxa com que o modelo apresenta melhores resultados se torna mais lenta ao passar das épocas. A economia da taxa na última época em relação à primeira é aproximadamente de 17\%. Nesse teste, a 26ª época gerou o modelo de melhor desempenho. Vamos nos referir a esse \acrshort{codec} como modelo26.  
 
 
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{figuras/taxa_bd_27epocas.pdf}
-	\caption{Ilustração da porcentagem da taxa-BD média sobre a base de dados da Kodak e tendo o JPEG como âncora.  Valores cada vez mais negativos indicam que a economia média de taxa de bits do nosso modelo em relação ao JPEG aumenta para uma dada qualidade equivalente de PSNR na média das imagens da Kodak.}  
+	\caption[Curva de taxa-BD por época de treinamento.]{Ilustração da porcentagem da taxa-BD média sobre a base de dados da Kodak e tendo o JPEG como âncora.  Valores cada vez mais negativos indicam que a economia média de taxa de bits do nosso modelo em relação ao JPEG aumenta para uma dada qualidade equivalente de PSNR na média das imagens da Kodak.}  
 	\label{fig:taxa_bd}
 \end{figure}	
 
@@ -172,13 +174,15 @@ Nas figuras em \ref{fig:metricas_3ep} podemos observar a otimização taxa-disto
 \begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{figuras/result_3ep.pdf}
-	\caption[Curvas de qualidade por taxa em 3 épocas distintas]{Figuras mostrando a evolução do modelo em termos de taxa e 4 métricas de qualidade em 3 épocas distintas. Nas 4 curvas taxa e distorção apresentam melhores resultado no passar da primeira, sexta e vigésima-sexta épocas}  	
+	\caption[Curvas de qualidade por taxa em 3 épocas distintas]{Figuras mostrando a evolução do modelo em termos de taxa e 4 métricas de qualidade para 3 épocas distintas. Nas 4 curvas taxa e distorção apresentam melhores resultado à medida que o número de épocas aumenta.}  	
 	\label{fig:metricas_3ep}
 \end{figure}
 
-A Figura \ref{fig:gain_medio_bpp} apresenta o ganho médio percentual da taxa real (fornecida pelo GZIP) em relação a nominal como função da iteração em que as imagens foram reconstruídas. Os resultados mostram que, aproximadamente, nos primeiros 3 níveis de reconstrução o modelo final tem ganho médio menor em relação a primeira e sexta versão do modelo. Além disso, nesses 3 níveis o ganho é reduzido ainda que temos um conjunto maior de bits para realizar compressão.  
-A justificativa pode ser que, durante o treinamento, para esse nível de reconstrução a função da distorção é significativamente superior ao valor da função que modela a taxa aproximadamente. Então, ao priorizar a reconstrução a proporção de zeros e uns é condicionada para reduzir a distorção. Esse fato não garante que a entropia de ordem 0 do fluxo de bits seja baixa. Além isso, o fator de regularização influencia de forma indireta na distorção.
-A partir da 4ª iteração a curva de ganho do modelo final ultrapassa as demais. Á medida que a reconstrução é feita, esperamos que em um momento a relevância da distorção no aprendizagem da rede seja reduzida e a entropia de ordem 0 dos bits seja otimizada. 
+A Figura \ref{fig:gain_medio_bpp} apresenta o ganho médio percentual da taxa real (fornecida pelo GZIP) em relação a nominal como função da iteração em que as imagens foram reconstruídas. Os resultados mostram que, aproximadamente, nos primeiros 3 níveis de reconstrução o modelo final tem ganho médio menor em relação à primeira e sexta versão do modelo.  
+
+Além disso, do primeiro para o terceiro nível o ganho é reduzido ainda que temos um conjunto maior de bits para realizar compressão.  
+A justificativa pode ser que, durante o treinamento, para esse nível de reconstrução a função da distorção é significativamente superior ao valor da função de esparsidade. Então, quando o treinamento prioriza a reconstrução a proporção de zeros e uns é condicionada para reduzir a distorção. Esse fato não garante que a entropia de ordem 0 do fluxo de bits seja baixa. Além isso, o fator de regularização influencia de forma indireta na distorção.
+A partir da 4ª iteração a curva de ganho do modelo final ultrapassa as demais. Á medida que a reconstrução é feita, esperamos que, em um momento, a relevância da distorção na aprendizagem da rede seja reduzida, e a entropia de ordem 0 dos bits seja otimizada. 
 
 
 
@@ -231,7 +235,40 @@ Em contrapartida, acreditamos a imagem kodim13 contém muita informação de alt
 	\caption{Em (a) temos a Kodim10 original em (b) sua versão reconstruída em 10 iterações. Em (c) está representado a kodim13 e em (d) sua sua reconstruída em 8 iterações.}
 	\label{fig:kodim13}
 \end{figure}
-No método de alocação dinâmica de bits descrito em \ref{sec:adb} fizemos dois testes principais. No primeiro, não havia restrição do mínimo de níveis de reconstrução ou iterações em cada bloco, isso equivale a fazer $k_min=1$ em \ref{fig:flux_vr}. Vamos no referir a ele como modeloVR0. Contudo, tal procedimento gera artefatos de blocos em evidência, como podemos observar na Figura \ref{fig:artf}. Então, fazemos $k_min=1$ para codificar as imagens pelo modeloVR e tentar minimizar o surgimento desses artefatos de compressão.   
+No método de alocação dinâmica de bits descrito em \ref{sec:adb} fizemos dois testes principais. No primeiro, sem restrição no número mínimo de níveis de reconstrução em cada bloco, isso equivale a fazer $k_min=1$ em \ref{fig:flux_vr}. Vamos no referir a ele como modeloVR0. Na tabela \ref{table:ba} apresentamos o resultado desse modelo ao aplica nas imagens da Kodak. Nessa tabela, PSNR$_d$ é o alvo de qualidade desejada e PSNR$_o$ é a qualidade obtida. 
+
+\begin{table}[]
+	\caption{Resultados do Método de Alocação Dinâmica de Bits}
+			\centering
+	\begin{tabular}{|c|c|c|}
+
+		\hline
+		\textbf{PSNR$_d$ (dB)} & \textbf{PSNR$_o$ (dB)} & \textbf{Taxa Real (bpp)} \\ \hline
+		24                  & 27,19               & 0,237                    \\ \hline
+		25                  & 27,82               & 0,282                    \\ \hline
+		26                  & 28,52               & 0,335                    \\ \hline
+		27                  & 29,27               & 0,397                    \\ \hline
+		28                  & 30,00               & 0,467                    \\ \hline
+		29                  & 30,81               & 0,551                    \\ \hline
+		30                  & 31,60               & 0,642                    \\ \hline
+		31                  & 32,42               & 0,742                    \\ \hline
+		32                  & 33,23               & 0,851                    \\ \hline
+		33                  & 34,05               & 0,971                    \\ \hline
+		34                  & 34,88               & 1,100                    \\ \hline
+		35                  & 35,65               & 1,237                    \\ \hline
+		36                  & 36,38               & 1,378                    \\ \hline
+		37                  & 37,06               & 1,520                    \\ \hline
+		38                  & 37,62               & 1,658                    \\ \hline
+		39                  & 38,12               & 1,793                    \\ \hline
+		40                  & 38,51               & 1,929                    \\ \hline
+		41                  & 38,79               & 2,063                    \\ \hline
+		42                  & 38,96               & 2,171                    \\ \hline
+	\end{tabular}
+	\label{table:ba}
+\end{table}
+
+
+Contudo, tal procedimento gera artefatos de blocos em evidência, como podemos observar na Figura \ref{fig:artf}. Então, fazemos $k_min=1$ para codificar as imagens pelo modeloVR e tentar minimizar o surgimento desses artefatos de compressão.   
 No exemplo apresentado na Figura \ref{fig:artf]}
 
 \begin{figure}
@@ -263,3 +300,30 @@ A Figura \ref{fig:comp_vr}
 	\caption{}  	
 	\label{fig:comp_codecs}
 \end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{figuras/comp_codecs_ssim.pdf}
+	\caption{}  	
+	\label{fig:comp_codecs_ssim}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{figuras/bd-rate_ref_JPEG2k.pdf}
+	\caption{}  	
+	\label{fig:comp_jp2k}
+\end{figure}
+
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{figuras/bd-rate_ref_JPEG.pdf}
+	\caption{}  	
+	\label{fig:comp_jp}
+\end{figure}
+
+
+ Em trabalhos posteriores, podemos realizar um estudo de um modelo de entropia para o conjunto de bits. Com esse estudo, podemos propor um codificador de entropia otimizado para a estatística dessa informação. 
+Outra alternativa, consiste em propor outra função de otimização de entropia para promover padrões formados por conjuntos ou sequências de bits. Dessa forma, podemos obter ganhos maiores ao utilizar os codificadores de entropia comerciais.

@@ -20,7 +20,7 @@
 \contentsline {section}{\numberline {2.2}Compress\IeC {\~a}o de dados}{20}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Medidas de informa\IeC {\c c}\IeC {\~a}o}{21}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}Imagens}{22}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Espa\IeC {\c c}o de Cores}{22}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Espa\IeC {\c c}o de Cores}{23}{subsection.2.3.1}
 \contentsline {subsubsection}{\numberline {2.3.1.1}RGB}{23}{subsubsection.2.3.1.1}
 \contentsline {subsubsection}{\numberline {2.3.1.2}YCbCr}{23}{subsubsection.2.3.1.2}
 \contentsline {subsection}{\numberline {2.3.2}Compress\IeC {\~a}o}{24}{subsection.2.3.2}
@@ -36,7 +36,7 @@
 \contentsline {subsection}{\numberline {3.2.2}Redes n\IeC {\~a}o-recorrentes}{31}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Redes Recorrentes}{31}{subsection.3.2.3}
 \contentsline {section}{\numberline {3.3}Autocodificadores variacionais}{39}{section.3.3}
-\contentsline {section}{\numberline {3.4}Autocodificadores baseado em GAN}{39}{section.3.4}
+\contentsline {section}{\numberline {3.4}Autocodificadores baseados em GAN}{39}{section.3.4}
 \contentsline {chapter}{\numberline {4}Metodologia}{42}{chapter.4}
 \contentsline {section}{\numberline {4.1}Arquitetura}{42}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Binariza\IeC {\c c}\IeC {\~a}o}{44}{subsection.4.1.1}
@@ -48,4 +48,5 @@
 \contentsline {section}{\numberline {4.4}Aloca\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de bits}{52}{section.4.4}
 \contentsline {section}{\numberline {4.5}Implementa\IeC {\c c}\IeC {\~a}o}{54}{section.4.5}
 \contentsline {chapter}{\numberline {5}Resultados}{55}{chapter.5}
-\contentsline {chapter}{REFER\IeC {\^E}NCIAS}{63}{figure.caption.50}
+\contentsline {section}{\numberline {5.1}An\IeC {\'a}lise Base de Dados}{55}{section.5.1}
+\contentsline {chapter}{REFER\IeC {\^E}NCIAS}{69}{figure.caption.54}

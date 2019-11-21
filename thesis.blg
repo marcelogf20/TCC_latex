@@ -17,13 +17,14 @@ Warning--entry type for "Olah" isn't style-file defined
 --line 360 of file bibliography.bib
 Warning--entry type for "sumit" isn't style-file defined
 --line 371 of file bibliography.bib
-Repeated entry---line 569 of file bibliography.bib
+Repeated entry---line 583 of file bibliography.bib
  : @misc{kodak
  :            ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "2019:ciscoreport"
-Warning--I didn't find a database entry for "h264:book"
-Warning--I didn't find a database entry for "Phyu_surveyof"
+Repeated entry---line 628 of file bibliography.bib
+ : @misc{implementationRNNPytorch
+ :                               ,
+I'm skipping whatever remains of this entry
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
@@ -36,45 +37,45 @@ Warning--campo year vazio ou faltando em bib:clic
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 64 entries,
+You've used 65 entries,
             6714 wiz_defined-function locations,
-            1547 strings with 20670 characters,
-and the built_in function-call counts, 62836 in all, are:
-= -- 5960
+            1549 strings with 20884 characters,
+and the built_in function-call counts, 64329 in all, are:
+= -- 6232
 > -- 1807
 < -- 639
-+ -- 1357
++ -- 1403
 - -- 538
-* -- 4331
-:= -- 7814
-add.period$ -- 246
-call.type$ -- 64
-change.case$ -- 742
-chr.to.int$ -- 103
-cite$ -- 66
-duplicate$ -- 4212
-empty$ -- 3975
+* -- 4397
+:= -- 8002
+add.period$ -- 250
+call.type$ -- 65
+change.case$ -- 748
+chr.to.int$ -- 104
+cite$ -- 67
+duplicate$ -- 4240
+empty$ -- 4037
 format.name$ -- 2816
-if$ -- 14346
+if$ -- 14757
 int.to.chr$ -- 0
 int.to.str$ -- 0
-missing$ -- 1142
-newline$ -- 292
+missing$ -- 1159
+newline$ -- 297
 num.names$ -- 244
-pop$ -- 1633
+pop$ -- 1657
 preamble$ -- 1
-purify$ -- 275
+purify$ -- 278
 quote$ -- 0
-skip$ -- 4602
+skip$ -- 4843
 stack$ -- 1
-substring$ -- 2533
-swap$ -- 1747
+substring$ -- 2601
+swap$ -- 1758
 text.length$ -- 63
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 30
+type$ -- 53
 warning$ -- 3
-while$ -- 395
+while$ -- 398
 width$ -- 0
-write$ -- 859
-(There was 1 error message)
+write$ -- 871
+(There were 2 error messages)

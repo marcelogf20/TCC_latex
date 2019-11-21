@@ -14,16 +14,16 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Rede \textit {feedforward} de 2 camadas}}{11}{figure.caption.11}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Convolu\IeC {\c c}\IeC {\~a}o 2D em um mapa de recurso.}}{13}{figure.caption.12}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Convolu\IeC {\c c}\IeC {\~a}o 2D em tr\IeC {\^e}s mapas de recursos.}}{14}{figure.caption.13}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Arquitetura RNR.}}{14}{figure.caption.14}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces C\IeC {\'e}lula \acrshort {lstm} no tempo}}{16}{figure.caption.15}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Arquitetura RNR.}}{15}{figure.caption.14}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces C\IeC {\'e}lula \acrshort {lstm} no tempo}}{17}{figure.caption.15}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Compress\IeC {\~a}o e reconstru\IeC {\c c}\IeC {\~a}o sem perdas.}}{21}{figure.caption.16}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Espa\IeC {\c c}o tridimensional de cores RGB.}}{23}{figure.caption.17}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Padr\IeC {\~a}o \acrshort {jpeg}}}{25}{figure.caption.18}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Padr\IeC {\~a}o \acrshort {jpeg}}}{26}{figure.caption.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Um autoencoder residual totalmente conectado com fun\IeC {\c c}\IeC {\~a}o de ativa\IeC {\c c}\IeC {\~a}o $\qopname \relax o{tanh}$. Esta figura representa uma arquitetura de duas itera\IeC {\c c}\IeC {\~o}es. As primeiras itera\IeC {\c c}\IeC {\~o}es codificam a imagem original. Os res\IeC {\'\i }duos da reconstru\IeC {\c c}\IeC {\~a}o s\IeC {\~a}o passados para a segunda itera\IeC {\c c}\IeC {\~a}o. Cada n\IeC {\'\i }vel de itera\IeC {\c c}\IeC {\~a}o produz 4 bits \cite {Variable2016Toderici}.\relax }}{31}{figure.caption.19}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces O codificador residual \acrshort {lstm} totalmente conectado. Esta figura mostra um desenrolamento do \acrshort {lstm}, necess\IeC {\'a}rio para o treinamento, em duas etapas. Ao todo, a rede foi treinada com 16 n\IeC {\'\i }veis de res\IeC {\'\i }duo, para gerar representa\IeC {\c c}\IeC {\~o}es de 64 bits. As conex\IeC {\~o}es verticais entre os est\IeC {\'a}gios \acrshort {lstm} no desenrolamento mostram o efeito da mem\IeC {\'o}ria persistente. Nessa arquitetura \acrshort {lstm}, cada etapa prev\IeC {\^e} a sa\IeC {\'\i }da real. \cite {Variable2016Toderici}.\relax }}{32}{figure.caption.20}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces The flow of the iterations in an RNN architecture. In this case, the prefix $D-$ refers to the "inverse" operation in the decoder. Also, the depth to space is a shuffle of the pixels as defined in the sub-pixel operations \cite {FullResolution2017Toderici}.\relax }}{34}{figure.caption.21}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Modelo DPCM com autocodificador}}{35}{figure.caption.22}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Autocodificador residual totalmente conectado.}}{31}{figure.caption.19}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Autocodificador residual com camadas \acrshort {lstm}}}{32}{figure.caption.20}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Arquitetura do autocodificador com camadas Con2DRNR}}{34}{figure.caption.21}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Modelo DPCM com autocodificador.}}{36}{figure.caption.22}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Autocodificador desenrolado no tempo}}{43}{figure.caption.25}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Conv2DLSTM}}{44}{figure.caption.26}
@@ -41,7 +41,7 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o.\relax }}{58}{figure.caption.39}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o.\relax }}{58}{figure.caption.40}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o de codifica\IeC {\c c}\IeC {\~a}o com e sem o GZIP}}{60}{figure.caption.42}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Ilustra\IeC {\c c}\IeC {\~a}o da porcentagem da taxa-BD m\IeC {\'e}dia sobre a base de dados da Kodak e tendo o JPEG como \IeC {\^a}ncora. Valores cada vez mais negativos indicam que a economia m\IeC {\'e}dia de taxa de bits do nosso modelo em rela\IeC {\c c}\IeC {\~a}o ao JPEG aumenta para uma dada qualidade equivalente de PSNR na m\IeC {\'e}dia das imagens da Kodak.\relax }}{61}{figure.caption.43}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Curva de taxa-BD por \IeC {\'e}poca de treinamento.}}{61}{figure.caption.43}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Curvas de qualidade por taxa em 3 \IeC {\'e}pocas distintas}}{62}{figure.caption.44}
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Ganho do GZIP por n\IeC {\'\i }vel de reconstru\IeC {\c c}\IeC {\~a}o}}{63}{figure.caption.45}
 \contentsline {figure}{\numberline {5.10}{\ignorespaces \relax }}{64}{figure.caption.46}
@@ -50,10 +50,13 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,942 bpp. PSNR: 36,925 dB.} }}}{64}{subfigure.11.2}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Imagem original}}}{64}{subfigure.11.3}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,987 bpp. PSNR: 26,357 dB.} }}}{64}{subfigure.11.4}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Surgimento de artefatos de blocos em modelos baseados em aloca\IeC {\c c}\IeC {\~a}o de bits.}}{65}{figure.caption.48}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Surgimento de artefatos de blocos em modelos baseados em aloca\IeC {\c c}\IeC {\~a}o de bits.}}{65}{figure.caption.49}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem original}}}{65}{subfigure.12.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,741 bpp, PSNR: 32,190dB, SSIM: 0,8675.} }}}{65}{subfigure.12.2}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Imagem reconstru\IeC {\'\i }da. Taxa: 0,782 bpp, PSNR: 32,687dB, SSIM: 0,8939}}}{65}{subfigure.12.3}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,754 bpp, PSNR: 31,621, SSIM:0,8985 } }}}{65}{subfigure.12.4}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces \relax }}{65}{figure.caption.49}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces \relax }}{66}{figure.caption.50}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces \relax }}{65}{figure.caption.50}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces \relax }}{66}{figure.caption.51}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces \relax }}{67}{figure.caption.52}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces \relax }}{67}{figure.caption.53}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces \relax }}{68}{figure.caption.54}

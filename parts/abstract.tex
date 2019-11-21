@@ -1,26 +1,15 @@
 %PORTUGUESE
 \resumo{Resumo}{
-
-A maioria do conteúdo em vídeo consumido atualmente, seja por meio de serviços de
-\textit{streaming} (\textit{Netflix, Youtube}), cinema, mídias de DVD ou \textit{Blu-Ray}, utiliza da tecnologia de compressão de vídeo para representar o vídeo de forma mais compacta, a fim de tornar factível tanto o armazenamento como a transmissão desse tipo de conteúdo.
-Transmissão de vídeo corresponde à maior parcela do tráfego mundial da \textit{internet} e continua a crescer substancialmente. De acordo com o \textit{Cisco Visual Networking Index} \cite{2019:ciscoreport}, o tráfego de vídeo de IP vai quadruplicar no período de 2017-2022, subindo de 75\% do tráfego total da \textit{internet} em 2017 para 82\% por volta de 2022. Com esta crescente, mostram-se necessárias não só melhores técnicas de compressão de vídeo como também formas de permitir a interoperabilidade entre sistemas que utilizam diferentes padrões de codificação.
-
-Um standardo de codificação de vídeo é a especificação de como representar uma sequência de vídeo em um arquivo ou \textit{bitstream} \cite{h264:book}. Uma sequência de vídeo codificada em um padrão pode ser decodificada apenas pelo decodificador daquele padrão, não sendo compatível com outro decodificador. Para que sistemas que utilizam diferentes padrões se comuniquem é necessária uma mudança de padrão, chamada de transcodificação, que consiste na conversão de um \textit{bitstream}, codificado com um determinado standardo (chamado de standardo fonte) para outro \textit{bitstream}, codificado com outro standardo (chamado de standardo alvo) \cite{Phyu_surveyof}.
-
-O padrão mais utilizado atualmente, o padrão internacional \gls{h264}, está sendo substituído por um novo padrão, chamado \gls{h265}. O \acrshort{h265} oferece uma
-redução de 30\% a 50\% na taxa de bits, para uma mesma qualidade,
-comparado com o H.264/AVC \cite{h264:book}. Assim, um transcodificador de vídeo do standardo
-\acrshort{h264} para o standardo \acrshort{h265} tem uma motivação dupla: promover a
-inter-operabilidade entre sistemas que utilizam esses standardos e aproveitar o
-maior ganho de compressão do novo padrão.
-
-
-Neste trabalho, comparamos a performance de 10 transcodificadores diferentes em um conjunto de sequências já conhecidas e com diversos resultados publicados. Entre os 10 transcodificadores, 8 utilizam Árvores de Decisão, sendo 4 com treinamento \textit{offline} e 4 com treinamento \textit{online}. Dois dos transcodificadores testados utilizam LDFs, ambos com treinamento \textit{online}. Em específico, comparamos dois transcodificadores em que a única diferença é o algoritmo de classificação e o transcodificador com Árvores de Decisão obteve um BD-Rate médio 2.22 vezes menor que o que utiliza LDFs para uma \textit{speed up} 1.11 vezes menor. Além disso, propôs-se uma novo critério de classificação para o modelo das Árvores de Decisão que é baseado no custo taxa-distorção do HEVC. Essa técnica mostrou-se promissora, apresentando resultados muito satisfatórios para algumas sequências.
-
-Para testar os transcodificadores de forma eficiente e rápida, foram utilizados os serviços de computação na nuvem oferecidos pelo \textit{Google Cloud Platform}. A utilização dessa ferramenta foi crucial para o desenvolvimento deste trabalho, uma vez que permitiu que fossem feitos diversos testes em paralelo.
-
-A implementação das Árvores de Decisão foi feita utilizando a biblioteca \textit{Scikit-Learn} do \textit{Python}. Todo o código desenvolvido neste trabalho está disponível de forma aberta e gratuita neste \href{https://github.com/thiagodma/DecisionTrees-Python}{link}.
-
+	A compressão de imagens é um tópico exaustivamente estudado dentro da ciência, em busca de representar a informação de forma compacta. Esse esforço é justificado pelo grande tráfego dessa mída pela Internet, porém limitado pelos requisitos de largura de banda. Recentemente, pesquisas de algoritmos baseados em Redes Neurais Artificiais para compressão de imagens têm alcançado resultados com enorme potencial. Em particular, a abordagem de ponta a ponta na qual codificador e decodificador são treinados em conjunto  está presente nos trabalhos que superam os métodos tradicionais de compressão de imagens. 
+	
+	Essa abordagem é possível através de uma arquitetura de rede neural denominada autocodificador. Sob certas condições, ela é especialmente útil para aprender representações compactadas e bem estruturas dos dados. Na literatura, são relatados autocodificadores com características específicas para o problema de compressão. Dentre eles, muitos são baseados somente em camadas convolucionais, contudo esse método exige, geralmente, o treinamento de diversos modelos para diferentes taxas de compactação para que possam gerar uma curva taxa-distorção com boa pefomance.
+	Nos autocodificadores com camadas recorrentes é possível gerar um modelo com flexibilidade para gerar taxas variadas com qualidade, ao aproveitarmos da sua capacididade para manter informações passadas. Os autocodificadores esparsos possuem alguma regularização envolvendo o espaço de código latente para encontrar represenações robustas dos dados.
+	
+	Introduzimos modificações em trabalhos anteriores baseados em redes neurais convolucionais recorrentes para compressão de imagem com perdas. Primeiro, avaliamos o papel de uma base de dados com diferentes característiacas de entropia na perfomance do modelo. Em seguida, foi feito uma análise empírica para obter uma função de custo adequada no nosso problema. 
+	
+	A introdução de um fator de regularização, interpretado aqui, como uma estimativa da entropia de ordem zero, nessa função propocionou ganhos consideráveis. Essa função teve o papel de promover, de certa forma, esparsidade no fluxo de bits gerados pelo codificador e mudar a frequência de ocorrência dos bits (-1 e 1 para o nosso modelo).  Essa estatística foi aproveitada pelo GZIP para reduzir as taxas. Por fim, propomos um esquema simples de alocação de bits para aproveita a diferença de complexidade nas regioões de uma imagem. 
+	
+	Os nossos resultados indicam melhor perfomance em relação ao JPEG nas medidas de PSNR, SSIM e MS-SSIM. Ao comparar esses resultados com o JPEG2000 obtemos desempenho competitivo. Contudo, o método de alocação dinâmica de bits teve o inconveniente de gerar artefatos de blocos visíveis e que degradam a qualidade perceptiva da imagem. 
 \begin{singlespace}
 {\setfonttimes\normalsize\noindent{\textbf{Palavras-chave:} \palavraschavecatalogoinome,~\palavraschavecatalogoiinome,~\palavraschavecatalogoiiinome,~\palavraschavecatalogoivnome.}}
 \end{singlespace}
@@ -29,19 +18,6 @@ A implementação das Árvores de Decisão foi feita utilizando a biblioteca \te
 \vspace{2cm}
 \resumo{Abstract}{
 
-Most video content consumed today, whether through streaming (Netflix, Youtube), cinema, DVD media or Blu-Ray uses some video compression technology to represent the video more compactly to make it feasible both the storage and transmission of such content. Video broadcasting accounts for the largest share of the internet world traffic and continues to grow substantially. According to the Cisco Visual Networking Index \cite{2019:ciscoreport}, IP video traffic will grow four-fold in the period of 2017-2022, rising from 75\% of the total internet traffic in 2017 to 82\% by 2022. Therefore, there is a need not only for more efficient video compression, but also for other tools that facilitate the use of such compression technology. Video transcoding is one such tool in this context. By enabling inter-operability between different codecs and systems, video transcoding allows for the use of newer, more efficient codecs.
-
-A video encoding standard is the specification of how to represent a video sequence in a file or bitstream \cite{h264:book}. A video sequence encoded in one standard can be decoded only by that standard's decoder and is not compatible with another decoder. For systems that use different standards to communicate, a change of standard, called transcoding, is required, which consists of converting a bitstream encoded with a given standard (called the source standard) to another bitstream, encoded with another standard (called the target standard) \cite{Phyu_surveyof}.
-
-The most widely used standard, the international standard \gls{h264}, is being replaced by a new standard called \gls{h265}. \acrshort{h265} offers a 30\% to 50\% reduction in bitrate for the same quality, compared to \acrshort{h264} \cite{h264:book}. So a video transcoder of the standard \acrshort{h264} for the standard \acrshort{h265} has a twofold motivation: to promote
-interoperability between systems using these standards and to take advantage of the
-higher compression gain of the new standard.
-
-In this work, we compare the performance of 10 different transcoders in a set of known sequences and with several published results. Among the 10 transcoders, 8 use Decision Trees, 4 with offline training and 4 with online training. Two of the transcoders tested use LDFs, both with online training. Specifically, we compared two transcoders where the only difference is the classification algorithm and the Decision Tree transcoder obtained an average BD-Rate 2.22 times lower than using LDFs for a 1.11 times lower speed up. In addition, a new classification criterion was proposed for the Decision Tree model that is based on the \acrshort{h265} rate-distortion cost. This technique was promising, presenting very satisfactory results for some sequences.
-
-In order to test transcoders efficiently and quickly, we used the cloud computing services offered by Google Cloud Platform. The use of this tool was crucial for the development of this work, as it allowed several tests to be done in parallel.
-
-Decision Trees were implemented using Python's Scikit-Learn library. All code developed in this work is available free and open source at this \href{https://github.com/thiagodma/DecisionTrees-Python}{link}.
 
 \begin{singlespace}
 {\setfonttimes\normalsize\noindent{\textbf{Keywords:} \keywordiname,~\keywordiiname,~\keywordiiiname,~\keywordivname.}}

@@ -29,7 +29,7 @@
 \BOOKMARK [2][-]{subsection.3.2.2}{Redes n\343o-recorrentes}{section.3.2}% 29
 \BOOKMARK [2][-]{subsection.3.2.3}{Redes Recorrentes}{section.3.2}% 30
 \BOOKMARK [1][-]{section.3.3}{Autocodificadores variacionais}{chapter.3}% 31
-\BOOKMARK [1][-]{section.3.4}{Autocodificadores baseado em GAN}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.4}{Autocodificadores baseados em GAN}{chapter.3}% 32
 \BOOKMARK [0][-]{chapter.4}{Metodologia}{}% 33
 \BOOKMARK [1][-]{section.4.1}{Arquitetura}{chapter.4}% 34
 \BOOKMARK [2][-]{subsection.4.1.1}{Binariza\347\343o}{section.4.1}% 35
@@ -41,4 +41,5 @@
 \BOOKMARK [1][-]{section.4.4}{Aloca\347\343o din\342mica de bits}{chapter.4}% 41
 \BOOKMARK [1][-]{section.4.5}{Implementa\347\343o}{chapter.4}% 42
 \BOOKMARK [0][-]{chapter.5}{Resultados}{}% 43
-\BOOKMARK [0][-]{figure.caption.50}{REFER\312NCIAS}{}% 44
+\BOOKMARK [1][-]{section.5.1}{An\341lise Base de Dados}{chapter.5}% 44
+\BOOKMARK [0][-]{figure.caption.54}{REFER\312NCIAS}{}% 45

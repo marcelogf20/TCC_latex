@@ -5,13 +5,6 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.6 }
 
-\bibitem{Variable2016Toderici}
-\abntrefinfo{Toderici et al.}{TODERICI et al.}{2015}
-{TODERICI, G. et al. {Variable Rate Image Compression with Recurrent Neural
-  Networks}. In:  \emph{International Conference on Learning Representations
-  ({ICLR})}. [s.n.], 2015. p. 1--12. Dispon{\'\i}vel em:
-  \url{http://arxiv.org/abs/1511.06085}.}
-
 \bibitem{FullResolution2017Toderici}
 \abntrefinfo{Toderici et al.}{TODERICI et al.}{2017}
 {TODERICI, G. et al. Full resolution image compression with recurrent neural
@@ -213,6 +206,12 @@ Dispon{\'\i}vel em:
   Conference on Signals, Systems \& Computers, 2003}. [S.l.], 2003. v.~2, p.
   1398--1402.}
 
+\bibitem{Priming2017Johnston}
+\abntrefinfo{Johnston et al.}{JOHNSTON et al.}{2017}
+{JOHNSTON, N. et al. \emph{{Improved Lossy Image Compression with Priming and
+  Spatially Adaptive Bit Rates for Recurrent Networks}}.
+[S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1703.10114}.}
+
 \bibitem{Autoregressive2018Minnen}
 \abntrefinfo{Minnen, Ball{\'{e}} e Toderici}{MINNEN; BALL{\'{E}};
   TODERICI}{2018}
@@ -252,11 +251,12 @@ Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1611.01704}.}
 {SANTURKAR, S.; BUDDEN, D.; SHAVIT, N. Generative compression. In:  IEEE.
   \emph{2018 Picture Coding Symposium (PCS)}. [S.l.], 2018. p. 258--262.}
 
-\bibitem{Priming2017Johnston}
-\abntrefinfo{Johnston et al.}{JOHNSTON et al.}{2017}
-{JOHNSTON, N. et al. \emph{{Improved Lossy Image Compression with Priming and
-  Spatially Adaptive Bit Rates for Recurrent Networks}}.
-[S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1703.10114}.}
+\bibitem{Variable2016Toderici}
+\abntrefinfo{Toderici et al.}{TODERICI et al.}{2015}
+{TODERICI, G. et al. {Variable Rate Image Compression with Recurrent Neural
+  Networks}. In:  \emph{International Conference on Learning Representations
+  ({ICLR})}. [s.n.], 2015. p. 1--12. Dispon{\'\i}vel em:
+  \url{http://arxiv.org/abs/1511.06085}.}
 
 \bibitem{target}
 \abntrefinfo{Covell et al.}{COVELL et al.}{2017}
@@ -306,17 +306,6 @@ Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1611.01704}.}
   codec}}.
 [S.l.], 2019.}
 
-\bibitem{li2018learning}
-\abntrefinfo{Li et al.}{LI et al.}{2018}
-{LI, M. et al. Learning convolutional networks for content-weighted image
-  compression. In:  \emph{Proceedings of the IEEE Conference on Computer Vision
-  and Pattern Recognition}. [S.l.: s.n.], 2018. p. 3214--3223.}
-
-\bibitem{ye2018progressive}
-\abntrefinfo{Ye et al.}{YE et al.}{2018}
-{YE, S. et al. Progressive weight pruning of deep neural networks using admm.
-\emph{arXiv preprint arXiv:1810.07378}, 2018.}
-
 \bibitem{radford2015unsupervised}
 \abntrefinfo{Radford, Metz e Chintala}{RADFORD; METZ; CHINTALA}{2015}
 {RADFORD, A.; METZ, L.; CHINTALA, S. Unsupervised representation learning with
@@ -339,6 +328,17 @@ Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1611.01704}.}
 \abntrefinfo{Mirza e Osindero}{MIRZA; OSINDERO}{2014}
 {MIRZA, M.; OSINDERO, S. Conditional generative adversarial nets.
 \emph{arXiv preprint arXiv:1411.1784}, 2014.}
+
+\bibitem{li2018learning}
+\abntrefinfo{Li et al.}{LI et al.}{2018}
+{LI, M. et al. Learning convolutional networks for content-weighted image
+  compression. In:  \emph{Proceedings of the IEEE Conference on Computer Vision
+  and Pattern Recognition}. [S.l.: s.n.], 2018. p. 3214--3223.}
+
+\bibitem{ye2018progressive}
+\abntrefinfo{Ye et al.}{YE et al.}{2018}
+{YE, S. et al. Progressive weight pruning of deep neural networks using admm.
+\emph{arXiv preprint arXiv:1810.07378}, 2018.}
 
 \bibitem{DeliverableJuly}
 \abntrefinfo{Hung et al.}{HUNG et al.}{2019}
@@ -374,6 +374,13 @@ Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1611.01704}.}
 \abntrefinfo{Kodak\ldots}{KODAK\ldots}{2019}
 {KODAK Image Dataset. 2019.
 Available from \url{http://www.cs.albany.edu/~xypan/research/snr/Kodak.html}.}
+
+\bibitem{implementationRNNPytorch}
+\abntrefinfo{pytorch-image-comp-rnn}{PYTORCH-IMAGE-COMP-RNN}{2018}
+{PYTORCH-IMAGE-COMP-RNN. 2018. Github repository.
+{PyTorch} source code for Full Resolution Image Compression with Recurrent
+  Neural Networks, available from
+  \url{https://github.com/1zb/pytorch-image-comp-rnn}.}
 
 \bibitem{su2017}
 \abntrefinfo{Su}{SU}{2017}
