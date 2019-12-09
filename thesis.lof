@@ -7,56 +7,58 @@
 \select@language {portuguese}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Paradigmas de programa\IeC {\c c}\IeC {\~a}o}}{3}{figure.caption.6}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Aprendizagem de m\IeC {\'a}quina}}{3}{figure.caption.6}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Principais componentes em uma \acrshort {rna}}}{4}{figure.caption.7}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Modelo do neur\IeC {\^o}nio matem\IeC {\'a}tico.}}{5}{figure.caption.8}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Superf\IeC {\'\i }cie de erro para o aprendizado dos pesos de um neur\IeC {\^o}nio simples.}}{8}{figure.caption.10}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Rede \textit {feedforward} de 2 camadas}}{11}{figure.caption.11}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Convolu\IeC {\c c}\IeC {\~a}o 2D em um mapa de recurso.}}{13}{figure.caption.12}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Convolu\IeC {\c c}\IeC {\~a}o 2D em tr\IeC {\^e}s mapas de recursos.}}{14}{figure.caption.13}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Arquitetura RNR.}}{15}{figure.caption.14}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces C\IeC {\'e}lula \acrshort {lstm} no tempo}}{17}{figure.caption.15}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Arquitetura RNR.}}{14}{figure.caption.14}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces C\IeC {\'e}lula \acrshort {lstm} no tempo}}{16}{figure.caption.15}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Compress\IeC {\~a}o e reconstru\IeC {\c c}\IeC {\~a}o sem perdas.}}{21}{figure.caption.16}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Espa\IeC {\c c}o tridimensional de cores RGB.}}{23}{figure.caption.17}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Padr\IeC {\~a}o \acrshort {jpeg}}}{26}{figure.caption.18}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Padr\IeC {\~a}o \acrshort {jpeg}}}{25}{figure.caption.18}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Autocodificador residual totalmente conectado.}}{31}{figure.caption.19}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Autocodificador residual com camadas \acrshort {lstm}}}{32}{figure.caption.20}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Arquitetura do autocodificador com camadas Con2DRNR}}{34}{figure.caption.21}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Modelo DPCM com autocodificador.}}{36}{figure.caption.22}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Arquitetura do autocodificador com camadas Conv2DRNR}}{34}{figure.caption.21}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Modelo do autocodificador de previs\IeC {\~a}o com base em contexto.}}{35}{figure.caption.22}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Autocodificador desenrolado no tempo}}{43}{figure.caption.25}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Conv2DLSTM}}{44}{figure.caption.26}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Histograma de todo o banco de dados}}{47}{figure.caption.28}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Histograma da baixa entropia DB0.}}{48}{figure.caption.29}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Histograma do DB1 de entropia m\IeC {\'e}dia.}}{48}{figure.caption.30}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Histograma do DB2 de alta entropia.}}{48}{figure.caption.31}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Histograma da entropia mista DB3.}}{49}{figure.caption.32}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Histograma da entropia alta DB4.}}{49}{figure.caption.33}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Aloca\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de bits.\relax }}{53}{figure.caption.34}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Histograma de baixa entropia - DB0.}}{48}{figure.caption.29}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Histograma de entropia m\IeC {\'e}dia - DB1.}}{48}{figure.caption.30}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Histograma de entropia alta - DB2.}}{48}{figure.caption.31}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Histograma da entropia aleat\IeC {\'o}ria - DB3.}}{49}{figure.caption.32}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Histograma de entropia alta - DB4.}}{49}{figure.caption.33}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces M\IeC {\'e}todo para aloca\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de bit}}{53}{figure.caption.34}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o das bases de dados pela \IeC {\'a}rea abaixo das curvas em m\IeC {\'e}tricas de qualidade}}{56}{figure.caption.36}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o dos resultados das bases de dados 2 e 4.}}{56}{figure.caption.36}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Performance do modelo em fun\IeC {\c c}\IeC {\~a}o do n\IeC {\'u}mero de \IeC {\'e}pocas de treinamento}}{57}{figure.caption.37}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o.\relax }}{57}{figure.caption.38}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o.\relax }}{58}{figure.caption.39}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o.\relax }}{58}{figure.caption.40}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o de codifica\IeC {\c c}\IeC {\~a}o com e sem o GZIP}}{60}{figure.caption.42}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Curva de taxa-BD por \IeC {\'e}poca de treinamento.}}{61}{figure.caption.43}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Curva \acrshort {ssim} por Taxa.}}{57}{figure.caption.38}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Curva \acrshort {msssim} por Taxa.}}{58}{figure.caption.39}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Curva \acrshort {psnr} por Taxa}}{58}{figure.caption.40}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Curvas antes e ap\IeC {\'o}s codifica\IeC {\c c}\IeC {\~a}o com o GZIP}}{61}{figure.caption.42}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Curva de \acrshort {bdrate} por \IeC {\'e}poca de treinamento.}}{61}{figure.caption.43}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Curvas de qualidade por taxa em 3 \IeC {\'e}pocas distintas}}{62}{figure.caption.44}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Ganho do GZIP por n\IeC {\'\i }vel de reconstru\IeC {\c c}\IeC {\~a}o}}{63}{figure.caption.45}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces \relax }}{64}{figure.caption.46}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Em (a) temos a Kodim10 original em (b) sua vers\IeC {\~a}o reconstru\IeC {\'\i }da em 10 itera\IeC {\c c}\IeC {\~o}es. Em (c) est\IeC {\'a} representado a kodim13 e em (d) sua sua reconstru\IeC {\'\i }da em 8 itera\IeC {\c c}\IeC {\~o}es.\relax }}{64}{figure.caption.47}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem original}}}{64}{subfigure.11.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,942 bpp. PSNR: 36,925 dB.} }}}{64}{subfigure.11.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Imagem original}}}{64}{subfigure.11.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,987 bpp. PSNR: 26,357 dB.} }}}{64}{subfigure.11.4}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Surgimento de artefatos de blocos em modelos baseados em aloca\IeC {\c c}\IeC {\~a}o de bits.}}{65}{figure.caption.49}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem original}}}{65}{subfigure.12.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,741 bpp, PSNR: 32,190dB, SSIM: 0,8675.} }}}{65}{subfigure.12.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Imagem reconstru\IeC {\'\i }da. Taxa: 0,782 bpp, PSNR: 32,687dB, SSIM: 0,8939}}}{65}{subfigure.12.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,754 bpp, PSNR: 31,621, SSIM:0,8985 } }}}{65}{subfigure.12.4}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces \relax }}{65}{figure.caption.50}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces \relax }}{66}{figure.caption.51}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces \relax }}{67}{figure.caption.52}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces \relax }}{67}{figure.caption.53}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces \relax }}{68}{figure.caption.54}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Ganho do GZIP por n\IeC {\'\i }vel de reconstru\IeC {\c c}\IeC {\~a}o}}{62}{figure.caption.45}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o em 3 imagens representativas da Kodak.}}{64}{figure.caption.47}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Imagens representativas com baixo e alto fator de compress\IeC {\~a}o. }}{65}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem original}}}{65}{subfigure.11.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,942 bpp. \acrshort {psnr}: 36,925 dB.} }}}{65}{subfigure.11.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Imagem original}}}{65}{subfigure.11.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,987 bpp. \acrshort {psnr}: 26,357 dB.} }}}{65}{subfigure.11.4}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Surgimento de artefatos de blocos no m\IeC {\'e}todo aloca\IeC {\c c}\IeC {\~a}o de bits.}}{67}{figure.caption.50}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem original.}}}{67}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,741 bpp, \acrshort {psnr}: 32,190dB, \acrshort {ssim}: 0,8675.} }}}{67}{subfigure.12.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Imagem reconstru\IeC {\'\i }da. Taxa: 0,782 bpp, \acrshort {psnr}: 32,687dB, \acrshort {ssim}: 0,8939}}}{67}{subfigure.12.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,754 bpp, \acrshort {psnr}: 31,621dB, \acrshort {ssim}:0,8985 } }}}{67}{subfigure.12.4}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o dos modelos de taxa vari\IeC {\'a}vel e taxa fixa.}}{67}{figure.caption.51}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Compara\IeC {\c c}\IeC {\~o}es de autocodificadores com o JPEG e JPEG2000 em \acrshort {psnr}.}}{68}{figure.caption.52}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Compara\IeC {\c c}\IeC {\~o}es de autocodificadores com o JPEG e JPEG2000 em \acrshort {ssim}}}{69}{figure.caption.53}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Compara\IeC {\c c}\IeC {\~o}es de autocodificadores com o JPEG e JPEG2000 em \acrshort {msssim}}}{69}{figure.caption.54}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o do modelo26 com JPEG2000 em \acrshort {bdrate}}}{70}{figure.caption.55}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o do modeloVR com JPEG2000 em \acrshort {bdrate}}}{71}{figure.caption.56}
+\addvspace {10\p@ }

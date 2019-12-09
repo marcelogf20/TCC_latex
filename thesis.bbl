@@ -9,8 +9,39 @@
 \abntrefinfo{Toderici et al.}{TODERICI et al.}{2017}
 {TODERICI, G. et al. Full resolution image compression with recurrent neural
   networks. In:  \emph{Proceedings of the {IEEE} Conference on Computer Vision
-  and Pattern Recognition ({CVPR})}. [S.l.: s.n.], 2017. p. 5306--5314.
-  Preprint available at \url{http://arxiv.org/abs/1608.05148}.}
+  and Pattern Recognition ({CVPR})}. [s.n.], 2017. p. 5306--5314.
+  Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1608.05148}.}
+
+\bibitem{Priming2017Johnston}
+\abntrefinfo{Johnston et al.}{JOHNSTON et al.}{2017}
+{JOHNSTON, N. et al. \emph{{Improved Lossy Image Compression with Priming and
+  Spatially Adaptive Bit Rates for Recurrent Networks}}.
+[S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1703.10114}.}
+
+\bibitem{Autoregressive2018Minnen}
+\abntrefinfo{Minnen, Ball{\'{e}} e Toderici}{MINNEN; BALL{\'{E}};
+  TODERICI}{2018}
+{MINNEN, D.; BALL{\'{E}}, J.; TODERICI, G. {Joint Autoregressive and
+  Hierarchical Priors for Learned Image Compression}. In:  \emph{NIPS}. [s.n.],
+  2018. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1809.02736}.}
+
+\bibitem{Variational2018Balle}
+\abntrefinfo{Ball{\'{e}} et al.}{BALL{\'{E}} et al.}{2018}
+{BALL{\'{E}}, J. et al. {Variational image compression with a scale
+  hyperprior}. In:  \emph{ICLR}. [s.n.], 2018. Dispon{\'\i}vel em:
+  \url{http://arxiv.org/abs/1802.01436 https://arxiv.org/abs/1802.01436}.}
+
+\bibitem{zhao1901cae}
+\abntrefinfo{Zhao e Liao}{ZHAO; LIAO}{1901}
+{ZHAO, H.; LIAO, P. \emph{CAE-ADMM: Implicit Bitrate Optimization via
+  ADMM-based Pruning in Compressive Autoencoders.} 1901.}
+
+\bibitem{akbari2019dsslic}
+\abntrefinfo{Akbari, Liang e Han}{AKBARI; LIANG; HAN}{2019}
+{AKBARI, M.; LIANG, J.; HAN, J. Dsslic: deep semantic segmentation-based
+  layered image compression. In:  IEEE. \emph{ICASSP 2019-2019 IEEE
+  International Conference on Acoustics, Speech and Signal Processing
+  (ICASSP)}. [S.l.], 2019. p. 2042--2046.}
 
 \bibitem{shalev2014understanding}
 \abntrefinfo{Shalev-Shwartz e Ben-David}{SHALEV-SHWARTZ; BEN-DAVID}{2014}
@@ -72,6 +103,11 @@ ISBN 9781617294433.}
 \abntrefinfo{Rumelhart et al.}{RUMELHART et al.}{1988}
 {RUMELHART, D.~E. et al. Learning representations by back-propagating errors.
 \emph{Cognitive modeling}, v.~5, n.~3, p.~1, 1988.}
+
+\bibitem{kingma2014adam}
+\abntrefinfo{Kingma e Ba}{KINGMA; BA}{2014}
+{KINGMA, D.~P.; BA, J. Adam: A method for stochastic optimization.
+\emph{arXiv preprint arXiv:1412.6980}, 2014.}
 
 \bibitem{hornik1989multilayer}
 \abntrefinfo{Hornik, Stinchcombe e White}{HORNIK; STINCHCOMBE; WHITE}{1989}
@@ -206,25 +242,10 @@ Dispon{\'\i}vel em:
   Conference on Signals, Systems \& Computers, 2003}. [S.l.], 2003. v.~2, p.
   1398--1402.}
 
-\bibitem{Priming2017Johnston}
-\abntrefinfo{Johnston et al.}{JOHNSTON et al.}{2017}
-{JOHNSTON, N. et al. \emph{{Improved Lossy Image Compression with Priming and
-  Spatially Adaptive Bit Rates for Recurrent Networks}}.
-[S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1703.10114}.}
-
-\bibitem{Autoregressive2018Minnen}
-\abntrefinfo{Minnen, Ball{\'{e}} e Toderici}{MINNEN; BALL{\'{E}};
-  TODERICI}{2018}
-{MINNEN, D.; BALL{\'{E}}, J.; TODERICI, G. {Joint Autoregressive and
-  Hierarchical Priors for Learned Image Compression}. In:  \emph{NIPS}. [s.n.],
-  2018. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1809.02736}.}
-
-\bibitem{akbari2019dsslic}
-\abntrefinfo{Akbari, Liang e Han}{AKBARI; LIANG; HAN}{2019}
-{AKBARI, M.; LIANG, J.; HAN, J. Dsslic: deep semantic segmentation-based
-  layered image compression. In:  IEEE. \emph{ICASSP 2019-2019 IEEE
-  International Conference on Acoustics, Speech and Signal Processing
-  (ICASSP)}. [S.l.], 2019. p. 2042--2046.}
+\bibitem{bjontegaard2008improvements}
+\abntrefinfo{Bjontegaard}{BJONTEGAARD}{2008}
+{BJONTEGAARD, G. Improvements of the bd-psnr model. In:  \emph{ITU-T SG16/Q6,
+  35th VCEG Meeting, Berlin, Germany, July, 2008}. [S.l.: s.n.], 2008.}
 
 \bibitem{Jiang1999}
 \abntrefinfo{Jiang}{JIANG}{1999}
@@ -270,16 +291,11 @@ Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1611.01704}.}
   Autoencoders}}.
 [S.l.], 2017. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1703.00395}.}
 
-\bibitem{Variational2018Balle}
-\abntrefinfo{Ball{\'{e}} et al.}{BALL{\'{E}} et al.}{2018}
-{BALL{\'{E}}, J. et al. {Variational image compression with a scale
-  hyperprior}. In:  \emph{ICLR}. [s.n.], 2018. Dispon{\'\i}vel em:
-  \url{http://arxiv.org/abs/1802.01436 https://arxiv.org/abs/1802.01436}.}
-
-\bibitem{zhao1901cae}
-\abntrefinfo{Zhao e Liao}{ZHAO; LIAO}{1901}
-{ZHAO, H.; LIAO, P. \emph{CAE-ADMM: Implicit Bitrate Optimization via
-  ADMM-based Pruning in Compressive Autoencoders.} 1901.}
+\bibitem{DeliverableJuly}
+\abntrefinfo{Hung et al.}{HUNG et al.}{2019}
+{HUNG, E.~M. et al. \emph{{A review of the state-of-the-art in AI-based image
+  codecs}}.
+[S.l.], 2019.}
 
 \bibitem{nie2010efficient}
 \abntrefinfo{Nie et al.}{NIE et al.}{2010}
@@ -340,17 +356,11 @@ Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1611.01704}.}
 {YE, S. et al. Progressive weight pruning of deep neural networks using admm.
 \emph{arXiv preprint arXiv:1810.07378}, 2018.}
 
-\bibitem{DeliverableJuly}
-\abntrefinfo{Hung et al.}{HUNG et al.}{2019}
-{HUNG, E.~M. et al. \emph{{A review of the state-of-the-art in AI-based image
-  codecs}}.
-[S.l.], 2019.}
-
 \bibitem{bib:clic}
 \abntrefinfo{Dataset\ldots}{DATASET\ldots}{}
 {DATASET of the {CVPR} Workshop and Challenge on Learned Image Compression
   ({CLIC}). Online.
-\url{http://www.compression.cc}.}
+Dispon{\'\i}vel em: \url{http://www.compression.cc}.}
 
 \bibitem{bib:div2k}
 \abntrefinfo{Agustsson e Timofte}{AGUSTSSON; TIMOFTE}{2017}
@@ -359,15 +369,14 @@ Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1611.01704}.}
   Computer Vision and Pattern Recognition ({CVPR}) Workshops}. [S.l.: s.n.],
   2017. {DIV2K} dataset: {DIV}erse 2{K} resolution high quality images as used
   for the challenges at {NTIRE} ({CVPR} 2017 and {CVPR} 2018) and at {PIRM}
-  ({ECCV} 2018), available from
+  ({ECCV} 2018), Disponível em
   \url{https://data.vision.ee.ethz.ch/cvl/DIV2K/}.}
 
 \bibitem{bib:ultraeye}
 \abntrefinfo{Nemoto et al.}{NEMOTO et al.}{2014}
 {NEMOTO, H. et al. {Ultra-Eye}: {UHD} and {HD} images eye tracking dataset. In:
    \emph{Sixth International Workshop on Quality of Multimedia Experience
-  ({QoMEX})}. Singapore: [s.n.], 2014. Available from
-  \url{http://mmspg.epfl.ch/ultra-eye}. Dispon{\'\i}vel em:
+  ({QoMEX})}. Singapore: [s.n.], 2014. Dispon{\'\i}vel em:
   \url{http://infoscience.epfl.ch/record/200190}.}
 
 \bibitem{kodak}

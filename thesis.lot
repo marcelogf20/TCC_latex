@@ -7,12 +7,14 @@
 \select@language {portuguese}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Fun\IeC {\c c}\IeC {\~o}es de ativa\IeC {\c c}\IeC {\~o}es usadas em redes neurais artificiais e suas respectivas derivadas. Todas s\IeC {\~a}o fun\IeC {\c c}\IeC {\~o}es de uma vari\IeC {\'a}vel, exceto a fun\IeC {\c c}\IeC {\~a}o \textit {softmax} que atua em um conjunto de entrada e retorna um grupo de sa\IeC {\'\i }da.\relax }}{7}{table.caption.9}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Fun\IeC {\c c}\IeC {\~o}es de ativa\IeC {\c c}\IeC {\~o}es usadas em \acrshort {rna}}}{7}{table.caption.9}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Tabela com resumo de \acrshort {codec}'s baseados em autocodificadores em cadeia.}}{38}{table.caption.24}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tabela com resumo de \acrshort {codec}s baseados em autocodificadores em cadeia.}}{38}{table.caption.24}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Par\IeC {\^a}metros das opera\IeC {\c c}\IeC {\~o}es no autocodificador.\relax }}{45}{table.caption.27}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o das base de dados.\relax }}{55}{table.caption.35}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o das base de dados}}{55}{table.caption.35}
 \contentsline {table}{\numberline {5.2}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o das fun\IeC {\c c}\IeC {\~o}es de custo.\relax }}{59}{table.caption.41}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Resultados do M\IeC {\'e}todo de Aloca\IeC {\c c}\IeC {\~a}o Din\IeC {\^a}mica de Bits\relax }}{66}{table.caption.48}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Estat\IeC {\'\i }stica do Fluxo De Bits na Compress\IeC {\~a}o das Imagens de Teste\relax }}{63}{table.caption.46}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Resultados do M\IeC {\'e}todo de Aloca\IeC {\c c}\IeC {\~a}o Din\IeC {\^a}mica de Bits\relax }}{66}{table.caption.49}
+\addvspace {10\p@ }

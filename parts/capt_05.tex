@@ -1,0 +1,22 @@
+\chapter{Conclusões e Trabalhos Futuros}
+
+Neste trabalho usamos um autocodificador baseado em redes convolucionais e recorrentes para comprimir imagens. Os nossos resultado indicam que:
+\begin{enumerate}
+	\item A entropia da base de dados e o número de épocas de treinamento influenciam no desempenho do modelo. Em particular, o modelo treinado por uma base de dados de alta entropia em várias épocas proporcionam melhor performance em curvas taxa-distorção, por exemplo.  
+	\item O erro quadrático médio foi a medida de distorção que melhor se adaptou para a otimização da distorção perceptual. Foi possível superar o \acrshort{jpeg}2000 em \acrshort{ssim} (a partir da taxa de 0,4bpp) usando a \acrshort{mse} como medida de distorção entre duas imagens. 
+	\item O treinamento através de resíduos calculados de forma recursiva apresentou melhor desempenho em relação ao treinamento com resíduos sempre obtidos da imagem original (referência fixa).
+	\item A adição de uma função de esparsidade é capaz de gerar códigos binários de baixa entropia de primeira ordem. Em geral, isso permitiu ao GZIP realizar compressão com ganhos elevados. Na taxa nominal de 2 bpp esse ganho foi cerca de 22\% pela média das imagens de testes.
+	\item Ainda assim, a redução da entropia de primeira ordem não reflete, necessariamente, em um ganho de compressão com o GZIP.		
+	\item A alocação dinâmica de bits, a pesar de gerar melhores resultados em \acrshort{psnr} degrada a qualidade perceptiva. A definição do número mínimo de iterações reduz os artefatos de bloco.   
+	\item O modelo apresenta limitações para operar em altas taxas para algumas imagens.
+	\item A escolha por uma função de custo para otimização taxa-distorção de forma eficaz é uma tarefa difícil.
+	\item Em baixas taxas, o desempenho do nosso \acrshort{codec} é consideravelmente inferior quando comparado ao \acrshort{jpeg}2000.        
+	
+\end{enumerate} 
+
+Em trabalhos posteriores, podemos realizar um estudo da entropia dos dados binários. Ao levantar correlações estatísticas é possível projetar um codificador de entropia otimizado para esses dados. 
+Por outro lado, talvez seja possível propor uma nova função de custo para promover padrões formados por conjuntos ou sequências de bits. Sobre esses dados, os codificadores comerciais de entropia são bastante eficientes.
+Para melhorar o desempenho em baixas taxas podemos adicionar uma método, baseado ou não em \acrshort{rna}, para realizar a primeira previsão de um bloco a partir do seus vizinhos. Isso foi explorado \cite{SpatiallyAdaptive2018Minnen}. Acreditamos ser possível adicionar uma \acrshort{gan} para gerar a primeira previsão dos blocos.
+Para melhorar a alocação dinâmica de bits é essencial a formulação de novas heurísticas para contornar os problemas de artefatos de compressão.  
+
+

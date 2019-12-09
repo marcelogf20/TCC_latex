@@ -20,23 +20,24 @@
 \contentsline {section}{\numberline {2.2}Compress\IeC {\~a}o de dados}{20}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Medidas de informa\IeC {\c c}\IeC {\~a}o}{21}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}Imagens}{22}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Espa\IeC {\c c}o de Cores}{23}{subsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.1.1}RGB}{23}{subsubsection.2.3.1.1}
+\contentsline {subsection}{\numberline {2.3.1}Espa\IeC {\c c}o de Cores}{22}{subsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.1.1}RGB}{22}{subsubsection.2.3.1.1}
 \contentsline {subsubsection}{\numberline {2.3.1.2}YCbCr}{23}{subsubsection.2.3.1.2}
-\contentsline {subsection}{\numberline {2.3.2}Compress\IeC {\~a}o}{24}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}Compress\IeC {\~a}o}{23}{subsection.2.3.2}
 \contentsline {subsubsection}{\numberline {2.3.2.1}JPEG}{24}{subsubsection.2.3.2.1}
-\contentsline {subsection}{\numberline {2.3.3}M\IeC {\'e}tricas de Qualidade}{26}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}M\IeC {\'e}tricas de Qualidade}{25}{subsection.2.3.3}
 \contentsline {subsubsection}{\numberline {2.3.3.1}PSNR}{26}{subsubsection.2.3.3.1}
 \contentsline {subsubsection}{\numberline {2.3.3.2}SSIM}{26}{subsubsection.2.3.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3.3}MS-SSIM}{27}{subsubsection.2.3.3.3}
+\contentsline {subsubsection}{\numberline {2.3.3.4}Bj{\o }ntegaard Delta Bitrate}{27}{subsubsection.2.3.3.4}
 \contentsline {chapter}{\numberline {3}Revis\IeC {\~a}o Bibliogr\IeC {\'a}fica}{28}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introdu\IeC {\c c}\IeC {\~a}o}{28}{section.3.1}
-\contentsline {section}{\numberline {3.2}Autocodifcadores em cadeia}{29}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Binariza\IeC {\c c}\IeC {\~a}o}{30}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Redes n\IeC {\~a}o-recorrentes}{31}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Redes Recorrentes}{31}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Autocodificadores variacionais}{39}{section.3.3}
-\contentsline {section}{\numberline {3.4}Autocodificadores baseados em GAN}{39}{section.3.4}
+\contentsline {section}{\numberline {3.1}Autocodificadores em cadeia}{28}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Binariza\IeC {\c c}\IeC {\~a}o}{29}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Redes n\IeC {\~a}o-recorrentes}{30}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Redes Recorrentes}{31}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Autocodificadores variacionais}{39}{section.3.2}
+\contentsline {section}{\numberline {3.3}Autocodificadores baseados em GAN}{39}{section.3.3}
+\contentsline {section}{\numberline {3.4}Autocodificador Esparso}{41}{section.3.4}
 \contentsline {chapter}{\numberline {4}Metodologia}{42}{chapter.4}
 \contentsline {section}{\numberline {4.1}Arquitetura}{42}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Binariza\IeC {\c c}\IeC {\~a}o}{44}{subsection.4.1.1}
@@ -44,9 +45,15 @@
 \contentsline {section}{\numberline {4.2}Base de Dados}{46}{section.4.2}
 \contentsline {section}{\numberline {4.3}Fun\IeC {\c c}\IeC {\~a}o de Custo}{50}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Otimiza\IeC {\c c}\IeC {\~a}o por distor\IeC {\c c}\IeC {\~a}o}{50}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Otimiza\IeC {\c c}\IeC {\~a}o por distor\IeC {\c c}\IeC {\~a}o e taxa}{51}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Aloca\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de bits}{52}{section.4.4}
+\contentsline {subsection}{\numberline {4.3.2}Otimiza\IeC {\c c}\IeC {\~a}o por distor\IeC {\c c}\IeC {\~a}o e taxa}{50}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Aloca\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de bits}{51}{section.4.4}
 \contentsline {section}{\numberline {4.5}Implementa\IeC {\c c}\IeC {\~a}o}{54}{section.4.5}
 \contentsline {chapter}{\numberline {5}Resultados}{55}{chapter.5}
-\contentsline {section}{\numberline {5.1}An\IeC {\'a}lise Base de Dados}{55}{section.5.1}
-\contentsline {chapter}{REFER\IeC {\^E}NCIAS}{69}{figure.caption.54}
+\contentsline {section}{\numberline {5.1}An\IeC {\'a}lise da Base de Dados}{55}{section.5.1}
+\contentsline {section}{\numberline {5.2}Treinamentos em Muitas \IeC {\'E}pocas}{56}{section.5.2}
+\contentsline {section}{\numberline {5.3}Fun\IeC {\c c}\IeC {\~a}o de Custo}{59}{section.5.3}
+\contentsline {section}{\numberline {5.4}An\IeC {\'a}lise da Codifica\IeC {\c c}\IeC {\~a}o de Entropia no Desempenho do Autocodificador Recorrente e Esparso}{60}{section.5.4}
+\contentsline {section}{\numberline {5.5}Aloca\IeC {\c c}\IeC {\~a}o Din\IeC {\^a}mica de Bits}{66}{section.5.5}
+\contentsline {section}{\numberline {5.6}Compara\IeC {\c c}\IeC {\~a}o com JPEG e JPEG2000}{68}{section.5.6}
+\contentsline {chapter}{\numberline {6}Conclus\IeC {\~o}es e Trabalhos Futuros}{72}{chapter.6}
+\contentsline {chapter}{REFER\IeC {\^E}NCIAS}{73}{Item.58}

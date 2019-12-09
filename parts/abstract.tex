@@ -1,15 +1,22 @@
 %PORTUGUESE
 \resumo{Resumo}{
-	A compressão de imagens é um tópico exaustivamente estudado dentro da ciência, em busca de representar a informação de forma compacta. Esse esforço é justificado pelo grande tráfego dessa mída pela Internet, porém limitado pelos requisitos de largura de banda. Recentemente, pesquisas de algoritmos baseados em Redes Neurais Artificiais para compressão de imagens têm alcançado resultados com enorme potencial. Em particular, a abordagem de ponta a ponta na qual codificador e decodificador são treinados em conjunto  está presente nos trabalhos que superam os métodos tradicionais de compressão de imagens. 
+	A compressão de imagens é um tópico exaustivamente estudado dentro da ciência, em busca de representar a informação de forma mais compacta possível. Esse esforço é justificado pelo grande tráfego dessa mídia pela Internet. Logo, qualquer redução nos dados economiza significativamente na largura de banda e no consumo de energia elétrica. Recentemente, pesquisas de algoritmos baseados em redes neurais artificiais para compressão de imagens têm alcançado resultados com enorme potencial. Em particular, a rede neural neural denominada autocodificador caracterizada por treinamento de ponta-a-ponta, isto é, codificador e decodificador treinados em conjunto, está presente na maioria dessas pesquisas.
 	
-	Essa abordagem é possível através de uma arquitetura de rede neural denominada autocodificador. Sob certas condições, ela é especialmente útil para aprender representações compactadas e bem estruturas dos dados. Na literatura, são relatados autocodificadores com características específicas para o problema de compressão. Dentre eles, muitos são baseados somente em camadas convolucionais, contudo esse método exige, geralmente, o treinamento de diversos modelos para diferentes taxas de compactação para que possam gerar uma curva taxa-distorção com boa pefomance.
-	Nos autocodificadores com camadas recorrentes é possível gerar um modelo com flexibilidade para gerar taxas variadas com qualidade, ao aproveitarmos da sua capacididade para manter informações passadas. Os autocodificadores esparsos possuem alguma regularização envolvendo o espaço de código latente para encontrar represenações robustas dos dados.
+	Essa rede pode ser baseada somente em camadas convolucionais e exigem, geralmente, o treinamento de diversos modelos para comprimir a informação em diferentes taxas. 
+	Autocodificadores com redes recorrentes são úteis para obter um único modelo capaz de fornecer taxas progressivas, ao aproveitarmos a capacidade dessas redes em manter informações passadas. Há ainda autocodificadores esparsos onde 
+	apenas uma pequena parcela das saídas envolvidos na representação da informação é ativada, e a abordagem variacional que assume modelos de probabilidades para aprender representações latentes.
 	
-	Introduzimos modificações em trabalhos anteriores baseados em redes neurais convolucionais recorrentes para compressão de imagem com perdas. Primeiro, avaliamos o papel de uma base de dados com diferentes característiacas de entropia na perfomance do modelo. Em seguida, foi feito uma análise empírica para obter uma função de custo adequada no nosso problema. 
+	Neste trabalho, realizamos modificações em trabalhos anteriores baseados em redes neurais convolucionais e recorrentes para compressão de imagem com perdas. 
+	Primeiro, avaliamos bases de dados com diferentes características de entropia no desempenho do modelo. Em seguida, foram realizados testes com diferentes funções de custo até obtermos uma medida para otimizar a distorção e, de forma indireta, a taxa.
+	O melhor desempenho ocorreu quando a distorção foi modelada pelo erro quadrático médio e a taxa pela quantidade de bits 1 presentes no código binário. Essa última função foi responsável por promover esparsidade no fluxo de bits, e permitir a codificação de entropia, fornecida pelo GZIP, redução considerável na taxa. 
+	Por fim, propomos um esquema simples de alocação de bits para aproveitar as diferenças de complexidades nas regiões de uma imagem. 
+	Os nossos resultados indicam melhor desempenho em relação ao JPEG nas medidas de PSNR, SSIM e MS-SSIM. Ao comparar esses resultados com o JPEG2000 obtemos desempenho competitivo em altas taxas. 
 	
-	A introdução de um fator de regularização, interpretado aqui, como uma estimativa da entropia de ordem zero, nessa função propocionou ganhos consideráveis. Essa função teve o papel de promover, de certa forma, esparsidade no fluxo de bits gerados pelo codificador e mudar a frequência de ocorrência dos bits (-1 e 1 para o nosso modelo).  Essa estatística foi aproveitada pelo GZIP para reduzir as taxas. Por fim, propomos um esquema simples de alocação de bits para aproveita a diferença de complexidade nas regioões de uma imagem. 
+	%Contudo, o método de alocação dinâmica de bits gera artefatos de blocos que degradam a qualidade perceptiva das imagens.foi usada pelo algoritmo do GZIP para reduzir as taxas de bitsEssa última função    
+	%A taxa foi otimizada através da redução da frequência do bit 1 dentro do código binário.    Na prática, essa função promoveu esparsidade no fluxo de bits provenientes do codificador. A esparsidade da representação da informação foi usada pelo algoritmo do GZIP para reduzir as taxas de bits. Por fim, propomos um esquema simples de alocação de bits para aproveitar a diferença de complexidade nas regiões de uma imagem. Os nossos resultados indicam melhor performance em relação ao JPEG nas medidas de PSNR, SSIM e MS-SSIM. Ao comparar esses resultados com o JPEG2000 obtemos desempenho competitivo. Contudo, o método de alocação dinâmica de bits gera artefatos de blocos que degradam a qualidade perceptiva das imagens.
 	
-	Os nossos resultados indicam melhor perfomance em relação ao JPEG nas medidas de PSNR, SSIM e MS-SSIM. Ao comparar esses resultados com o JPEG2000 obtemos desempenho competitivo. Contudo, o método de alocação dinâmica de bits teve o inconveniente de gerar artefatos de blocos visíveis e que degradam a qualidade perceptiva da imagem. 
+
+ 
 \begin{singlespace}
 {\setfonttimes\normalsize\noindent{\textbf{Palavras-chave:} \palavraschavecatalogoinome,~\palavraschavecatalogoiinome,~\palavraschavecatalogoiiinome,~\palavraschavecatalogoivnome.}}
 \end{singlespace}
@@ -17,6 +24,20 @@
 %ENGLISH
 \vspace{2cm}
 \resumo{Abstract}{
+	Image compression is a topic exhaustively studied within science, in order to represent information in a more compact way possible. This effort is justified by the great traffic of this media over the Internet. Therefore, any reduction in data saves significantly in bandwidth and electricity consumption. Recently, research of algorithms based on artificial neural networks for image compression has achieved results with enormous potential. In particular, the end-to-end approach in which encoder and decoder are trained together is present in works that outperform traditional image compression methods.
+	
+	This approach is possible with a neural network called autoencoder. It is especially useful for learning compressed representations and well data structures. In the literature, projects of several autoenencoder architectures focused on the challenge of image compression are reported.
+	Some are based only on convolutional layers and generally require the training of various models to compress at different compression ratios. 
+	The	autoencoders with recurrent networks are useful for obtaining a single model capable of providing progressive rates.
+	Sparse autoencoders have some regularization to find robust representations of the data. The variational autocoder assumes probability models for learning latent representations.
+
+	In this work, we made modifications in previous works based on recurrent convolutional neural networks for lossy image compression.
+	First, we evaluated different training databases with specific entropy characteristics in model performance.
+	Then, tests with different cost functions were performed until we obtained a measure to optimize distortion and, indirectly, the rate. 
+	In practice, this function promoted sparsity in the bit stream generated by the encoder. Thus, the frequency of occurrence of a given bit decreases and the frequency of the other increases. This statistic was used by the GZIP algorithm to considerably reduce bit rates. 
+	Finally, we propose a simple bit allocation scheme to take advantage of the complexity difference in the regions of an image. 
+	
+	Our results indicate better JPEG performance on PSNR, SSIM and MS-SSIM measurements. By comparing these results with the JPEG2000 we get competitive performance. However, the dynamic bit allocation method generates block artifacts that degrade the perceptual image quality.
 
 
 \begin{singlespace}

@@ -10,19 +10,18 @@ Nessa seção, descrevemos a ideia básica de treinamento de qualquer \acrshort{
 
 O aprendizado de máquina, do inglês \textit{machine learning}, é um campo de conhecimento interdisciplinar que refere-se à detecção automatizada de padrões significativos nos dados através da construção de programas de computador que melhoram com a experiência (aprendizagem) \cite{shalev2014understanding}. 
 Na etapa de aprendizado, o modelo de aprendizagem de máquina  utiliza os dados de entrada para realizar predições dos resultados. Uma medida de erro é calculado entre a previsão e o resultado esperado. Essa medição é usada como um sinal de retroalimentação (\textit{feedback}) para ajustar as regras  do algoritmo de modo a minimizar o erro. Após o aprendizado do modelo ele deve ser capaz de fazer inferências com novos exemplos dos dados de entrada \cite{FrancoisDeepLearning}.
-
 Na programação clássica, os seres humanos inserem regras (um programa) e dados a serem processados de acordo com essas regras para obter as respostas  -  não há processo de aprendizado. A figura em \ref{fig:machinelearning} resume a diferença essencial entre a programação convencional e o aprendizado de máquina \cite{FrancoisDeepLearning}.  
 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.4\textwidth]{figuras/MachineLearning.pdf}
-	\caption[Paradigmas de programação]{Aprendizado de Máquina: um novo paradigma de programação. Adaptado de \cite{FrancoisDeepLearning}.}
+	\caption[Aprendizagem de máquina]{Aprendizado de máquina e programação clássica. Adaptado de \cite{FrancoisDeepLearning}.}
 	\label{fig:machinelearning}
 \end{figure}
 
 
-As \acrshort{rna}'s são técnicas específicas de aprendizado de máquina inspiradas no funcionamento do cérebro humano. A semelhança com esse órgão humano advém de dois aspectos principais \cite{Haykin}:
+As \acrshort{rna}s são técnicas específicas de aprendizado de máquina inspiradas no funcionamento do cérebro humano. A semelhança com esse órgão humano advém de dois aspectos principais \cite{Haykin}:
 \begin{enumerate}
 	\item O conhecimento é adquirido pela rede a partir do seu ambiente através de um processo de aprendizagem;
 	\item Forças de conexão de neurônios, conhecidos como pesos sinápticos, são utilizados para armazenar o conhecimento adquirido.
@@ -35,15 +34,15 @@ O aprendizado ou treinamento de uma \acrshort{rna} usando amostras dos dados e o
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/modeloRNA.pdf}
-	\caption[Principais componentes em uma \acrshort{rna}]{A rede neural composta por 2 camadas encadeadas mapeia os dados de entrada para as previsões. A função de perdas compara essas previsões às metas, produzindo um valor de erro. O otimizador usa esse valor para atualizar os pesos da rede. Adaptado de \cite{FrancoisDeepLearning}.}
+	\caption[Principais componentes em uma \acrshort{rna}]{Rede neural composta por 2 camadas encadeadas mapeia os dados de entrada para as previsões. A função de perdas compara essas previsões às metas, produzindo um valor de erro. O otimizador usa esse valor para atualizar os pesos da rede. Adaptado de \cite{FrancoisDeepLearning}.}
 	\label{fig:modeloRNA}
 \end{figure}
 
 
-O neurônio artificial, também chamado perceptron, é a unidade básica de processamento de uma rede neural e a interligação em massa dessas unidades computacionais a permite alcançar desempenho cada vez melhor \cite{Haykin}.  As principais propriedades úteis das \acrshort{rna}'s em diversas tarefas de tomada de decisão são \cite{Haykin}:
+O neurônio artificial, também chamado perceptron, é a unidade básica de processamento de uma rede neural e a interligação em massa dessas unidades computacionais a permite alcançar desempenho cada vez melhor \cite{Haykin}.  As principais propriedades úteis das \acrshort{rna}s em diversas tarefas de tomada de decisão são \cite{Haykin}:
 \begin{enumerate}
 	\item A possibilidade de não linearidade dos neurônio, o que permite a rede resolver problemas não-lineares e complexos;
-	\item  Adaptabilidade: os pesos das \acrshort{rna}'s são facilmente adaptados sendo possível retreinar uma rede em um novo ambiente com pequenas modificações em relação ao original. Ademais, é possível encontrar um equilíbrio para que os pesos sejam modificados se a fonte de dados é não-estacionária e capaz de ignorar perturbações espúrias;
+	\item  Adaptabilidade: os pesos das \acrshort{rna}s são facilmente adaptados sendo possível re-treinar uma rede em um novo ambiente com pequenas modificações em relação ao original. Ademais, é possível encontrar um equilíbrio para que os pesos sejam modificados se a fonte de dados é não-estacionária e capaz de ignorar perturbações espúrias;
 	\item Resposta a evidência: nas tarefas de classificação a rede pode ser projetada para indicar o grau de certeza nas suas previsões. Isso permite ao modelo descartar informações ambíguas e aprimorar a performance de classificação;
 	\item Informação contextual: cada neurônio é potencialmente afetado pelo comportamento dos demais de forma a proporcionar um conhecimento de contexto ao modelo.
 \end{enumerate}
@@ -56,7 +55,7 @@ O neurônio é a unidade mais básica da \acrshort{rna}. O seu modelo está ilus
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/neuronio.pdf}
-	\caption[Modelo do neurônio matemático.]{Representação do neurônio artificial formado por um vetor de peso $W$ de tamanho $m$. A entrada $X_0$ é artificial e o peso associada a ela é denominado viés. O neurônio funciona como um operador matemático simples que realiza um mapeamento de muitos para 1. Adaptado de \cite{Haykin}.}
+	\caption[Modelo do neurônio matemático.]{Representação do neurônio artificial formado por um vetor de peso $W$ de tamanho $m$. A entrada $X_0$ é artificial e o peso associada a ela é denominado viés. O neurônio funciona como um operador matemático simples que realiza um mapeamento de muitos para um. Adaptado de \cite{Haykin}.}
 	\label{fig:neuronio}
 \end{figure}
 
@@ -77,29 +76,30 @@ y_{k} = \phi(v_{k})
 \end{aligned}
 \end{equation}
 
-Em que $x_{0}$ é uma entrada fictícia que será multiplicada pelo viés ou do inglês \textit{bias}, $w_{k0} = b_{k}$; $x_{1},x_{2}, ...,x_{m}$ são os valores reais de entrada, $w_{k1},x_{k2}, ...,x_{km}$ são os pesos sinápticos do neurônio k; $v_{k}$ é a saída do produto escalar entre os vetores $\textbf{w}$ e $ \textbf{x}$;  $\phi()$ é denominada função de ativação e $y_{k}$ é o sinal de saída do neurônio. O viés é um termo independente dos sinais de entrada e tem o objetivo de fornecer mais um grau de liberdade ao neurônio.
+\noindent em que $x_{0}$ é uma entrada fictícia que será multiplicada pelo viés (do inglês \textit{bias}), $w_{k0} = b_{k}$; $x_{1},x_{2}, ...,x_{m}$ são os valores reais de entrada, $w_{k1},x_{k2}, ...,x_{km}$ são os pesos sinápticos do neurônio k; $v_{k}$ é a saída do produto escalar entre os vetores $\textbf{w}$ e $ \textbf{x}$;  $\phi()$ é denominada função de ativação e $y_{k}$ é o sinal de saída do neurônio. O viés é um termo independente dos sinais de entrada e tem o objetivo de fornecer mais um grau de liberdade ao neurônio.
 
 %Elas são usadas em neurônios das camadas intermediárias ou na última para problemas de classificação binária ou regressão. 
 
 \subsubsection{Funções de ativação}
 A função de ativação é uma transformação matemática adicional que ocorre no perceptron. O seu uso permite a solução de problemas complexos e não-lineares, tais como tarefas de visão computacional e processamento de linguagem natural \cite{Mitchell}. 
-O neurônio com a função limiar foi utilizado no primeiro modelo de perceptron \cite{mcculloch1943logical,Haykin} e contém a propriedade ``tudo ou nada''.  As funções com formato de S e não-lineares são chamadas de sigmóides e amplamente usadas em \acrshort{rna}'s. Entre elas há a função logística que restringe a saída no intervalo [0,1] e a tangente hiperbólica cuja saída pertence ao intervalo [-1,1]. 
-A função \textit{softmax} também é uma função sigmóide usada para prever as probabilidades associadas a uma classificação multi-classe \cite{Goodfellow2016}.  Ela toma um vetor $K$-dimensional correspondentes aos $K$ neurônios de uma camada e produz outro vetor $K$-dimensional com valores reais no intervalo (0, 1) que somam 1.  A função \textit{softmax} é idealmente usada na camada de saída do classificador \cite{Goodfellow2016}.
+O neurônio com a função limiar foi utilizado no primeiro modelo de perceptron \cite{mcculloch1943logical,Haykin} e contém a propriedade ``tudo ou nada''.  As funções com formato de S e não-lineares são chamadas de sigmóides e amplamente usadas em \acrshort{rna}s. Entre elas há a função logística que restringe a saída no intervalo [0,1] e a tangente hiperbólica cuja saída pertence ao intervalo [-1,1]. 
+A função \textit{softmax} também é uma função sigmóide usada para prever as probabilidades associadas a uma classificação multi-classe \cite{Goodfellow2016}.  Ela toma um vetor $K$-dimensional correspondentes aos $K$ neurônios de uma camada e produz outro vetor $K$-dimensional com valores reais no intervalo (0, 1) que somam um.  A função \textit{softmax} é idealmente usada na camada de saída do classificador \cite{Goodfellow2016}.
 A \gls{relu} \cite{nair2010rectified}, é uma função não-linear que mapeia uma entrada para zero se ela for negativa ou retorna a própria entrada se ela for positiva. Diferentemente das funções sigmóides, ela é uma função não saturada e em decorrência disso possui duas vantagens principais: minimiza o problema denominado “gradiente de explosão e fuga” e acelerar a velocidade de convergência da rede \cite{xu2015empirical}.
 As equações das funções de ativações mencionadas aqui e a suas derivadas estão apresentadas na Tabela \ref{table:func_ativacoes}. 
 
 \begin{table}[htbp]
 	\centering
 	
-	\caption{Funções de ativações usadas em redes neurais artificiais e suas respectivas derivadas. Todas são funções de uma variável, exceto a função \textit{softmax} que atua em um conjunto de entrada e retorna um grupo de saída.}
+	\caption[Funções de ativações usadas em \acrshort{rna}]{Funções de ativações usadas em redes neurais artificiais e suas respectivas derivadas. Todas são funções de uma variável, exceto a função \textit{softmax} que atua em um conjunto de entrada e retorna um grupo de saída.}
 	{\renewcommand{\arraystretch}{2.5}
 		\begin{tabular}{|l|l|l|}
+
 			\hline
 			\textbf{Função de ativação} & \textbf{Equação} & \textbf{Derivada} \\ \hline
-			Limiar & \(\displaystyle \beta(v) =  \begin{cases} 1 ,  &\text{se $v \geq  0$}; \\ \text{0},  & \text{se $v <0$} \end{cases}\) & \(\displaystyle \beta'(v) =  \begin{cases} 0 ,   & \text{se $v \neq 0$} \\ \text{Não definida},  &   \text{se $v = 0$} \end{cases}\) \\ \hline
-			Logística & \(\displaystyle   \alpha (v) =  \frac{\mathrm{1} } {\mathrm{1} + e^{-v}}\) & \(\displaystyle\alpha'(v) =  \alpha(v) \times (1 - \alpha(v)\) \\ \hline
+			Limiar & \(\displaystyle \beta(v) =  \begin{cases} 1 ,  &\text{se $v \geq  0$} \\ \text{0},  & \text{se $v <0$} \end{cases}\) & \(\displaystyle \beta'(v) =  \begin{cases} 0 ,   & \text{se $v \neq 0$} \\ \text{Não definida},  &   \text{se $v = 0$} \end{cases}\) \\ \hline
+			Logística & \(\displaystyle   \alpha (v) =  \frac{\mathrm{1} } {\mathrm{1} + e^{-v}}\) & \(\displaystyle\alpha'(v) =  \alpha(v) \times (1 - \alpha(v))\) \\ \hline
 			Tangente Hiperbólica & \(\displaystyle tanh(v) =  \frac{e^{v} - e^{-v} }{ e^{v} + e^{-v}}\) & \(\displaystyle tanh'(v) = 1 -tanh^{2}(v) \) \\ \hline
-			\text{\acrshort{relu}} & \(\displaystyle relu(v) =  \begin{cases} v , &\text{ se $v \geq 0$;} \\ \text{0},  &\text{se $ v <0$}  \end{cases}\) & \(\displaystyle relu'(v) =  \begin{cases} 1 , &\text{ se $v > 0$} \\ \text{0},  &\text{se $ v <0$}  \end{cases}\) \\ \hline
+			\text{\acrshort{relu}} & \(\displaystyle relu(v) =  \begin{cases} v , &\text{ se $v \geq 0$} \\ \text{0},  &\text{se $ v <0$}  \end{cases}\) & \(\displaystyle relu'(v) =  \begin{cases} 1 , &\text{ se $v > 0$} \\ \text{0},  &\text{se $ v <0$}  \end{cases}\) \\ \hline
 			\textit{Softmax} & \(\displaystyle  S(\textbf{v})_j = \frac{e^{v_j}}{\sum^{K}_{k=1}e^{v_k} }\)   & \(\displaystyle \frac{\partial S_j}{\partial v_i} =  \begin{cases} S_j(1-S_i), &\text{ se $i = j$} \\ -S_jS_i,  &\text{se $i \neq  j$}  \end{cases}\) \\ \hline
 	\end{tabular}} \quad
 	\label{table:func_ativacoes}
@@ -119,7 +119,7 @@ E(\textbf{w}) = \displaystyle \frac{1}{2}\sum_{d=0}^{D}( t_{d} - y_{d})^{2}
 \end{aligned}
 \end{equation}
 
-Onde, D é o conjunto de exemplos de treinamento, $t_{d}$ é a saída de destino para o exemplo de treinamento d e $y_{d}$ é a predição do perceptron. Por essa definição, caracterizamos $E$ como uma função de $\textbf{w}$ \cite{Mitchell}.
+\noindent onde $D$ é o conjunto de exemplos de treinamento, $t_{d}$ é a saída de destino para o exemplo de treinamento $d$ e $y_{d}$ é a predição do perceptron. Por essa definição, caracterizamos $E$ como uma função de $\textbf{w}$ \cite{Mitchell}.
 A Figura \ref{fig:gradiente} ilustra a superfície do erro hipotético em função do espaço de hipóteses para o vetor de pesos de tamanho igual a 2. O espaço de hipótese é formado pelo plano $w_0w_1$ enquanto o erro para cada vetor de pesos está no eixo vertical. Para qualquer ponto nessa superfície o algoritmo de descida de gradiente indica a direção de redução mais acentuada do erro. Com essa informação o vetor de pesos é atualizado sucessivamente até encontrar um mínimo na superfície de possibilidades do erro. Idealmente, desejamos que esse o mínimo seja o global, entretanto para muitas situações não há como garantir isso \cite{Mitchell}. 
 
 \begin{figure}[h]
@@ -190,7 +190,7 @@ A regra de treinamento modificada é semelhante à Equação \ref{eq:descida_gra
 \Delta{w}^{t}_{i} &=  \eta \times \sum_{d=0}^{m} (t_{d} - y_{d})\phi'(v)x_{i}
 \end{aligned}
 \end{equation}
-O otimizador \gls{adam} \ref{kingma2014adam} implementa um método de otimização por descida estocástica do gradiente e é amplamente usado em redes neurais artificiais.  
+O otimizador \gls{adam} \cite{kingma2014adam} implementa um método de otimização por descida estocástica do gradiente e é amplamente usado em redes neurais artificiais.  
 
 \subsection{Redes \textit{Feedforward}}
 
@@ -198,7 +198,6 @@ As redes neurais \textit{feedforward} são uma classe de \acrshort{rna} formada 
 A última camada é denominada camada de saída e as demais são camadas ocultas. A profundidade da \acrshort{rna} é dada pelo número de camadas.  
 
 De forma análoga ao neurônio simples, em uma rede \textit{feedforward} há a fase de propagação (\textit{do inglês forward pass}), onde as entradas são passadas através da rede e as previsões obtidas. No passo para trás, do inglês \textit{backward pass}, primeiro calculamos o gradiente da função de perdas em relação aos pesos da última camada da rede.
-
 Nas camadas ocultas, o algoritmo de retropropagação não sabe qual saída cada neurônio deve fornecer. Portanto, aqui, devemos calcular a derivada do erro da última camada em relação as pesos das camadas ocultas. Isso é obtido aplicando-se a regra da cadeia. É possível provar que o gradiente calculado na última camada é ``passado'' até chegar a primeira camada oculta.    
 Em redes com camadas ocultas a regra da cadeia possibilita computar o quanto um peso qualquer contribuiu para o sinal de erro calculado pela função de custo.  
 
@@ -218,7 +217,7 @@ O teorema da aproximação universal \cite{hornik1989multilayer} estabelece que 
 
 Seja $m_{0}$ o número de entradas de uma \acrshort{mlp} e M o número de neurônios na camada de saída. A relação de entrada-saída da rede define um mapeamento de um espaço de entrada euclidiano de dimensão $m_{0}$ para um espaço de saída euclidiano de dimensão M, que é infinitamente diferenciável desde que a função de ativação também tenha essa propriedade. Então o teorema diz:
 
-\textit{Suponha que $\phi(.)$ seja uma função contínua não-constante, limitada e monotonamente crescente. Suponha que $I_{m_{0}}$ represente o hipercubo unitário $[0,1]^{m_{0}}$ de dimensão $m_{0}$. O espaço das funções contínuas em $I_{m_{0}}$ é representado por $C(I_{m_{0}})$. Então, dada qualquer função $f \in C(I_{m{0}})$ e $\epsilon>0$, existe um inteiro $m_{1}$ e conjuntos de constantes reais $\alpha_{i},\beta_{i}$ e $w_{ij}$, onde  $i = 1,...m_{1}$ e $j = 1, .., m_{0}$ tal que podemos definir:}
+\textit{Suponha que $\phi$ seja uma função contínua não-constante, limitada e monotonamente crescente. Suponha que $I_{m_{0}}$ represente o hipercubo unitário $[0,1]^{m_{0}}$ de dimensão $m_{0}$. O espaço das funções contínuas em $I_{m_{0}}$ é representado por $C(I_{m_{0}})$. Então, dada qualquer função $f \in C(I_{m{0}})$ e $\epsilon>0$, existe um inteiro $m_{1}$ e conjuntos de constantes reais $\alpha_{i},\beta_{i}$ e $w_{ij}$, onde  $i = 1,...m_{1}$ e $j = 1, .., m_{0}$ tal que podemos definir:}
 
 \begin{equation}
 \label{eq:teorema_mlp}
@@ -238,7 +237,6 @@ F(x_{1},..,x_{m_{0}}) = \sum_{i=1}^{m_{1}}\alpha_{i}\phi(\sum_{i=1}^{m_{0}}w_{ij
 A equação apresentada em \ref{eq:teorema_mlp} representa uma rede \acrshort{mlp} com apenas uma camada oculta com $m_{1}$ neurônios. A ativação da camada oculta pode ser a função logística, uma vez que ela é não constante, limitada e monotonamente crescente. Os vetores \textbf{w} e \textbf{b} são os pesos e viés dos neurônios da camada oculta. A saída da rede é uma combinação linear das saídas dos neurônios ocultos, com \textbf{$\alpha$} definindo o vetor de pesos sinápticos da camada de saída \cite{Haykin}.  
 
 Vale ressaltar que em novos trabalhos o teorema de aproximação universal foi provado para uma classe mais ampla de funções de ativação, como a \acrshort{relu} \cite{leshno1993multilayer}. Uma rede neural também pode aproximar qualquer mapeamento de função de qualquer espaço discreto dimensional finito para outro \cite{Goodfellow2016}.
-
 O teorema da aproximação universal sintetizado pela Equação \ref{eq:teorema_mlp} generaliza as aproximações por série de Fourier \cite{Haykin}. Contudo, ele não define o mínimo número de neurônios  da camada oculta para cada $\epsilon$. Na pior das hipóteses, pode ser necessário um número exponencial de unidades ocultas (possivelmente uma unidade oculta correspondente a cada configuração de entrada que precise ser distinguida) \cite{Goodfellow2016}.
 Além disso, o teorema também não diz se essa abordagem é ótima no sentido de tempo de de aprendizagem, facilidade de implementação e especialmente na generalização do modelo \cite{Haykin}. Na prática, as redes com mais de uma camada oculta se mostram mais concebíveis computacionalmente e generalizam melhor \cite{Goodfellow2016}.   
 
@@ -247,13 +245,13 @@ As principais considerações de arquitetura de uma \acrshort{rna} são a sua pr
 
 \subsubsection{Rede Convolucional}
 
-A \gls{rnc} é \textit{feedforward} apropriada para extrair atributos de imagens através da aplicação de convoluções bidimensionais em que os pesos dos filtros são aprendidos durante o treinamento. Ela é projetada especificamente para reconhecer formas bidimensionais com um alto grau de invariância quanto a translação, inclinação e outros modos de distorção. Isso significa que após aprender um certo padrão em uma posição específica de uma imagem a rede convolucional o reconhece em qualquer lugar da imagem \cite{Haykin}. 
+A \gls{rnc} é apropriada para extrair atributos de imagens através da aplicação de convoluções bidimensionais nas quais os pesos dos filtros são aprendidos durante o treinamento. Ela é projetada especificamente para reconhecer formas bidimensionais com um alto grau de invariância quanto a translação, inclinação e outros modos de distorção. Isso significa que após aprender um certo padrão em uma posição específica de uma imagem a rede convolucional o reconhece em qualquer lugar da imagem \cite{Haykin}. 
 A \gls{conv2d} é usada  em redes neurais para operar sobre mapas de características (estruturas  bidimensionais). Tais mapas estão organizados em pilhas formando tensores tridimensionais. Tensores podem ser interpretados como uma matriz multidimensional \cite{geron2017hands}, generalizando vetores e matrizes.  
 
 Nesses tensores, a primeira e segunda dimensão são a altura e largura do mapa e a terceira dimensão é o número de canais ou, profundidade, ou ainda, o número de mapas recursos. A saída da convolução também é montada em tensores tridimensionais.
 Os parâmetros para definir a operação de \acrshort{conv2d} são o passo (\textit{stride}), preenchimento (\textit{padding}), as dimensões espaciais do filtro e o número de canais de saída. O passo controla como o filtro se desloca pelos mapas. 
 Através do preenchimento podemos adicionar um número apropriado de linhas e colunas em cada lado dos mapas. 
-As duas principais configurações de preenchimento são as do tipo ``válida'' \textit(valid) e `mesma'' \textit{same}. Na primeira, não há preenchimento (somente locais válidos do mapa sofrem convolução pelo filtro), enquanto na segunda o preenchimento é feito de maneira a ter uma saída com a mesma largura e altura que a entrada \cite{FrancoisDeepLearning}. 
+As duas principais configurações de preenchimento são as do tipo ``válida'' (\textit{valid}) e ``mesma'' (\textit{same}). Na primeira, não há preenchimento (somente locais válidos do mapa sofrem convolução pelo filtro), enquanto na segunda o preenchimento é feito de maneira a ter uma saída com a mesma largura e altura que a entrada \cite{FrancoisDeepLearning}. 
 As dimensões espaciais do filtro se referem a sua altura e largura. O número de canais na saída da camada de convolução é igual à quantidade de filtros que foi escolhido para essa camada. O número de canais do filtro é sempre igual ao número de canais do tensor 3D de entrada. 
 
 Matematicamente, a convolução de um tensor \textbf{I} com dimensões $H \times W \times 1$, por um filtro $K$($M \times N \times 1$), com passo 1 e  preenchimento válido, resulta no tensor \textbf{S} calculado segundo a equação a seguir. 
@@ -264,7 +262,7 @@ Matematicamente, a convolução de um tensor \textbf{I} com dimensões $H \times
 S(i,j) = (I*K)(i,j)=  \sum_{m=0}^{M-1}\sum_{n=0}^{N-1}I(i+m,j+n)K(m,n) 
 \end{aligned}
 \end{equation}
-onde $i \in [0,1,..., M-H+1]$ e $j \in [0,1,..., N-W+1]$. 
+\noindent onde $i \in [0,1,..., M-H+1]$ e $j \in [0,1,..., N-W+1]$. 
 
 A Figura \ref{fig:con2d} ilustra a convolução 2D entre um mapa de recursos com um filtro $K = \begin{bmatrix}
 1 &  0& 1\\ 
@@ -276,7 +274,7 @@ A Figura \ref{fig:con2d} ilustra a convolução 2D entre um mapa de recursos com
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/conv2D.pdf}
-	\caption[Convolução 2D em um mapa de recurso.]{Convolução de um tensor $5 \times 5 \times 1$, em verde, com um filtro $3 \times 3 \times 1$, em amarelo. À medida que o filtro se desloca pela entrada obtemos progressivamente um novo mapa de característica, em rosa, com dimensões $3 \times 3 \times 1$.  O filtro K se desloca 9 vezes, sempre executando uma operação de multiplicação ponto a ponto entre K e a parte P do mapa sobreposto pelo filtro. Em seguida, somamos todos os valores de K $\odot$ P para preencher o mapa de característica da saída \cite{sumit}.}
+	\caption[Convolução 2D em um mapa de recurso.]{Convolução de um tensor $5 \times 5 \times 1$, em verde, com um filtro $3 \times 3 \times 1$, em amarelo. À medida que o filtro se desloca pela entrada obtemos progressivamente um novo mapa de característica, em rosa, com dimensões $3 \times 3 \times 1$.  O filtro K se desloca 9 vezes, sempre executando uma operação de multiplicação ponto-a-ponto entre K e a parte P do mapa sobreposto pelo filtro. Em seguida, somamos todos os valores de K $\odot$ P para preencher o mapa de característica da saída \cite{sumit}.}
 	\label{fig:con2d}
 \end{figure}
 
@@ -285,7 +283,7 @@ Se a entrada for uma imagem com múltiplos canais, por exemplo, \acrshort{rgb}, 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figuras/conv3D.pdf}
-	\caption[Convolução 2D em três mapas de recursos.]{Convolução de uma imagem  $5 \times 5 \times 3$, preenchido de zeros nas bordas, com um filtro K $3 \times 3 \times 1$. Para cada canal da imagem é feito uma convolução 2D com o respectivo canal do filtro. O resultado das convoluções são somados entre si e com o viés para fornecer a saída gradualmente.  O número de canais na saída é apenas 1 porque estamos utilizando 1 filtro \cite{sumit}.}
+	\caption[Convolução 2D em três mapas de recursos.]{Convolução de uma imagem  $5 \times 5 \times 3$, preenchido de zeros nas bordas, com um filtro K ($3 \times 3 \times 1$). Para cada canal da imagem é feito uma convolução 2D com o respectivo canal do filtro. O resultado das convoluções são somados entre si e com o viés para fornecer a saída gradualmente.  O número de canais na saída é apenas 1 porque estamos utilizando 1 filtro \cite{sumit}.}
 	\label{fig:con3d}
 \end{figure}
 
@@ -318,13 +316,14 @@ Podemos visualizar o compartilhamento dos pesos ao longo do tempo e o efeito dos
 \end{aligned}
 \end{equation}
 
-Onde  $h_{t-1}$ e $h_{t}$ são os estados ocultos ou saídas da unidade recorrente no instante de tempo t-1 e t, respectivamente.  $x_{t}$ é a entrada da etapa  t da sequência, $\textbf{W}$ e $\textbf{U}$ são os vetores de pesos que multiplicam $x_{t}$ e $h_{t-1}$, respectivamente. Os pesos são compartilhados durante as iterações que compõem uma sequência de dados. A função de ativação está representada genericamente por $\phi \left( \odot \right)$. Devido ao ciclo da rede, o estado oculto, no instante t, depende de todos os estados ocultos obtidos anteriormente.  
+\noindent onde  $h_{t-1}$ e $h_{t}$ são os estados ocultos ou saídas da unidade recorrente no instante de tempo $t-1$ e $t$, respectivamente.  $x_{t}$ é a entrada da etapa  t da sequência, $\textbf{W}$ e $\textbf{U}$ são os vetores de pesos que multiplicam $x_{t}$ e $h_{t-1}$, respectivamente. Os pesos são compartilhados durante as iterações que compõem uma sequência de dados. A função de ativação está representada genericamente por $\phi \left( \odot \right)$. Devido ao ciclo da rede, o estado oculto, no instante $t$, depende de todos os estados ocultos obtidos anteriormente.  
 
 O compartilhamento de parâmetros torna possível estender e aplicar o modelo a sequências de diferentes comprimentos, e identificar uma informação específica em qualquer posição dentro da sequência \cite{Goodfellow2016}. 
-Para treinar uma RNR é preciso executar o algoritmo de retropropagação ao longo das etapas para cada sequência. Isso requer desenrolar a RNR em uma rede profunda. O treinamento de uma rede neural profunda pode sofrer com lentidão e problemas de gradientes que tendem a zero ou a valores muito elevados. A solução mais simples e comum para esse problema é desenrolar a RNR apenas em um número limitado de etapas durante o treinamento. Isso é chamado de retropropagação truncada ao longo do tempo \cite{geron2017hands}.
+Para treinar uma \acrshort{rnr} é preciso executar o algoritmo de retropropagação ao longo das etapas para cada sequência. Isso requer desenrolar a RNR em uma rede profunda. O treinamento de uma rede neural profunda pode sofrer com lentidão e problemas de gradientes que tendem a zero ou a valores muito elevados. A solução mais simples e comum para esse problema é desenrolar a RNR apenas em um número limitado de etapas durante o treinamento. Isso é chamado de retropropagação truncada ao longo do tempo \cite{geron2017hands}.
 
 Atualmente, um dos modelos de sequências mais eficazes usados em aplicações práticas é a \gls{lstm} \cite{lstm}. A sua arquitetura favorece a rápida convergência e detecção de dependências de longo prazo nos dados \cite{geron2017hands}.
-Essas redes contém  têm ``células LSTM'' que possuem uma recorrência interna além da recorrência externa. Veja a Figura \ref{fig:lstm_time} para observar essas duas recorrências. Cada célula possui as mesmas entradas e saídas que uma rede recorrente comum, mas contém mais parâmetros e um sistema de unidades de controle que coordena o fluxo de informações.  A formulação matemática da \acrshort{lstm} possui 4 camadas de rede neural sendo 3 delas unidades de controle ou portas. 
+Uma célula \acrshort{lstm} possui uma recorrência interna além da recorrência externa. Veja a Figura \ref{fig:lstm_time} para observar essas duas recorrências. Além disso, ela 
+um sistema de unidades de controle ou portas que coordenam o fluxo de informações.  A formulação matemática da \acrshort{lstm}, descrita a seguir, possui 4 camadas de rede neural sendo 3 delas unidades de controle. 
 
 \begin{equation}
 \label{eq:lstm}
@@ -337,8 +336,8 @@ Essas redes contém  têm ``células LSTM'' que possuem uma recorrência interna
 \textbf{h}_t & = \textbf{o}_t \odot \tanh(\textbf{c}_t)  
 \end{aligned}
 \end{equation}
-Onde, $\textbf{x}_t$ é a entrada atual da sequência. As variáveis $\textbf{W}$, $\textbf{U}$ e $\textbf{b}$  são as matrizes de pesos e viés aprendidas por cada camada.  O vetor $\textbf{i}_{t}$ é a porta de entrada que nos diz quais novas informações vamos armazenar no estado da célula, $\textbf{c}_{t}$. 
-A porta do esquecimento, $\textbf{f}_{t}$, controla quais informações serão ``esquecidas'' do estado da célula anterior, $\textbf{c}_{t-1}$. A porta de saída $\textbf{o}_{t}$ é usada para fornecer a ativação para a saída, $\textbf{h}_{t}$. O vetor $\textbf{c}'_{t}$ é o estado da célula candidata e $\textbf{c}_{t}$ é o estado de célula atual.  Este último é o termo que contém a ``memória'' de longo prazo da \acrshort{lstm}. Nessa equação, o símbolo $\odot$ significa multiplicação ponto a ponto entre dois vetores. O cálculo do estado de célula é uma função recursiva que ocorre no interior da célula. Por fim, a saída é um  vetor $\textbf{h}_{t}$.
+\noindent onde $\textbf{x}_t$ é a entrada atual da sequência. As variáveis $\textbf{W}$, $\textbf{U}$ e $\textbf{b}$  são as matrizes de pesos e viés aprendidas por cada camada.  O vetor $\textbf{i}_{t}$ é a porta de entrada que nos diz quais novas informações vamos armazenar no estado da célula, $\textbf{c}_{t}$. 
+A porta do esquecimento, $\textbf{f}_{t}$, controla quais informações serão ``esquecidas'' do estado da célula anterior, $\textbf{c}_{t-1}$. A porta de saída $\textbf{o}_{t}$ é usada para fornecer a ativação para a saída, $\textbf{h}_{t}$. O vetor $\textbf{c}'_{t}$ é o estado da célula candidata e $\textbf{c}_{t}$ é o estado de célula atual.  Este último é o termo que contém a ``memória'' de longo prazo da \acrshort{lstm}. Nessa equação, o símbolo $\odot$ significa multiplicação ponto-a-ponto entre dois vetores. O cálculo do estado de célula é uma função recursiva que ocorre no interior da célula. Por fim, a saída é um  vetor $\textbf{h}_{t}$.
 A função logística é adotada na ativação das 3 portas.  Dessa forma, as portas podem inibir uma informação na medida que seus elementos sejam próximos de zero (saturação inferior) ou mantê-la se os seus elementos são próximos a um (saturação superior). A lista a seguir detalha as variáveis da \acrshort{lstm} quando o vetor $\textbf{x}_t$ tem tamanho $d$ e escolhemos $h$ unidades ocultas.    
 
 
@@ -360,7 +359,7 @@ A função logística é adotada na ativação das 3 portas.  Dessa forma, as po
 A formulação da \acrshort{lstm} apresentada aqui é também denominada por \gls{fc-lstm}.
 
 A sua principal desvantagem, no tratamento de dados espaço-temporais, é o fato que não leva em consideração uma correlação espacial devido ao uso de conexões completas nas operações internas.  
-Para superar esse problema, defini-se a \gls{conv2dlstm} \cite{xingjian2015convolutional,FullResolution2017Toderici} na qual todas as entradas($x_1,..., x_t$), estados de células ($c_1,..., c_t$), estados ocultos($h_1,..., h_t$) e portas($i_t$, $f_t$, $o_t$) são tensores 3D cujas duas últimas dimensões são dimensões espaciais (linhas e colunas). Isso pode ser alcançado usando um operador de convolução nas transições de estado para estado e de entrada para estado. As principais equações do \acrshort{conv2dlstm} são mostradas abaixo, onde '*' denota o operador de convolução.
+Para superar esse problema, defini-se a \gls{conv2dlstm} \cite{xingjian2015convolutional,FullResolution2017Toderici} na qual todas as entradas($x_1,..., x_t$), estados de células ($c_1,..., c_t$), estados ocultos($h_1,..., h_t$) e portas($i_t$, $f_t$, $o_t$) são tensores 3D cujas duas últimas dimensões são dimensões espaciais (linhas e colunas). Isso pode ser alcançado usando um operador de convolução nas transições de estado para estado e de entrada para estado. As principais equações do \acrshort{conv2dlstm} são mostradas abaixo, onde $`\ast'$ denota o operador de convolução.
 
 \begin{equation}
 \label{eq:conlstm}
@@ -394,12 +393,9 @@ Nessa rede, o processo de aprendizagem visa minimizar uma função de perdas:
 L = d(x,D(E(x)))
 \end{equation}
 
-Onde $d$ é uma função de perda que penaliza $D(E(x))$  por ser diferente de $x$. Na prática, os \acrshort{ac}es clássicos não levam a espaços latentes particularmente úteis ou bem estruturados \cite{FrancoisDeepLearning}. 
+onde $d$ é uma função de perda que penaliza $D(E(x))$  por ser diferente de $x$. Na prática, os \acrshort{ac}es clássicos não levam a espaços latentes particularmente úteis ou bem estruturados \cite{FrancoisDeepLearning}. 
 
-%A rede pode ser vista como consistindo de duas partes: uma função de codificação, $\textbf{z} = E(\textbf{x})$ e um decodificador que produz a reconstrução $\textbf{f} = D(\textbf{z})$ \cite{Goodfellow2016}. 
-
-
-Um \acrshort{ac} é dito incompleto quando a dimensão de saída do codificador é menor que a dimensão de entrada \cite{Goodfellow2016}. Nesse caso, o codificador realiza sucessivas transformações de filtragens e reduções na dimensionalidade dos dados de entrada, em um processo chamado de subamostragem, do inglês (\textit{downsampling}), e produz o vetor latente. O vetor latente segue para o decodificador que irá aumentar a dimensionalidade dos dados na etapa de superamostragem (\textit{upsampling}) e produz uma versão aproximada da entrada. Aprender uma representação incompleta força o \textit{autoencoder}  a capturar os recursos mais destacados dos dados de treinamento \cite{Goodfellow2016}. 
+Um \acrshort{ac} é dito incompleto quando a dimensão de saída do codificador é menor que a dimensão de entrada \cite{Goodfellow2016}. Nesse caso, o codificador realiza sucessivas transformações de filtragens e reduções na dimensionalidade dos dados de entrada, em um processo chamado de subamostragem (do inglês \textit{downsampling}), e produz o vetor latente. O vetor latente segue para o decodificador que irá aumentar a dimensionalidade dos dados na etapa de superamostragem (do inglês \textit{upsampling}) e produz uma versão aproximada da entrada. Aprender uma representação incompleta força o \textit{autoencoder}  a capturar os recursos mais destacados dos dados de treinamento \cite{Goodfellow2016}. 
 
 
 %Esses dois elementos são treinados de ponta a ponta, mas durante a implantação, o codificador e o decodificador são normalmente usados independentemente.
@@ -423,7 +419,7 @@ L = d(x,D(E(x))) + \Omega(z)
 \end{aligned}
 \end{equation}
 
-Se impusermos uma restrição de esparsidade às unidades do latente, o codificador automático descobrirá uma estrutura interessante nos dados, mesmo que o número de unidades ocultas seja grande \cite{ng2011sparse}. 
+Se adicionarmos uma restrição de esparsidade às unidades do latente, o codificador automático descobrirá uma estrutura interessante nos dados, mesmo que o número de unidades ocultas seja grande \cite{ng2011sparse}. 
 Para uma função de ativação logística, considera-se um neurônio como sendo ``ativo'' se seu valor de saída for próximo de 1 ou como ``inativo'' se seu valor de saída for próximo de 0. Sendo $z_j$ a ativação de uma unidade do vetor latente ${z}$ para uma entrada específica $x_m$ podemos definir uma média da ativação dessa unidade para um conjunto com $M$ exemplos de treinamento:
 
 \begin{equation}
@@ -436,15 +432,15 @@ Em um \acrshort{ac} esparso desejamos obter neurônios inativos na maioria das v
 \hat{\rho}_{j} = \rho
 \end{equation}
 
-onde ${\rho}$ é um parâmetro de esparsidade, normalmente um valor pequeno próximo a zero. 
-Então, escolhemos uma função que penaliza $\hat{\rho}_{j}$ por ser diferente de ${\rho}$. Uma opção, é usar a divergência de 
-de Kullback-leibler (KL) \cite{kullback1951information} entre duas variáveis aleatórias de Bernoulli com médias ${\rho}$ e $\hat{\rho}_{j}$: \cite{ng2011sparse}.  
+\noindent onde ${\rho}$ é um parâmetro de esparsidade, normalmente um valor pequeno próximo a zero. 
+Então, escolhemos uma função que penaliza $\hat{\rho}_{j}$ por ser diferente de ${\rho}$. Uma opção é usar a divergência de 
+de \gls{kl} \cite{kullback1951information} entre duas variáveis aleatórias de Bernoulli com médias ${\rho}$ e $\hat{\rho}_{j}$: \cite{ng2011sparse}.  
 
 \begin{equation}
 D_{KL}(\rho||\hat{\rho}_{j}) = \sum_{j=1}^{h}\rho \log \frac{\rho}{\hat{\rho}_{j}} +(1-\rho)\log \frac{1- \rho}{1-\hat{\rho}_j}
 \end{equation}
 
-Aqui, $h$ é o número de elementos do latente.  A divergência KL é uma função padrão para medir a diferença entre duas distribuições diferentes. Ela tem a propriedade que $D_{KL}(\rho||\hat{\rho}_{j}) = 0$ se $\rho = \hat{\rho}_{j}$ e, caso contrário, aumenta monotonicamente à medida que $\hat{\rho}_{j}$ diverge de $\rho$ \cite{kullback1951information}. Então podemos reescrever a Equação \ref{eq:loss_sparse} como:
+\noindent aqui, $h$ é o número de elementos do latente.  A divergência KL é uma função padrão para medir a diferença entre duas distribuições diferentes. Ela tem a propriedade que $D_{KL}(\rho||\hat{\rho}_{j}) = 0$ se $\rho = \hat{\rho}_{j}$ e, caso contrário, aumenta monotonicamente à medida que $\hat{\rho}_{j}$ diverge de $\rho$ \cite{kullback1951information}. Então podemos reescrever a Equação \ref{eq:loss_sparse} como:
 
 \begin{equation}
 \label{eq:loss_sparse2}
@@ -452,7 +448,7 @@ Aqui, $h$ é o número de elementos do latente.  A divergência KL é uma funç�
 L = d({x},D(E({x}))) + \lambda \sum_{j=1}^{s_2} D_{KL}(\rho||\hat{\rho}_{j}) 
 \end{aligned}
 \end{equation}
-Onde $\lambda$ controla o peso do termo de penalidade de esparsidade. Geralmente, restringimos o latente a ser de baixa dimensão e esparso para que o codificador atue para compactar os dados de entrada em menos bits de informação \cite{FrancoisDeepLearning}.
+\noindent onde $\lambda$ controla o peso do termo de penalidade de esparsidade. Geralmente, restringimos o latente a ser de baixa dimensão e esparso para que o codificador atue para compactar os dados de entrada em menos bits de informação \cite{FrancoisDeepLearning}.
 
 %Para satisfazer essa restrição, as ativações da unidade oculta devem estar próximas de 0.
 
@@ -469,23 +465,23 @@ Onde $\lambda$ controla o peso do termo de penalidade de esparsidade. Geralmente
 
 
 O \gls{vae} \cite{kingma2013auto,rezende2014stochastic} é um modelo generativo profundo capaz de aprender representações latentes não supervisionadas de dados \cite{klys2018learning}.
-Um \acrshort{vae} transforma uma entrada em parâmetros de uma distribuição estatística. Isso significa assumir que a entrada foi gerada por um processo estatístico e que a aleatoriedade desse processo deve ser levada em consideração durante a codificação e decodificação \cite{FrancoisDeepLearning}.
+Um \acrshort{vae} transforma a entrada em parâmetros de uma distribuição estatística. Isso significa assumir que a entrada foi gerada por um processo estatístico e que a aleatoriedade desse processo deve ser levada em consideração durante a codificação e decodificação \cite{FrancoisDeepLearning}.
 
-Seja $X = \{x^i\}_{i=1}^N$ uma base de dados consistindo de $N$ amostras independentes e identicamente distribuídas, gerada de uma variável aleatória $x$. Um \acrshort{ac} opera com dois mapeamentos, o codificador opera $Enc_{\phi}:X \rightarrow Z$ e o decodificador $Dec_{\theta}:Z \rightarrow X$, onde $Z$ é o espaço latente. No caso do \acrshort{vae}, ambos os mapeamentos são probabilísticos e uma distribuição fixa a \textit{prior} $p(z)$ sobre $Z$ é assumida. Como a distribuição de $x$ também é fixa (distribuição de dados real $q(x)$), os mapeamentos $Enc_{\phi}$ e  $Dec_{\theta}$ induzem distribuições conjuntas $q(x,z) = q_{\phi}(z|x)q(x)$ e $p(x,z) = p_{\theta}(x|z)p(z)$, respectivamente (omitindo a dependência com os parâmetros $\theta$ e $\phi$) \cite{rolinek2019variational}. O objetivo idealizado do \acrshort{vae} é obter a função de verossimilhança logarítmica (\textit{log-likelihood}) marginalizada:
+Seja $X = \{x^i\}_{i=1}^N$ uma base de dados consistindo de $N$ amostras independentes e identicamente distribuídas, gerada de uma variável aleatória $x$. Um \acrshort{ac} opera com dois mapeamentos, o codificador opera $Enc_{\phi}:X \rightarrow Z$ e o decodificador $Dec_{\theta}:Z \rightarrow X$, onde $Z$ é o espaço latente. No caso do \acrshort{vae}, ambos os mapeamentos são probabilísticos e uma distribuição fixa \textit{a priori} $p(z)$ sobre $Z$ é assumida. Como a distribuição de $x$ também é fixa (distribuição de dados real $q(x)$), os mapeamentos $Enc_{\phi}$ e  $Dec_{\theta}$ induzem distribuições conjuntas $q(x,z) = q_{\phi}(z|x)q(x)$ e $p(x,z) = p_{\theta}(x|z)p(z)$, respectivamente (omitindo a dependência com os parâmetros $\theta$ e $\phi$) \cite{rolinek2019variational}. O objetivo idealizado do \acrshort{vae} é obter a função de verossimilhança logarítmica (\textit{log-likelihood}) marginalizada:
 
 
 \begin{equation}
 \sum_{i=1}^N \log (p(x^i))
 \end{equation}
 
-Entretanto, esse objetivo não é tratável e é aproximado pelo limite inferior da evidência (ELBO) \cite{kingma2013auto}. Para um $x_i$ fixo, o logarítmico de verossimilhança $\log p(x^i)$ tem o limite inferior dado por $\mathcal{L}(q)$ conforme a seguinte equação:
+Entretanto, esse objetivo não é tratável e é aproximado pelo \gls{elbo} \cite{kingma2013auto}. Para um $x_i$ fixo, o logaritmo de verossimilhança $\log p(x^i)$ tem o limite inferior dado por $\mathcal{L}(q)$ conforme a seguinte equação:
 
 \begin{equation}
-\label{elbo}
+\label{elbo2}
 \mathcal{L}(q) = \mathbb{E}_{z \sim q(z|x^i)} \log p(x_i|z) - D_{KL}(q(z|x^i)||p(z)) \leq \log p(x^i)
 \end{equation}
 
-onde o primeiro termo corresponde à perda de reconstrução e o segundo à divergência KL entre a representação latente $q(z|x_i)$ e a distribuição a \textit{prior} $p(z)$.
+\noindent onde o primeiro termo corresponde à perda de reconstrução e o segundo à divergência \acrshort{kl} entre a representação latente $q(z|x_i)$ e a distribuição $p(z)$.
 Por fim, $p(z)$ é definido como uma distribuição gaussiana multidimensional com média zero: $\mathcal{N}$(0, $\mathcal{I}$) onde $\mathcal{I}$ é a matriz identidade. O codificador também assume o formato de uma distribuição gaussiana dada por:
 
 \begin{equation}
@@ -493,8 +489,8 @@ Enc_{\theta}(x) \sim q_{\phi}(z|x) = \mathcal{N}(\mu_{\phi}(x), diag\ \ \sigma_{
 \end{equation}
 %The important property here is that pθ(x|z) can be efficiently computed
 %Uma variante, o $\beta$-VAE [17], introduz uma ponderação $\beta$ no termo KL para regular o trade-off entre reconstrução (primeiro termo) e a proximidade com $p(z)$. 
-onde $\mu_{\phi}$ e $\sigma_{\phi}$ são mapeamentos determinísticos que dependem dos parâmetros $\phi$. A matriz de covariância é aplicada para ser diagonal. Os parâmetros de geração e inferência, $\theta$ e  $\phi$, são treinados em conjunto pela maximização de $\mathcal{L}$, onde usamos o truque de reparametrização para aplicar a descida estocástica do gradiente através das variáveis latentes gaussianas \cite{sonderby2016ladder}. Além disso, todas as expectativas na Equação \ref{elbo} podem ser aproximadas pela amostragem de Monte Carlo \cite{Goodfellow2016}.
-Uma vez concluído o treinamento, a distribuição a \textit{posterior} aproximado $q_{\phi}(z|x)$ funciona como um codificador.
+\noindent em que $\mu_{\phi}$ e $\sigma_{\phi}$ são mapeamentos determinísticos que dependem dos parâmetros $\phi$. A matriz de covariância é aplicada para ser diagonal. Os parâmetros de geração e inferência, $\theta$ e  $\phi$, são treinados em conjunto pela maximização de $\mathcal{L}$, onde é utilizada uma reparametrização para aplicar a descida estocástica do gradiente através das variáveis latentes gaussianas \cite{sonderby2016ladder}. Além disso, todas as expectativas na Equação \ref{elbo2} podem ser aproximadas pela amostragem de Monte Carlo \cite{Goodfellow2016}.
+Uma vez concluído o treinamento, a distribuição \textit{a posterior} aproximado $q_{\phi}(z|x)$ funciona como um codificador.
 
 
 
@@ -518,7 +514,7 @@ Uma vez concluído o treinamento, a distribuição a \textit{posterior} aproxima
 
 %O \acrshort{vae} usa os parâmetros de média e variância para amostrar aleatoriamente um elemento da distribuição e decodifica esse elemento de volta à entrada original. A estocástica deste processo melhora a robustez e força o espaço latente a codificar representações significativas em todos os lugares: todo ponto amostrado no espaço latente é decodificado para uma saída válida \cite{FrancoisDeepLearning}.
 
-%O principal insight por trás dos autoencodificadores variacionais é que eles podem ser treinados maximizando o limite inferior variacional $L(q)$ associado ao ponto de dados x.
+%O principal insight por trás dos autocodificadores variacionais é que eles podem ser treinados maximizando o limite inferior variacional $L(q)$ associado ao ponto de dados x.
 
 
 
@@ -534,7 +530,7 @@ Uma vez concluído o treinamento, a distribuição a \textit{posterior} aproxima
 
 
 
-%Na equação 20.76, reconhecemos o primeiro termo como a probabilidade logarítmica conjunta das variáveis ​​visíveis e ocultas sob o posterior aproximado sobre as variáveis ​​latentes (assim como no EM, exceto que usamos um posterior aproximado, e não o exato). Reconhecemos também um segundo termo, a entropia do posterior aproximado. Quando q é escolhido para ser uma distribuição gaussiana, com ruído adicionado a um valor médio previsto, maximizar esse termo de entropia incentiva o aumento do desvio padrão desse ruído. De maneira mais geral, esse termo de entropia encoraja a variação posterior a colocar uma massa de alta probabilidade em muitos valores de z que poderiam ter gerado x, em vez de entrar em colapso para uma estimativa pontual do valor mais provável. Na equação 20.77, reconhecemos o primeiro termo como a probabilidade de log de reconstrução encontrada em outros autoencodificadores. O segundo termo tenta fazer com que a distribuição posterior aproximada q (z | x) e o modelo anterior p modelo (z) se aproximem.
+%Na equação 20.76, reconhecemos o primeiro termo como a probabilidade logarítmica conjunta das variáveis ​​visíveis e ocultas sob o posterior aproximado sobre as variáveis ​​latentes (assim como no EM, exceto que usamos um posterior aproximado, e não o exato). Reconhecemos também um segundo termo, a entropia do posterior aproximado. Quando q é escolhido para ser uma distribuição gaussiana, com ruído adicionado a um valor médio previsto, maximizar esse termo de entropia incentiva o aumento do desvio padrão desse ruído. De maneira mais geral, esse termo de entropia encoraja a variação posterior a colocar uma massa de alta probabilidade em muitos valores de z que poderiam ter gerado x, em vez de entrar em colapso para uma estimativa pontual do valor mais provável. Na equação 20.77, reconhecemos o primeiro termo como a probabilidade de log de reconstrução encontrada em outros autocodificadores. O segundo termo tenta fazer com que a distribuição posterior aproximada q (z | x) e o modelo anterior p modelo (z) se aproximem.
 
 %As abordagens tradicionais para inferência variacional e aprendizado inferem q por meio de um algoritmo de otimização, tipicamente iteradas equações de ponto fixo (seção 19.4). Essas abordagens são lentas e geralmente exigem a capacidade de calcular o modelo E z∼q log p (z, x) de forma fechada. A idéia principal por trás do \textit{autoencoder}  variacional é treinar um codificador paramétrico (também chamado de rede de inferência ou modelo de reconhecimento) que produz os parâmetros de q. Contanto que z seja uma variável contínua, podemos então propagar novamente através de amostras de z extraídas de q (z | x) = q (z; f (x; θ)) para obter um gradiente em relação a θ. O aprendizado então consiste apenas em maximizar L com relação aos parâmetros do codificador e decodificador. Todas as expectativas em L podem ser aproximadas pela amostragem de Monte Carlo.
 %A aprendizagem então consiste apenas em maximizar $\mathcal{L}$ com relação aos parâmetros do codificador e decodificador. 
@@ -553,7 +549,7 @@ Rd &= 1 - \frac{1}{C}
 \end{aligned}
 \end{equation}
 
-Considerando que a informação representada pelos $b$ bits contém $s$ símbolos, então, defini-se a taxa dessa representação ou número médio de bits como $R = \frac{b}{s}$ bits por símbolo (bps).   
+Considerando que a informação representada pelos $b$ bits contém $s$ símbolos, então, é definido a taxa dessa representação ou número médio de bits como $R = \frac{b}{s}$ bits por símbolo (bps).   
 
 O codificador é o algoritmo utilizado para explorar as redundâncias na informação e gerar um conjunto de dados comprimidos. O algoritmo do decodificador realiza o processo de reconstrução dos dados. Ele toma os dados comprimidos e tenta recuperar os dados originais que representam a informação. Esse processo está ilustrada na Figura \ref{fig:codec}.
 
@@ -584,13 +580,13 @@ I(E) = log_{b}\frac{1}{P(E)} = - \log (P(E))
 \end{aligned}
 \end{equation}
 
-onde a base $b$ do logaritmo define a unidade utilizada para medir as informações. Se a base 2 for selecionada, a unidade de informação é o bit. $I(E)$ também é denominado de auto-informação. Se tivermos um conjunto de eventos independentes $A_i$ provenientes de algum experimento $S$, tais que:
+\noindent em que a base $b$ do logaritmo define a unidade utilizada para medir as informações. Se a base 2 for selecionada, a unidade de informação é o bit. $I(E)$ também é denominado de auto-informação. Se tivermos um conjunto de eventos independentes $A_i$ provenientes de algum experimento $S$, tais que:
 
 \begin{equation}
 \bigcup A_i = S 
 \end{equation}
 
-sendo $S$ o espaço amostral, então a auto-informação média associada ao experimento aleatório é fornecida por:
+\noindent sendo $S$ o espaço amostral, então a auto-informação média associada ao experimento aleatório é fornecida por:
 
 \begin{equation}
 H(x) = -\sum P(A_i)\log_b(P(A_i))
@@ -598,8 +594,8 @@ H(x) = -\sum P(A_i)\log_b(P(A_i))
 
 Essa quantidade é chamada entropia associada ao	experimento. Se o experimento é uma fonte que gera os símbolos $A_i$ de um conjunto $\mathcal{A}$ denominado alfabeto da fonte, a entropia é uma medida do número médio de símbolos binários necessários para codificar a saída da fonte  \cite{sayood2017introduction}. Ademais, essa quantidade é a mínima necessária para que qualquer método de compressão codifique essa fonte sem perdas.
 
-Contudo, se o conjunto de eventos gerados são dependentes devemos considerar tais dependências para pode estimar de forma mais precisa a entropia real da fonte. 
-Uma possibilidade para realizar essa estimação é observar distribuições conjuntas de sequências de símbolos cada vez mais longas \cite{sayood2017introduction}. Para uma sequência de comprimento $n$, podemos definir a entropia de ordem $n$ que se aproxima da entropia real da fonte à medida que $n$ aumente. 
+Contudo, se o conjunto de eventos gerados são dependentes devemos considerar tais dependências para estimar de forma mais precisa a entropia real da fonte. 
+Uma possibilidade para realizar essa estimação é observar distribuições conjuntas de sequências de símbolos cada vez mais longas \cite{sayood2017introduction}. Para uma sequência de comprimento $n$, podemos definir a entropia de ordem $n$ que se aproxima da entropia real da fonte à medida que $n$ aumenta. 
 
 
 %\begin{equation}
@@ -611,10 +607,10 @@ Uma possibilidade para realizar essa estimação é observar distribuições con
 %Dessa forma, capturamos as dependências do elementos observando as distribuições conjuntas de sequências cada vez mais longas geradas pela fonte. Quando n tende ao infinito $H_n$ converge para a entropia real da fonte. 
 
 \section{Imagens}
-Nessa seção explicamos como as imagens digitais podem ser representadas, quais são as suas principais características que são exploradas pelos \acrshort{codec}s. Em seguida, apresentamos o algoritmo base do padrão \acrshort{jpeg} e as métricas objetivas para avaliar imagens comparativamente,
+Nessa seção explicamos como as imagens digitais podem ser representadas, quais são as suas principais características que são exploradas pelos \acrshort{codec}s. Em seguida, apresentamos o algoritmo base do padrão \acrshort{jpeg} e as métricas objetivas para avaliar imagens. Ao final uma métrica mais geral usada para avaliar \acrshort{codec}s é apresentada. 
 
 Uma imagem pode ser definida como uma função bidimensional, $f(x,y)$, em que $x$ e $y$ são coordenadas espaciais (plano), e a amplitude de f em qualquer par de coordenadas $(x, y)$ é chamada de intensidade ou valor do \textit{pixel} nesse ponto \cite{gonzalez2009processamento}. Em uma imagem digital os valores de $x$,$y$ e $f$ são discretos e finitos. 
-Uma imagem monocromática requer apenas um número para indicar a intensidade de cada amostra espacial. As imagens coloridas, por outro lado, exigem pelo menos três números por posição de pixel para representar com precisão as cores \cite{richardson2010h}.
+Uma imagem monocromática requer apenas um número para indicar a intensidade de cada amostra espacial. As imagens coloridas, por outro lado, exigem pelo menos três números por posição de \textit{pixel} para representar com precisão as cores \cite{richardson2010h}.
 
 \subsection{Espaço de Cores}
 
@@ -653,7 +649,7 @@ Cg &= G - Y
 
 
 
-%A maioria das imagens são representadas com 8 bits, isto é, com 256 valores discretos para a intensidade. Em uma imagem colorida representada no espaço de cores RGB \textit(Red,Green e Blue), cada pixel tem 24 bits de resolução de intensidade, 8 bits para cada imagem componente de cor: vermelha, verde e azul \cite{gonzalez2009processamento}.
+%A maioria das imagens são representadas com 8 bits, isto é, com 256 valores discretos para a intensidade. Em uma imagem colorida representada no espaço de cores RGB \textit(Red,Green e Blue), cada \textit{pixel} tem 24 bits de resolução de intensidade, 8 bits para cada imagem componente de cor: vermelha, verde e azul \cite{gonzalez2009processamento}.
 
 
 
@@ -665,17 +661,17 @@ No contexto da compressão digital de imagens os três principais tipos de redun
 \begin{enumerate}
 	\item Redundância de codificação. Os códigos de 8 bits utilizados para representar as intensidades na maioria dos arranjos de intensidade	2-D contêm mais bits do que o necessário para representar as intensidades.
 	\item Redundância espacial. Como os \textit{pixels} da
-	maioria dos arranjos de intensidade 2-D são correlacionados no espaço (isto é, cada pixel é similar aos \textit{pixels} vizinhos ou dependente deles), as informações são desnecessariamente replicadas nas representações dos \textit{pixels} correlacionados.
+	maioria dos arranjos de intensidade 2-D são correlacionados no espaço (isto é, cada \textit{pixel} é similar aos \textit{pixels} vizinhos ou dependente deles), as informações são desnecessariamente replicadas nas representações dos \textit{pixels} correlacionados.
 	\item Informações irrelevantes. A maioria dos arranjos de intensidade 2-D contém informações ignoradas pelo sistema visual humano e/ou irrelevantes para a utilização pretendida da imagem. 
 \end{enumerate}
 
 
 \subsubsection{JPEG}
 
-O JPEG é o acrônimo de \textit{Joint Photographic Experts Group}. Foi concebido por um esforço conjunto do \gls{ccitt} (agora \gls{itu}) e da \gls{iso}. Ele é um dos padrões mais conhecidos para compactação de imagem com perdas, amplamente usado na \textit{Web} e em máquinas fotográficas \cite{sayood2017introduction}. 
+O \acrshort{jpeg} é o acrônimo de \textit{Joint Photographic Experts Group}. Foi concebido por um esforço conjunto do \acrshort{ccitt} (agora \acrshort{itu}) e da \acrshort{iso}. Ele é um dos padrões mais conhecidos para compactação de imagem com perdas, amplamente usado na \textit{Web} e em máquinas fotográficas \cite{sayood2017introduction}. 
 As principais etapas desse \acrshort{codec} estão descritas a seguir. 
 \begin{enumerate}
-	\item A primeira etapa consiste em transformar uma imagem colorida para o espaço de cores de luminância e crominância, como \acrshort{ycbcr}. Em seguida subtraímos cada elemento da imagem por $2^{P-1}$, onde P é o número de bits usado para representar cada pixel \cite{sayood2017introduction}. 
+	\item A primeira etapa consiste em transformar uma imagem colorida para o espaço de cores de luminância e crominância, como \acrshort{ycbcr}. Em seguida subtraímos cada elemento da imagem por $2^{P-1}$, onde P é o número de bits usado para representar cada \textit{pixel} \cite{sayood2017introduction}. 
 	\item As componentes de crominância das imagens coloridas podem ser subamostradas reduzindo as suas resoluções espaciais. A redução da amostragem pode ser feita por um fator de 2 na direção vertical e horizontal (amostragem 4:2:0) ou por um fator de 2 somente na horizontal (amostragem 4:2:2) \cite{salomon2007data}. 
 	\item Os canais de cor são recortadas em blocos de $8 \times 8$ \textit{pixels} e compactados separadamente. 
 	\item Aplicamos a \gls{dct} a cada bloco para criar um mapa $8 \times 8$ dos componentes de frequência.
@@ -695,7 +691,7 @@ As principais etapas desse \acrshort{codec} estão descritas a seguir.
 	Para $0 \leq i \leq n - 1$ e $0 \leq j \leq m - 1$. O primeiro coeficiente, $G_{00}$ é denominado coeficiente DC e os demais são chamados coeficientes AC. 
 	
 	\item O \acrshort{jpeg} usa quantização uniforme para quantificar os coeficientes da DCT. Os tamanhos das etapas do quantizador são organizados em uma tabela chamada tabela de quantização e podem ser vistos como a parte fixa desse processo \cite{sayood2017introduction}. 
-	Cada valor quantizado é representado por um rótulo $I_{ij}$ e obtido a partir dos respectivos coeficientes $G_ij$ e do elemento da matriz de quantização $Q_{ij}$, conforme descrito pela próxima equação. 
+	Cada valor quantizado é representado por um rótulo $I_{ij}$ e obtido a partir dos respectivos coeficientes $G_{ij}$ e do elemento da matriz de quantização $Q_{ij}$, conforme descrito pela próxima equação. 
 	
 	\begin{equation}
 	\begin{aligned}
@@ -712,7 +708,7 @@ O esquema de decodificação é o inverso dos passos da codificação \cite{sayo
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{figuras/jpeg.pdf}
+	\includegraphics[width=1.0\textwidth]{figuras/jpeg.pdf}
 	\caption[Padrão \acrshort{jpeg}]{Etapas da codificação e decodificação de uma imagem através do \acrshort{jpeg}.}
 	\label{fig:jpeg}
 \end{figure}
@@ -725,7 +721,7 @@ As métricas de qualidade são utilizadas para avaliar a fidelidade entre a info
 
 \subsubsection{PSNR}
 
-A \acrshort{psnr} depende do valor máximo teórico de um pixel (255 para imagens de 8 bits) e do \gls{mse} entre a imagem original e a sua versão reconstruída. Para uma imagem monocromática $x$ de dimensões $n \times m$ representada por $P$ bits e sendo $x'$ a sua reconstrução, teremos:
+A \acrshort{psnr} depende do valor máximo teórico de um \textit{pixel} (255 para imagens de 8 bits) e do \gls{mse} entre a imagem original e a sua versão reconstruída. Para uma imagem monocromática $x$ de dimensões $n \times m$ representada por $P$ bits e sendo $x'$ a sua reconstrução, teremos:
 
 \begin{equation}
 \begin{aligned}
@@ -750,7 +746,7 @@ O \acrshort{ssim} foi projetado para modelar qualquer distorção da imagem como
 SSIM(x,x') = l(x,x') \times c(x,x') \times s(x,x') 
 \end{aligned}
 \end{equation}
-Onde
+\noindent sendo que:
 
 \begin{equation}
 \label{eq:ssim2}
@@ -772,3 +768,13 @@ O \acrshort{ssim} varia de 0 a 1, onde 0 significa que não existe similaridade 
 \subsubsection{MS-SSIM}
 O \acrshort{msssim} \cite{wang2003multiscale} é uma variação do \acrshort{ssim} para várias escalas de imagens e conveniente para incorporar seus detalhes em diferentes resoluções. A imagem original e a reconstruída estão na escala 1. As imagens na escala 2 são obtidas após aplicar um filtro passa-baixas nas imagens da escala 1 (escala anterior). Esse filtro realiza subamostragem nas imagens por um fator de 2 \cite{wang2003multiscale}. Esse processo se repete até obtermos as imagens de escala $M$. 
 Essas imagens são usadas para compor o cálculo do \acrshort{msssim}. Essa métrica retorna valores entre 0 (ausência de similaridade) e 1 (reconstrução sem perdas). 
+
+
+
+\subsubsection{Bj{\o}ntegaard Delta Bitrate}
+
+A métrica \gls{bdrate} \cite{bjontegaard2008improvements} é usada para avaliar curvas de taxa-distorção aos pares. Ela realiza interpolação com polinômios de terceiro grau com os pontos de dados dessas curvas. Em seguida, obtém-se a área entre as duas curvas de modo a considerar os seus menores limites.  Ela é definida, em geral, para curvas de \acrshort{psnr} $\times$ Taxa. 
+O valor de \acrshort{bdrate} em relação ao uma referência (âncora) é dado em porcentagem. Se positivo indica um ganho médio de taxa, caso contrário corresponde a uma economia média de taxa. 
+
+
+

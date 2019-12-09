@@ -14,17 +14,15 @@ Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: bibliography.bib
 Warning--entry type for "Olah" isn't style-file defined
---line 360 of file bibliography.bib
+--line 367 of file bibliography.bib
 Warning--entry type for "sumit" isn't style-file defined
---line 371 of file bibliography.bib
-Repeated entry---line 583 of file bibliography.bib
+--line 378 of file bibliography.bib
+Repeated entry---line 590 of file bibliography.bib
  : @misc{kodak
  :            ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 628 of file bibliography.bib
- : @misc{implementationRNNPytorch
- :                               ,
-I'm skipping whatever remains of this entry
+Warning--I'm ignoring bib:ultraeye's extra "url" field
+--line 663 of file bibliography.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
@@ -37,45 +35,45 @@ Warning--campo year vazio ou faltando em bib:clic
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 65 entries,
+You've used 67 entries,
             6714 wiz_defined-function locations,
-            1549 strings with 20884 characters,
-and the built_in function-call counts, 64329 in all, are:
-= -- 6232
-> -- 1807
-< -- 639
-+ -- 1403
-- -- 538
-* -- 4397
-:= -- 8002
-add.period$ -- 250
-call.type$ -- 65
-change.case$ -- 748
-chr.to.int$ -- 104
-cite$ -- 67
-duplicate$ -- 4240
-empty$ -- 4037
-format.name$ -- 2816
-if$ -- 14757
+            1558 strings with 21090 characters,
+and the built_in function-call counts, 66598 in all, are:
+= -- 6483
+> -- 1845
+< -- 697
++ -- 1475
+- -- 550
+* -- 4539
+:= -- 8287
+add.period$ -- 256
+call.type$ -- 67
+change.case$ -- 763
+chr.to.int$ -- 106
+cite$ -- 69
+duplicate$ -- 4464
+empty$ -- 4146
+format.name$ -- 2877
+if$ -- 15213
 int.to.chr$ -- 0
 int.to.str$ -- 0
-missing$ -- 1159
-newline$ -- 297
-num.names$ -- 244
-pop$ -- 1657
+missing$ -- 1189
+newline$ -- 306
+num.names$ -- 252
+pop$ -- 1701
 preamble$ -- 1
-purify$ -- 278
+purify$ -- 285
 quote$ -- 0
-skip$ -- 4843
+skip$ -- 5083
 stack$ -- 1
-substring$ -- 2601
-swap$ -- 1758
-text.length$ -- 63
+substring$ -- 2687
+swap$ -- 1829
+text.length$ -- 65
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 53
+type$ -- 54
 warning$ -- 3
-while$ -- 398
+while$ -- 410
 width$ -- 0
-write$ -- 871
-(There were 2 error messages)
+write$ -- 895
+(There was 1 error message)
