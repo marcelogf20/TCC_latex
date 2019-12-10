@@ -1,14 +1,14 @@
 \chapter{Metodologia}
 
 
-\resumodocapitulo{Neste capítulo explicaremos com mais detalhes a arquitetura do trabalho \cite{FullResolution2017Toderici}, o método para elaboração da  de treinamento,  uma função de custo para promover esparsidade no código binário. Além disso, abordamos um método simples para alocação de bits com base em um alvo de qualidade}.  
+\resumodocapitulo{Neste capítulo explicaremos com mais detalhes a arquitetura usado no trabalho \cite{FullResolution2017Toderici} e o método de treinamento empregado. Além disso, apresentamos os critérios para a elaboração das bases de dados de treinamento, as funções de custo para otimizar os parâmetros do modelo e um método simples para alocação de bits com base em um alvo de qualidade}.  
 
 \section{Arquitetura} \label{sec:arq}
 
 Nessa seção explicaremos o método para treinamento do modelo ao longo das iterações, os formatos dos tensores nas saídas de cada camada da rede, e como se dá a formação do código binário de uma imagem.   
 
 Usamos o autocodificador com camadas LSTM-convolucional proposto por \cite{FullResolution2017Toderici} e apresentado na Figura \ref{fig:toderici3}. 
-Decidimos que a rede irá receber a informação residual do estágio anterior, dada por $ r_t = r_{t-1}$ - $r'_{t-1}$, e será treinada para reconstruí-la. Dessa forma, a reconstrução de uma imagem $x$ será progressivamente. Essas duas características estão resumidas na próxima Equação:
+Decidimos que a rede irá receber a informação residual do estágio anterior, dada por $ r_t = r_{t-1}$ - $r'_{t-1}$, e será treinada para reconstruí-la. Dessa forma, a reconstrução de uma imagem $x$ será feita progressivamente. Essas duas características estão resumidas na próxima Equação:
 
 \begin{equation}
 \label{eq:model_1it}
@@ -23,7 +23,7 @@ x'_t &= r'_{t-1} + x'_{t-1}
 \end{equation}
 
 Originalmente, esse método foi apresentado em \cite{Variable2016Toderici} para treinar autocodificadores de camadas não-recorrente. 
-Ele difere um pouco do apresentado em \cite{FullResolution2017Toderici} e descrito pela Equação \ref{eq:ae_full},  pois nele os autores usam o valor de $x-x'_{t-1}$ como  informação residual de entrada no estágio $t$, ou seja, o resíduo em relação à imagem original.
+Ele difere um pouco do apresentado em \cite{FullResolution2017Toderici} e descrito pela Equação \ref{eq:ae_full},  pois nele é empregado o valor de $x-x'_{t-1}$ como  informação residual de entrada no estágio $t$, ou seja, o resíduo em relação à imagem original.
 A Figura \ref{fig:rede_toderici} mostra a rede ``desenrolada'' no tempo. Para simplificar a representação, omitimos as camadas \acrshort{pe}. 
 
 \begin{figure}
@@ -72,13 +72,13 @@ Os detalhes do autocodificador podem ser consultados na Tabela \ref{table:aerc} 
 			Conv2D          & 2x2x32                                                               & 1x1/-                                                                                   & 1              & 0                 & Tanh                                                                  & 16384                                                                   \\ \hline
 			Binarizador     & 2x2x32                                                               & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
 			Conv2D          & 2x2x512                                                              & 1x1/-                                                                                   & 1              & 1                  & Identididade                                                          & 16384                                                                   \\ \hline
-			Conv2DLSTM      & 2x2x512                                                              & 3x3/1x1                                                                                 & 1              & 1                  & Logística                                                               & 10485760                                                                \\ \hline
+			Conv2DLSTM      & 2x2x512                                                              & 2x2/1x1                                                                                 & 1              & 1                  & Logística                                                               & 10485760                                                                \\ \hline
 			PE             & 4x4x128                                                              & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
 			Conv2DLSTM      & 4x4x512                                                              & 3x3/1x1                                                                                 & 1              & 1                  & Logística                                                               & 3407872                                                                 \\ \hline
 			PE             & 8x8x128                                                              & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
-			Conv2DLSTM      & 8x8x256                                                              & 3x3/1x1                                                                                 & 2              & 1                  & Logística                                                               & 1441792                                                                 \\ \hline
+			Conv2DLSTM      & 8x8x256                                                              & 3x3/3x3                                                                                 & 2              & 1                  & Logística                                                               & 1441792                                                                 \\ \hline
 			PE             & 16x16x64                                                             & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
-			Conv2DLSTM      & 16x16x128                                                            & 3x3/1x1                                                                                 & 2              & 1                  & Logística                                                               & 360448                                                                  \\ \hline
+			Conv2DLSTM      & 16x16x128                                                            & 3x3/3x3                                                                                 & 2              & 1                  & Logística                                                               & 360448                                                                  \\ \hline
 			PE             & 32x32x32                                                             & -                                                                                       &                &                        &                                                                       &                                                                         \\ \hline
 			Conv2D          & 32x32x3                                                              & 1x1/-                                                                                   & 1              & 1                  & Tanh                                                                  & 96                                                                      \\ \hline
 			\multicolumn{6}{|c|}{Total de parâmetros}                                                                                                                                                                                                                                                          & 32835360                                                                \\ \hline
@@ -102,7 +102,7 @@ Na prática, para tornar esse processo estocástico,  definimos um valor $u$ ent
 \right. \\
 \end{aligned}
 \end{equation}
-A binarização será feita com valores -1 e 1, e usamos o truque apresentado em \ref{subsec:bin} para conseguir treinar o modelo com essa camada não diferenciável. 
+A binarização será feita com os símbolos -1 e 1, que serão referidos como os bits 0 e 1, respectivamente. Usamos o método apresentado em \ref{subsec:bin} para conseguir treinar o modelo com essa camada não diferenciável. 
 
 %\section{Taxas de compressão}
 
@@ -126,7 +126,7 @@ A binarização será feita com valores -1 e 1, e usamos o truque apresentado em
 
 \subsection{Formato do fluxo de bits}
 
-A arquitetura será otimizada para reconstruir blocos de $32 \times 32$ pixels, uma vez que os modelos serão treinados com imagens dessa dimensão. Portanto, durante os testes, devemos dividir as imagens em blocos $32 \times 32$ pixels. 
+A arquitetura será otimizada para reconstruir blocos de $32 \times 32$ \textit{pixels}, uma vez que os modelos serão treinados com imagens dessa dimensão. Portanto, durante os testes, devemos dividir as imagens em blocos $32 \times 32$ \textit{pixels}. 
 
 Considerando que o número de blocos gerados é igual a $n$ e desejamos agrupá-los em lotes de tamanho $l$ e reconstruídos passando $k$ vezes pela rede, então teremos:
 \begin{enumerate}
@@ -145,9 +145,7 @@ Nesta seção explicamos o processo de construção das bases de dados de treina
 
 %Essa é uma das principais escolhas para treinar qualquer algoritmo de redes neurais.  
 
-Idealmente, desejamos obter uma base de dados de treinamento a fim de tornar o modelo capaz de comprimir satisfatoriamente (desempenho semelhante ao JPEG2000) imagens naturais com diferentes características de tamanho, componentes de frequência, entropia etc. 
-
-Primeiro, selecionamos imagens de bases de dados distintas que não passaram por nenhum processo de compressão com perdas. Assim, preservamos as componentes de frequência das imagens naturais. Essas imagens foram obtidas dos seguintes conjuntos de dados:
+Idealmente, desejamos obter uma base de dados de treinamento a fim de tornar o modelo capaz de comprimir satisfatoriamente (desempenho semelhante ao JPEG2000) imagens naturais com diferentes características de tamanho, componentes de frequência, entropia etc. Primeiro, selecionamos imagens de bases de dados distintas que não passaram por nenhum processo de compressão com perdas. Assim, preservamos as componentes de frequência das imagens naturais. Essas imagens foram obtidas dos seguintes conjuntos de dados:
 
 \begin{enumerate}
 	\item Conjunto de dados CLIC \cite{bib:clic} (\textit{Challenge on Learned Image Compression}) - Imagens de alta qualidade.
@@ -166,7 +164,7 @@ Primeiro, selecionamos imagens de bases de dados distintas que não passaram por
 
 %O bloco que apresentou maior entropia foi definido como uma referência de 100\% de entropia. 
 
-Em seguida, recortamos as imagens em blocos de tamanho $32 \times 32$ e salvamos em formato PNG. Esse procedimento gerou 6.231.440 blocos. Apresentamos na Figura \ref{fig:histdatabase} um histograma do tamanho desses blocos. Essa medida é usada aqui como uma estimativa da entropia do bloco. Então, separamos os blocos em 5 base de dados observando os seguintes critérios:
+Em seguida, recortamos as imagens em blocos com dimensões $32 \times 32$ \textit{pixels} e salvamos em formato PNG. Esse procedimento gerou 6.231.440 blocos. Apresentamos na Figura \ref{fig:histdatabase} um histograma do tamanho em bytes desses blocos. Essa medida é usada aqui como uma estimativa da entropia do bloco. Então, separamos os blocos em 5 base de dados observando os seguintes critérios:
 
 
 \begin {enumerate}
@@ -204,35 +202,35 @@ Os histogramas dessas bases, exceto a 5, estão ilustrados nas Figuras \ref{fig:
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{figuras/hist0.eps}
-\caption[Histograma de  baixa entropia -  DB0.]{Histograma de  baixa entropia -  DB0.}
+\caption[Histograma de  baixa entropia -  DB0]{Histograma de baixa entropia - DB0.}
 \label{fig:database0}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.80\textwidth]{figuras/hist1.eps}
-\caption[Histograma de entropia média - DB1.]{Histograma de entropia média - DB1.}
+\caption[Histograma de média entropia - DB1]{Histograma de média entropia - DB1.}
 \label{fig:database1}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{figuras/hist2.eps}
-\caption[Histograma de entropia alta - DB2.]{ Histograma de entropia alta - DB2.}
+\caption[Histograma de alta entropia - DB2]{ Histograma de alta entropia - DB2.}
 \label{fig:database2}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.80\textwidth]{figuras/hist3.eps}
-\caption[Histograma da entropia aleatória - DB3.]{Histograma de entropia aleatória - DB3.}
+\caption[Histograma da entropia aleatória - DB3]{Histograma de entropia aleatória - DB3.}
 \label{fig:database3}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{figuras/hist4.eps}
-\caption[Histograma de entropia alta - DB4.]{Histograma de entropia alta - DB4..}
+\caption[Histograma de alta entropia - DB4]{Histograma de alta entropia - DB4.}
 \label{fig:database4}
 \end{figure}
 
@@ -252,7 +250,7 @@ Nessa seção, discutimos o procedimento para a escolha da função de custo (ou
 %Na hipótese de haver tal função, poderíamos definir uma função de erro em relação à métrica ideal como função de custo e minimizar o seu valor ao longo do aprendizado do modelo. 
 
 A função de custo é uma escolha importante nos treinamentos de \acrshort{rna}. No problema de compressão de imagens a escolha dessa função tem o agravante de não haver consenso entre os pesquisadores de uma métrica ideal para avaliar a qualidade entre uma imagem original e a sua versão reconstruída como relatado em \cite{Priming2017Johnston,End2016Balle}.   
-Em nossa análise, usamos as funções conhecidas para medir distorção entre uma imagem e sua reconstrução, tais como \acrshort{mse}, \acrshort{mae}, e uma versão diferenciável de 1-\acrshort{ssim}. Em dois testes, modificamos o espaço de cores dos blocos de \acrshort{rgb} para \acrshort{ycbcr}. Outra modificação foi alterar a formulação em \ref{eq:model_1it} para \ref{eq:ae_full}.  Para comparar a performance de cada função, realizamos treinamentos curtos usando a base de dados 4. 
+Em nossa análise, usamos as funções conhecidas para medir distorção entre uma imagem e sua reconstrução, tais como \acrshort{mse}, \acrshort{mae}, e uma versão diferenciável de 1-\acrshort{ssim}. Em dois testes, modificamos o espaço de cores dos blocos de \acrshort{rgb} para \acrshort{ycbcr}. Outra modificação foi alterar a formulação em \ref{eq:model_1it} para \ref{eq:ae_full}.  Para comparar o desempenho de cada função, realizamos treinamentos curtos usando a base de dados 4. 
 
 A função de custo $L$ é calculada em cada estágio e, ao final das iterações, computamos a sua média para obter $L_{mean}$. 
 
@@ -265,21 +263,21 @@ L_{mean} = \frac{1}{k} \sum_{t=0}^k L(r_t,r'_t)
 %Vamos definir algumas variações e combinações dessas funções e comparar os resultados em treinamentos curtos.  
 
 %Em nossos testes, dedicamos atenção especial na escolha da função de custo conveniente para o problema de compressão de imagens. No primeiro momento,
-%avaliamos a performance do modelo com  distorção das reconstruções.
+%avaliamos o desempenho do modelo com  distorção das reconstruções.
 
 
 \subsection{Otimização por distorção e taxa}
 
-Até aqui, não estamos tendo controle sobre a entropia do código binário gerado. Se pudermos otimizar a rede para gerar uma sequência de bits $z$ com baixa entropia teremos ganhos relevantes ao aplicador um codificador de entropia. Em um segundo momento, adicionamos uma função de regularização $R(z)$ para otimizar implicitamente a taxa do código binário, inspirado no trabalho \cite{zhao1901cae}. 
-Para calculá-lo em uma iteração, copiamos o código binário fornecido pela função de binarização  para a variável $Z$. Nessa variável, substituímos os bits -1 por 0 e aplicamos a norma $L_1$ sobre $Z$. Ademais, empregamos a função \acrshort{mse} para fornecer uma medida de distorção. Assim, temos:
+Até aqui, nós não estamos tendo controle sobre a entropia do código binário gerado. Se pudermos otimizar a rede para gerar uma sequência de bits $z$ com baixa entropia teremos ganhos relevantes ao aplicar um codificador de entropia. Em um segundo momento, adicionamos uma função de regularização $R(z)$ para otimizar implicitamente a taxa do código binário, inspirado no trabalho \cite{zhao1901cae}. 
+Para calculá-lo em uma iteração, copiamos o código binário fornecido pela função de binarização  para a variável $Z$. Nessa variável, substituímos os valores -1 por 0 e aplicamos a norma $L_1$ sobre $Z$. Nessa caso, essa função equivale a quantidade de bits iguais a 1 em $Z$.    
+Ademais, empregamos a função \acrshort{mse} para fornecer uma medida de distorção. Assim, temos:
 
 \begin{equation}
 \label{eq:rdo}
 L = \acrshort{mse}(r,r') + \lambda(t) \times \sum_{t=1}^{n} Z 
 \end{equation}
 
-
-onde $n$ é o número de bits do código binário por nível. Em nossa rede esse número é igual a 128 para cada bloco $32 \times 32$. A ideia é que ao penalizarmos a ocorrência do bit 1 estamos, essencialmente, reduzindo a entropia de primeira ordem do código binário. Esperamos que isso reflita na redução da taxa ao aplicarmos um codificador de entropia.   
+\noindent onde $n$ é o número de bits do código binário por nível. Em nossa rede esse número é igual a 128 para cada bloco $32 \times 32$. A ideia é que ao penalizarmos a ocorrência do bit 1 estamos, essencialmente, reduzindo a entropia de primeira ordem do código binário. Esperamos que isso reflita na redução da taxa ao aplicarmos um codificador de entropia.   
 
 O fator $\lambda(t)>0$ é uma função de iteração da $t$ e responsável por controlar a proporção de $R$ sobre a função de custo. Em nossos testes, definimos $\lambda(t)$ como uma função decrescente. Para um lote de blocos de treinamento, à medida que as iterações prosseguem o resíduo reconstruído se torna cada vez menor e, consequentemente, a distorção medida pela \acrshort{mse} decai. Todavia, tal comportamento não ocorre, necessariamente, em $R$. Então controlamos o peso de $R$ sobre  $L$ através de um valor de regularização menor. Dessa forma, tentamos balancear o impacto da distorção e taxa. Podemos, encarar essa formulação com um autocodificador esparso, discutido em \ref{sec:ac_es}, onde bit -1 significa neurônio ``desativado'' e saída 1 ``ativada''. 
 
@@ -298,9 +296,8 @@ O GZIP usa um algoritmo baseado no LZ77 (técnica de dicionário), seguido por \
 
 Aproveitamos a arquitetura do \acrshort{codec} que é baseado na reconstrução por blocos de forma progressiva para apresentar uma proposta de alocação dinâmica de bits semelhante a \cite{Priming2017Johnston}. Nesse método, consideramos as regiões nas quais o modelo consegue reconstruir bem para economizar bits, e nas regiões  mais difíceis usar mais bits. 
 
-
 Uma desvantagem do método \acrshort{cbr} é usar a mesma taxa independentemente da complexidade dos blocos. Tal problema foi levantado em \cite{Priming2017Johnston}. Para tentar contornar essa desvantagem, propomos uma heurística simples.
-O método de alocação dinâmica de bits é uma etapa realizada após o treinamento da rede. Nele, ao final de cada iteração e para cada lote de blocos $32 \times 32$ que são passados pela rede do codificador e decodificador calculamos a sua média de \acrshort{psnr} e desse conjunto também obtemos a menor \acrshort{psnr}. Se essa média for maior ou igual a um alvo de qualidade ($P_{a}$) e a menor \acrshort{psnr} for maior ou igual a $P_{ct}$\% do valor desse alvo então interrompemos a reconstrução nesse ponto e passamos a codificar o próximo lote. Se chegarmos no número máximo iterações ($k_{max}$) o algoritmo encerra a reconstrução e recebe o próximo conjunto de blocos.
+O método de alocação dinâmica de bits é uma etapa realizada após o treinamento da rede. Nele, ao final de cada iteração e para cada lote de blocos $32 \times 32$ que são passados pela rede do codificador e decodificador calculamos a média de \acrshort{psnr} ($P_1$) e obtemos a menor \acrshort{psnr} ($P_2$). Se essa média for maior ou igual a um alvo de qualidade ($P_{a}$) e a menor \acrshort{psnr} for maior ou igual a $P_{ct}$ porcento do valor desse alvo então interrompemos a reconstrução nesse ponto e passamos a codificar o próximo lote. Se chegarmos no número máximo iterações ($k_{max}$) o algoritmo encerra a reconstrução e recebe o próximo conjunto de blocos.
 Como veremos, essa prática gera imagens com artefatos de blocos  que comprometam a qualidade perceptual ainda que a \acrshort{psnr} indique melhora. Por isso, adicionamos mais uma restrição: independentemente de $P_{a}$ haverá um número mínimo e máximo de iterações que os blocos estão sujeitos. O fluxograma na Figura \ref{fig:flux_vr} resume o método de alocação dinâmica de bits. 
 
 
@@ -311,7 +308,7 @@ Como veremos, essa prática gera imagens com artefatos de blocos  que comprometa
 \label{fig:flux_vr}
 \end{figure}		
 
-O codificador gerar um mapa de valores para indicar ao decodificador quantas iterações deve realizar por conjunto de blocos. Quando aplicamos esse métodos, lotes de tamanho 4 são utilizados com blocos $32 \times 32$. Em um lote reunimos 4096 pixels da imagem.
+O codificador gerar um mapa de valores para indicar ao decodificador quantas iterações deve realizar por conjunto de blocos. Quando aplicamos esse métodos, lotes de tamanho 4 são utilizados com blocos $32 \times 32$. Em um lote reunimos 4096 \textit{pixels} da imagem.
 O número máximo de interações não ultrapassa 32 e podemos representá-lo com 5 bits. Portanto a taxa extra de bits corresponde a 0.0012 bpp. Esse valor é considerado para obter os resultados.    
 
 \section{Implementação}

@@ -46,14 +46,14 @@
 \contentsline {section}{\numberline {4.3}Fun\IeC {\c c}\IeC {\~a}o de Custo}{50}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Otimiza\IeC {\c c}\IeC {\~a}o por distor\IeC {\c c}\IeC {\~a}o}{50}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Otimiza\IeC {\c c}\IeC {\~a}o por distor\IeC {\c c}\IeC {\~a}o e taxa}{50}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Aloca\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de bits}{51}{section.4.4}
+\contentsline {section}{\numberline {4.4}Aloca\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de bits}{52}{section.4.4}
 \contentsline {section}{\numberline {4.5}Implementa\IeC {\c c}\IeC {\~a}o}{54}{section.4.5}
 \contentsline {chapter}{\numberline {5}Resultados}{55}{chapter.5}
 \contentsline {section}{\numberline {5.1}An\IeC {\'a}lise da Base de Dados}{55}{section.5.1}
-\contentsline {section}{\numberline {5.2}Treinamentos em Muitas \IeC {\'E}pocas}{56}{section.5.2}
-\contentsline {section}{\numberline {5.3}Fun\IeC {\c c}\IeC {\~a}o de Custo}{59}{section.5.3}
-\contentsline {section}{\numberline {5.4}An\IeC {\'a}lise da Codifica\IeC {\c c}\IeC {\~a}o de Entropia no Desempenho do Autocodificador Recorrente e Esparso}{60}{section.5.4}
-\contentsline {section}{\numberline {5.5}Aloca\IeC {\c c}\IeC {\~a}o Din\IeC {\^a}mica de Bits}{66}{section.5.5}
-\contentsline {section}{\numberline {5.6}Compara\IeC {\c c}\IeC {\~a}o com JPEG e JPEG2000}{68}{section.5.6}
-\contentsline {chapter}{\numberline {6}Conclus\IeC {\~o}es e Trabalhos Futuros}{72}{chapter.6}
-\contentsline {chapter}{REFER\IeC {\^E}NCIAS}{73}{Item.58}
+\contentsline {section}{\numberline {5.2}Treinamentos em Muitas \IeC {\'E}pocas}{58}{section.5.2}
+\contentsline {section}{\numberline {5.3}Fun\IeC {\c c}\IeC {\~a}o de Custo}{60}{section.5.3}
+\contentsline {section}{\numberline {5.4}An\IeC {\'a}lise da Codifica\IeC {\c c}\IeC {\~a}o de Entropia para o Desempenho do Autocodificador Recorrente e Esparso}{61}{section.5.4}
+\contentsline {section}{\numberline {5.5}Aloca\IeC {\c c}\IeC {\~a}o Din\IeC {\^a}mica de Bits}{69}{section.5.5}
+\contentsline {section}{\numberline {5.6}Compara\IeC {\c c}\IeC {\~a}o com JPEG e JPEG2000}{72}{section.5.6}
+\contentsline {chapter}{\numberline {6}Conclus\IeC {\~o}es e Trabalhos Futuros}{75}{chapter.6}
+\contentsline {chapter}{REFER\IeC {\^E}NCIAS}{76}{Item.58}

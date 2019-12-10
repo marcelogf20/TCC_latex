@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.10.27)  8 DEC 2019 18:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.10.27)  10 DEC 2019 12:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2140,14 +2140,14 @@ l.39 \runfrontend
 he same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.23 }
+l.24 }
        [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.46 }
+l.49 }
        [1
 
 ])
@@ -2184,19 +2184,19 @@ Underfull \hbox (badness 10000) in alignment at lines 2--55
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 55--114
+Underfull \hbox (badness 10000) in alignment at lines 55--118
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 114--176
+Underfull \hbox (badness 10000) in alignment at lines 118--179
 [] []
  []
 
 [13
 
 
-]) (./thesis.not) [14]
+] [14]) (./thesis.not) [15]
 \c@pagesLTS.roman.1.local.count=\count347
 \c@pagesLTS.pnc.arabic=\count348
 \c@pagesLTS.double.arabic=\count349
@@ -2224,7 +2224,7 @@ Overfull \hbox (220.50885pt too wide) in paragraph at lines 1--1
 [][][]  
  []
 
-<figuras/MachineLearning.pdf, id=746, 213.67828pt x 103.3461pt>
+<figuras/MachineLearning.pdf, id=771, 213.67828pt x 103.3461pt>
 File: figuras/MachineLearning.pdf Graphic file (type pdf)
 
 <use figuras/MachineLearning.pdf>
@@ -2237,7 +2237,7 @@ Package pdftex.def Info: figuras/MachineLearning.pdf used on input line 18.
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/MachineLearning.pdf): PDF inc
 lusion: invalid other resource which is no dict (key 'ProcSets', type <array>);
  ignored.
->] <figuras/modeloRNA.pdf, id=772, 277.035pt x 247.8861pt>
+>] <figuras/modeloRNA.pdf, id=797, 277.035pt x 247.8861pt>
 File: figuras/modeloRNA.pdf Graphic file (type pdf)
 
 <use figuras/modeloRNA.pdf>
@@ -2251,7 +2251,7 @@ ed.
 >]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12.59991> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 52.
- <figuras/neuronio.pdf, id=809, 319.1925pt x 146.4672pt>
+ <figuras/neuronio.pdf, id=833, 319.1925pt x 146.4672pt>
 File: figuras/neuronio.pdf Graphic file (type pdf)
 
 <use figuras/neuronio.pdf>
@@ -2280,7 +2280,7 @@ pdfTeX warning: /usr/bin/pdflatex (file ./figuras/gradient_descent-eps-converte
 d-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> al
 lowed
 
-<figuras/gradient_descent-eps-converted-to.pdf, id=902, 985.6825pt x 484.81125p
+<figuras/gradient_descent-eps-converted-to.pdf, id=926, 985.6825pt x 484.81125p
 t>
 File: figuras/gradient_descent-eps-converted-to.pdf Graphic file (type pdf)
  <use figuras/gradient_descent-eps-converted-to.pdf>
@@ -2299,7 +2299,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12.59991> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 195.
 
-<figuras/feedforward.pdf, id=956, 175.61609pt x 119.4864pt>
+<figuras/feedforward.pdf, id=981, 175.61609pt x 119.4864pt>
 File: figuras/feedforward.pdf Graphic file (type pdf)
 
 <use figuras/feedforward.pdf>
@@ -2314,14 +2314,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/feedforward.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
->] [12] <figuras/conv2D.pdf, id=1030, 453.61469pt x 277.035pt>
+>] [12] <figuras/conv2D.pdf, id=1054, 453.61469pt x 277.035pt>
 File: figuras/conv2D.pdf Graphic file (type pdf)
 
 <use figuras/conv2D.pdf>
 Package pdftex.def Info: figuras/conv2D.pdf used on input line 276.
 (pdftex.def)             Requested size: 264.61331pt x 161.61038pt.
 
-<figuras/conv3D.pdf, id=1037, 515.04419pt x 291.00719pt>
+<figuras/conv3D.pdf, id=1061, 515.04419pt x 291.00719pt>
 File: figuras/conv3D.pdf Graphic file (type pdf)
 
 <use figuras/conv3D.pdf>
@@ -2336,7 +2336,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/conv2D.pdf): PDF inclusion: i
 nvalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 
->] <figuras/rnn.pdf, id=1071, 124.54529pt x 113.4639pt>
+>] <figuras/rnn.pdf, id=1095, 124.54529pt x 113.4639pt>
 File: figuras/rnn.pdf Graphic file (type pdf)
  <use figuras/rnn.pdf>
 Package pdftex.def Info: figuras/rnn.pdf used on input line 305.
@@ -2351,7 +2351,7 @@ nvalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/rnn.pdf): PDF inclusion: inva
 lid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] [15] <figuras/lstm_no_tempo.pdf, id=1113, 536.96606pt x 257.04028pt>
+>] [15] <figuras/lstm_no_tempo.pdf, id=1138, 536.96606pt x 257.04028pt>
 File: figuras/lstm_no_tempo.pdf Graphic file (type pdf)
 
 <use figuras/lstm_no_tempo.pdf>
@@ -2366,7 +2366,7 @@ gnored.
 
 LaTeX Warning: Command \textquoteright invalid in math mode on input line 542.
 
-<figuras/codec.pdf, id=1219, 298.23419pt x 153.6942pt>
+<figuras/codec.pdf, id=1243, 298.23419pt x 153.6942pt>
 File: figuras/codec.pdf Graphic file (type pdf)
  <use figuras/codec.pdf>
 Package pdftex.def Info: figuras/codec.pdf used on input line 559.
@@ -2379,7 +2379,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/codec.pdf): PDF inclusion: in
 valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] <figuras/rgb.pdf, id=1272, 126.4725pt x 99.2508pt>
+>] <figuras/rgb.pdf, id=1298, 126.4725pt x 99.2508pt>
 File: figuras/rgb.pdf Graphic file (type pdf)
  <use figuras/rgb.pdf>
 Package pdftex.def Info: figuras/rgb.pdf used on input line 625.
@@ -2389,7 +2389,7 @@ Package pdftex.def Info: figuras/rgb.pdf used on input line 625.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/rgb.pdf): PDF inclusion: inva
 lid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] [24] <figuras/jpeg.pdf, id=1341, 723.66356pt x 160.6803pt>
+>] [24] <figuras/jpeg.pdf, id=1365, 723.66356pt x 160.6803pt>
 File: figuras/jpeg.pdf Graphic file (type pdf)
 
 <use figuras/jpeg.pdf>
@@ -2408,14 +2408,14 @@ Overfull \hbox (220.50885pt too wide) in paragraph at lines 1--1
 
 [28
 
-] [29] [30] <figuras/toderici_1.pdf, id=1467, 595.47469pt x 154.32657pt>
+] [29] [30] <figuras/toderici_1.pdf, id=1491, 595.47469pt x 154.32657pt>
 File: figuras/toderici_1.pdf Graphic file (type pdf)
 
 <use figuras/toderici_1.pdf>
 Package pdftex.def Info: figuras/toderici_1.pdf used on input line 139.
 (pdftex.def)             Requested size: 396.91324pt x 102.86606pt.
  [31 <./figuras/toderici_1.pdf>]
-<figuras/ae_lstm.pdf, id=1502, 464.69609pt x 117.3183pt>
+<figuras/ae_lstm.pdf, id=1526, 464.69609pt x 117.3183pt>
 File: figuras/ae_lstm.pdf Graphic file (type pdf)
 
 <use figuras/ae_lstm.pdf>
@@ -2426,7 +2426,7 @@ Package pdftex.def Info: figuras/ae_lstm.pdf used on input line 177.
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/ae_lstm.pdf): PDF inclusion: 
 invalid other resource which is no dict (key 'ProcSets', type <array>); ignored
 .
->] <figuras/toderici_3.pdf, id=1543, 498.90388pt x 225.7233pt>
+>] <figuras/toderici_3.pdf, id=1567, 498.90388pt x 225.7233pt>
 File: figuras/toderici_3.pdf Graphic file (type pdf)
 
 <use figuras/toderici_3.pdf>
@@ -2449,14 +2449,14 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/toderici_3.pdf): PDF inclusio
 n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
 red.
->] <figuras/toderici_8.pdf, id=1580, 270.4849pt x 90.6085pt>
+>] <figuras/toderici_8.pdf, id=1604, 270.4849pt x 90.6085pt>
 File: figuras/toderici_8.pdf Graphic file (type pdf)
 
 <use figuras/toderici_8.pdf>
 Package pdftex.def Info: figuras/toderici_8.pdf used on input line 297.
 (pdftex.def)             Requested size: 396.91324pt x 132.9675pt.
 
-<figuras/toderici_7.pdf, id=1583, 727.29346pt x 229.56953pt>
+<figuras/toderici_7.pdf, id=1607, 727.29346pt x 229.56953pt>
 File: figuras/toderici_7.pdf Graphic file (type pdf)
 
 <use figuras/toderici_7.pdf>
@@ -2480,14 +2480,14 @@ Overfull \hbox (220.50885pt too wide) in paragraph at lines 1--1
 [][][]  
  []
 
-<figuras/redeTCC.pdf, id=1745, 768.95276pt x 612.36775pt>
+<figuras/redeTCC.pdf, id=1769, 768.95276pt x 612.36775pt>
 File: figuras/redeTCC.pdf Graphic file (type pdf)
 
 <use figuras/redeTCC.pdf>
 Package pdftex.def Info: figuras/redeTCC.pdf used on input line 31.
 (pdftex.def)             Requested size: 396.91324pt x 316.08772pt.
 
-<figuras/convlstm.pdf, id=1753, 687.52856pt x 207.65579pt>
+<figuras/convlstm.pdf, id=1777, 687.52856pt x 207.65579pt>
 File: figuras/convlstm.pdf Graphic file (type pdf)
 
 <use figuras/convlstm.pdf>
@@ -2514,18 +2514,18 @@ Package epstopdf Info: Source file: <figuras/hist.eps>
 (epstopdf)                    size: 31973 bytes
 (epstopdf)             Command: <repstopdf --outfile=figuras/hist-eps-converted
 -to.pdf figuras/hist.eps>
-(epstopdf)             \includegraphics on input line 195.
+(epstopdf)             \includegraphics on input line 193.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/hist-eps-converted-to.pdf): P
 DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/hist-eps-converted-to.pdf, id=1890, 617.30624pt x 331.2375pt>
+<figuras/hist-eps-converted-to.pdf, id=1914, 617.30624pt x 331.2375pt>
 File: figuras/hist-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figuras/hist-eps-converted-to.pdf>
 Package pdftex.def Info: figuras/hist-eps-converted-to.pdf used on input line 1
-95.
+93.
 (pdftex.def)             Requested size: 352.8155pt x 189.31781pt.
 Package epstopdf Info: Source file: <figuras/hist0.eps>
 (epstopdf)                    date: 2019-11-19 09:19:06
@@ -2535,18 +2535,18 @@ Package epstopdf Info: Source file: <figuras/hist0.eps>
 (epstopdf)                    size: 18114 bytes
 (epstopdf)             Command: <repstopdf --outfile=figuras/hist0-eps-converte
 d-to.pdf figuras/hist0.eps>
-(epstopdf)             \includegraphics on input line 206.
+(epstopdf)             \includegraphics on input line 204.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/hist0-eps-converted-to.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/hist0-eps-converted-to.pdf, id=1896, 617.30624pt x 331.2375pt>
+<figuras/hist0-eps-converted-to.pdf, id=1920, 617.30624pt x 331.2375pt>
 File: figuras/hist0-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figuras/hist0-eps-converted-to.pdf>
 Package pdftex.def Info: figuras/hist0-eps-converted-to.pdf used on input line 
-206.
+204.
 (pdftex.def)             Requested size: 352.8155pt x 189.31781pt.
 Package epstopdf Info: Source file: <figuras/hist1.eps>
 (epstopdf)                    date: 2019-11-19 09:19:06
@@ -2556,18 +2556,18 @@ Package epstopdf Info: Source file: <figuras/hist1.eps>
 (epstopdf)                    size: 11222 bytes
 (epstopdf)             Command: <repstopdf --outfile=figuras/hist1-eps-converte
 d-to.pdf figuras/hist1.eps>
-(epstopdf)             \includegraphics on input line 213.
+(epstopdf)             \includegraphics on input line 211.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/hist1-eps-converted-to.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/hist1-eps-converted-to.pdf, id=1897, 617.30624pt x 331.2375pt>
+<figuras/hist1-eps-converted-to.pdf, id=1921, 617.30624pt x 331.2375pt>
 File: figuras/hist1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figuras/hist1-eps-converted-to.pdf>
 Package pdftex.def Info: figuras/hist1-eps-converted-to.pdf used on input line 
-213.
+211.
 (pdftex.def)             Requested size: 352.8155pt x 189.31781pt.
 Package epstopdf Info: Source file: <figuras/hist2.eps>
 (epstopdf)                    date: 2019-11-19 09:19:06
@@ -2577,18 +2577,18 @@ Package epstopdf Info: Source file: <figuras/hist2.eps>
 (epstopdf)                    size: 15048 bytes
 (epstopdf)             Command: <repstopdf --outfile=figuras/hist2-eps-converte
 d-to.pdf figuras/hist2.eps>
-(epstopdf)             \includegraphics on input line 220.
+(epstopdf)             \includegraphics on input line 218.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/hist2-eps-converted-to.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/hist2-eps-converted-to.pdf, id=1898, 617.30624pt x 331.2375pt>
+<figuras/hist2-eps-converted-to.pdf, id=1922, 617.30624pt x 331.2375pt>
 File: figuras/hist2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figuras/hist2-eps-converted-to.pdf>
 Package pdftex.def Info: figuras/hist2-eps-converted-to.pdf used on input line 
-220.
+218.
 (pdftex.def)             Requested size: 352.8155pt x 189.31781pt.
 Package epstopdf Info: Source file: <figuras/hist3.eps>
 (epstopdf)                    date: 2019-11-19 09:19:06
@@ -2598,18 +2598,18 @@ Package epstopdf Info: Source file: <figuras/hist3.eps>
 (epstopdf)                    size: 29613 bytes
 (epstopdf)             Command: <repstopdf --outfile=figuras/hist3-eps-converte
 d-to.pdf figuras/hist3.eps>
-(epstopdf)             \includegraphics on input line 227.
+(epstopdf)             \includegraphics on input line 225.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/hist3-eps-converted-to.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/hist3-eps-converted-to.pdf, id=1899, 617.30624pt x 331.2375pt>
+<figuras/hist3-eps-converted-to.pdf, id=1923, 617.30624pt x 331.2375pt>
 File: figuras/hist3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figuras/hist3-eps-converted-to.pdf>
 Package pdftex.def Info: figuras/hist3-eps-converted-to.pdf used on input line 
-227.
+225.
 (pdftex.def)             Requested size: 352.8155pt x 189.31781pt.
 Package epstopdf Info: Source file: <figuras/hist4.eps>
 (epstopdf)                    date: 2019-11-19 09:19:06
@@ -2619,29 +2619,29 @@ Package epstopdf Info: Source file: <figuras/hist4.eps>
 (epstopdf)                    size: 19075 bytes
 (epstopdf)             Command: <repstopdf --outfile=figuras/hist4-eps-converte
 d-to.pdf figuras/hist4.eps>
-(epstopdf)             \includegraphics on input line 234.
+(epstopdf)             \includegraphics on input line 232.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/hist4-eps-converted-to.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/hist4-eps-converted-to.pdf, id=1900, 617.30624pt x 331.2375pt>
+<figuras/hist4-eps-converted-to.pdf, id=1924, 617.30624pt x 331.2375pt>
 File: figuras/hist4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figuras/hist4-eps-converted-to.pdf>
 Package pdftex.def Info: figuras/hist4-eps-converted-to.pdf used on input line 
-234.
+232.
 (pdftex.def)             Requested size: 352.8155pt x 189.31781pt.
  [47 <./figuras/hist-eps-converted-to.pdf>] [48 <./figuras/hist0-eps-converted-
 to.pdf> <./figuras/hist1-eps-converted-to.pdf> <./figuras/hist2-eps-converted-t
 o.pdf>] [49 <./figuras/hist3-eps-converted-to.pdf> <./figuras/hist4-eps-convert
 ed-to.pdf>] [50] [51]
-<figuras/fluxograma.pdf, id=2007, 298.23419pt x 385.44pt>
+<figuras/fluxograma.pdf, id=2032, 297.02968pt x 385.44pt>
 File: figuras/fluxograma.pdf Graphic file (type pdf)
 
 <use figuras/fluxograma.pdf>
-Package pdftex.def Info: figuras/fluxograma.pdf used on input line 309.
-(pdftex.def)             Requested size: 308.71104pt x 398.99553pt.
+Package pdftex.def Info: figuras/fluxograma.pdf used on input line 306.
+(pdftex.def)             Requested size: 308.71104pt x 400.63641pt.
  [52] [53 <./figuras/fluxograma.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/fluxograma.pdf): PDF inclusio
@@ -2654,294 +2654,256 @@ Overfull \hbox (220.50885pt too wide) in paragraph at lines 2--2
 [][][]  
  []
 
-<figuras/auc1.pdf, id=2076, 650.43pt x 397.485pt>
-File: figuras/auc1.pdf Graphic file (type pdf)
- <use figuras/auc1.pdf>
-Package pdftex.def Info: figuras/auc1.pdf used on input line 43.
-(pdftex.def)             Requested size: 308.71104pt x 188.66177pt.
-
 [55
 
-] <figuras/psnr_13epochs.pdf, id=2093, 650.43pt x 433.62pt>
+] <figuras/psnr_db2_db4.pdf, id=2111, 650.43pt x 433.62pt>
+File: figuras/psnr_db2_db4.pdf Graphic file (type pdf)
+
+<use figuras/psnr_db2_db4.pdf>
+Package pdftex.def Info: figuras/psnr_db2_db4.pdf used on input line 45.
+(pdftex.def)             Requested size: 396.91324pt x 264.61368pt.
+
+<figuras/ssim_db2_db4.pdf, id=2114, 650.43pt x 433.62pt>
+File: figuras/ssim_db2_db4.pdf Graphic file (type pdf)
+
+<use figuras/ssim_db2_db4.pdf>
+Package pdftex.def Info: figuras/ssim_db2_db4.pdf used on input line 52.
+(pdftex.def)             Requested size: 396.91324pt x 264.61368pt.
+ [56 <./figuras/psnr_db2_db4.pdf>]
+<figuras/msssim_db2_db4.pdf, id=2188, 650.43pt x 433.62pt>
+File: figuras/msssim_db2_db4.pdf Graphic file (type pdf)
+
+<use figuras/msssim_db2_db4.pdf>
+Package pdftex.def Info: figuras/msssim_db2_db4.pdf used on input line 59.
+(pdftex.def)             Requested size: 396.91324pt x 264.61368pt.
+ [57 <./figuras/ssim_db2_db4.pdf> <./figuras/msssim_db2_db4.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./figuras/msssim_db2_db4.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>] <figuras/psnr_13epochs.pdf, id=2328, 650.43pt x 433.62pt>
 File: figuras/psnr_13epochs.pdf Graphic file (type pdf)
 
 <use figuras/psnr_13epochs.pdf>
-Package pdftex.def Info: figuras/psnr_13epochs.pdf used on input line 58.
+Package pdftex.def Info: figuras/psnr_13epochs.pdf used on input line 83.
 (pdftex.def)             Requested size: 396.91324pt x 264.61368pt.
 
-<figuras/ssim_ae_jpeg_toderici.pdf, id=2104, 650.43pt x 433.62pt>
+<figuras/ssim_ae_jpeg_toderici.pdf, id=2346, 650.43pt x 433.62pt>
 File: figuras/ssim_ae_jpeg_toderici.pdf Graphic file (type pdf)
 
 <use figuras/ssim_ae_jpeg_toderici.pdf>
-Package pdftex.def Info: figuras/ssim_ae_jpeg_toderici.pdf used on input line 7
-2.
+Package pdftex.def Info: figuras/ssim_ae_jpeg_toderici.pdf used on input line 9
+8.
 (pdftex.def)             Requested size: 396.91324pt x 264.61368pt.
 
-<figuras/msssim_ae_jpeg_toderici.pdf, id=2109, 650.43pt x 433.62pt>
+<figuras/msssim_ae_jpeg_toderici.pdf, id=2355, 650.43pt x 433.62pt>
 File: figuras/msssim_ae_jpeg_toderici.pdf Graphic file (type pdf)
 
 <use figuras/msssim_ae_jpeg_toderici.pdf>
 Package pdftex.def Info: figuras/msssim_ae_jpeg_toderici.pdf used on input line
- 81.
+ 106.
 (pdftex.def)             Requested size: 396.91324pt x 264.61368pt.
 
-<figuras/psnr_ae_jpeg.pdf, id=2112, 650.43pt x 433.62pt>
+<figuras/psnr_ae_jpeg.pdf, id=2362, 650.43pt x 433.62pt>
 File: figuras/psnr_ae_jpeg.pdf Graphic file (type pdf)
 
 <use figuras/psnr_ae_jpeg.pdf>
-Package pdftex.def Info: figuras/psnr_ae_jpeg.pdf used on input line 90.
+Package pdftex.def Info: figuras/psnr_ae_jpeg.pdf used on input line 115.
 (pdftex.def)             Requested size: 396.91324pt x 264.61368pt.
- [56 <./figuras/auc1.pdf>] [57 <./figuras/psnr_13epochs.pdf> <./figuras/ssim_ae
-_jpeg_toderici.pdf
+ [58 <./figuras/psnr_13epochs.pdf>] [59 <./figuras/ssim_ae_jpeg_toderici.pdf> <
+./figuras/msssim_ae_jpeg_toderici.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./figuras/ssim_ae_jpeg_toderici.pdf): P
-DF inclusion: multiple pdfs with page group included in a single page
->] [58 <./figuras/msssim_ae_jpeg_toderici.pdf> <./figuras/psnr_ae_jpeg.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./figuras/psnr_ae_jpeg.pdf): PDF inclus
-ion: multiple pdfs with page group included in a single page
+pdfTeX warning: /usr/bin/pdflatex (file ./figuras/msssim_ae_jpeg_toderici.pdf):
+ PDF inclusion: multiple pdfs with page group included in a single page
 >]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 122.
+               Default added (so using `tbp') on input line 147.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 136.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 161.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 136.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 161.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 136.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 161.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 136.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 161.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 136.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 161.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 136.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 161.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 136.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 161.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 136.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 161.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 136.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 161.
 
 
-Overfull \hbox (28.144pt too wide) in paragraph at lines 136--138
+Overfull \hbox (28.144pt too wide) in paragraph at lines 161--163
  [][] 
  []
 
-[59]
-Overfull \hbox (2.07442pt too wide) in paragraph at lines 159--159
-[]\T1/ptm/b/n/14 ANÁLISE DA CO-DI-FI-CA-ÇÃO DE EN-TRO-PIA NO DE-SEM-PE-NHO
- []
-
-<figuras/gain_gzip_media.pdf, id=2453, 1011.78pt x 469.755pt>
+[60 <./figuras/psnr_ae_jpeg.pdf>] [61]
+<figuras/gain_gzip_media.pdf, id=2665, 1011.78pt x 469.755pt>
 File: figuras/gain_gzip_media.pdf Graphic file (type pdf)
 
 <use figuras/gain_gzip_media.pdf>
-Package pdftex.def Info: figuras/gain_gzip_media.pdf used on input line 168.
+Package pdftex.def Info: figuras/gain_gzip_media.pdf used on input line 193.
 (pdftex.def)             Requested size: 485.12218pt x 225.23613pt.
 
-Overfull \hbox (44.10446pt too wide) in paragraph at lines 168--169
+Overfull \hbox (44.10446pt too wide) in paragraph at lines 193--194
  [][] 
  []
 
-<figuras/taxa_bd_27epocas.pdf, id=2457, 650.43pt x 433.62pt>
+<figuras/taxa_bd_27epocas.pdf, id=2670, 650.43pt x 433.62pt>
 File: figuras/taxa_bd_27epocas.pdf Graphic file (type pdf)
 
 <use figuras/taxa_bd_27epocas.pdf>
-Package pdftex.def Info: figuras/taxa_bd_27epocas.pdf used on input line 179.
+Package pdftex.def Info: figuras/taxa_bd_27epocas.pdf used on input line 203.
 (pdftex.def)             Requested size: 441.01772pt x 294.0174pt.
 
-<figuras/result_3ep.pdf, id=2467, 650.43pt x 433.62pt>
+<figuras/result_3ep.pdf, id=2684, 650.43pt x 433.62pt>
 File: figuras/result_3ep.pdf Graphic file (type pdf)
 
 <use figuras/result_3ep.pdf>
-Package pdftex.def Info: figuras/result_3ep.pdf used on input line 189.
+Package pdftex.def Info: figuras/result_3ep.pdf used on input line 213.
 (pdftex.def)             Requested size: 441.01772pt x 294.0174pt.
 
-<figuras/ganho_taxa_3epocas.pdf, id=2469, 650.43pt x 433.62pt>
+<figuras/ganho_taxa_3epocas.pdf, id=2686, 650.43pt x 433.62pt>
 File: figuras/ganho_taxa_3epocas.pdf Graphic file (type pdf)
 
 <use figuras/ganho_taxa_3epocas.pdf>
-Package pdftex.def Info: figuras/ganho_taxa_3epocas.pdf used on input line 199.
+Package pdftex.def Info: figuras/ganho_taxa_3epocas.pdf used on input line 223.
 
 (pdftex.def)             Requested size: 396.91324pt x 264.61368pt.
- [60] [61 <./figuras/gain_gzip_media.pdf> <./figuras/taxa_bd_27epocas.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./figuras/taxa_bd_27epocas.pdf): PDF in
-clusion: multiple pdfs with page group included in a single page
->] [62 <./figuras/result_3ep.pdf> <./figuras/ganho_taxa_3epocas.pdf
+ [62 <./figuras/gain_gzip_media.pdf>]
+[63 <./figuras/taxa_bd_27epocas.pdf>] [64 <./figuras/result_3ep.pdf> <./figuras
+/ganho_taxa_3epocas.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/ganho_taxa_3epocas.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
 >]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 220.
+               Default added (so using `tbp') on input line 244.
 
-
-LaTeX Warning: Reference `fig:kodim20' on page 63 undefined on input line 273.
-
-[63] <figuras/comp_gain_psnr.pdf, id=2739, 867.24pt x 484.209pt>
+<figuras/comp_gain_psnr.pdf, id=2952, 867.24pt x 484.209pt>
 File: figuras/comp_gain_psnr.pdf Graphic file (type pdf)
 
 <use figuras/comp_gain_psnr.pdf>
-Package pdftex.def Info: figuras/comp_gain_psnr.pdf used on input line 282.
+Package pdftex.def Info: figuras/comp_gain_psnr.pdf used on input line 306.
 (pdftex.def)             Requested size: 441.01772pt x 246.23402pt.
 
-<figuras/kodim20.pdf, id=2740, 770.88pt x 513.92pt>
+<figuras/kodim20.pdf, id=2953, 770.88pt x 513.92pt>
 File: figuras/kodim20.pdf Graphic file (type pdf)
  <use figuras/kodim20.pdf>
-Package pdftex.def Info: figuras/kodim20.pdf used on input line 293.
-(pdftex.def)             Requested size: 198.45662pt x 132.29861pt.
+Package pdftex.def Info: figuras/kodim20.pdf used on input line 316.
+(pdftex.def)             Requested size: 441.01772pt x 294.01176pt.
 
-<figuras/kodim20it10.pdf, id=2741, 770.88pt x 513.92pt>
+<figuras/kodim20it10.pdf, id=2954, 770.88pt x 513.92pt>
 File: figuras/kodim20it10.pdf Graphic file (type pdf)
 
 <use figuras/kodim20it10.pdf>
-Package pdftex.def Info: figuras/kodim20it10.pdf used on input line 295.
-(pdftex.def)             Requested size: 198.45662pt x 132.29861pt.
+Package pdftex.def Info: figuras/kodim20it10.pdf used on input line 318.
+(pdftex.def)             Requested size: 441.01772pt x 294.01176pt.
 
-Underfull \hbox (badness 1067) in paragraph at lines 295--295
-[]\T1/ptm/m/n/10 (b) |Ima-gem re-cons-truída. Taxa: 0,942 bpp.
- []
-
-<figuras/kodim13.pdf, id=2744, 770.88pt x 513.92pt>
+<figuras/kodim13.pdf, id=2957, 770.88pt x 513.92pt>
 File: figuras/kodim13.pdf Graphic file (type pdf)
  <use figuras/kodim13.pdf>
-Package pdftex.def Info: figuras/kodim13.pdf used on input line 297.
-(pdftex.def)             Requested size: 198.45662pt x 132.29861pt.
+Package pdftex.def Info: figuras/kodim13.pdf used on input line 324.
+(pdftex.def)             Requested size: 441.01772pt x 294.01176pt.
 
-<figuras/kodim13it8.pdf, id=2745, 770.88pt x 513.92pt>
+<figuras/kodim13it8.pdf, id=2958, 770.88pt x 513.92pt>
 File: figuras/kodim13it8.pdf Graphic file (type pdf)
 
 <use figuras/kodim13it8.pdf>
-Package pdftex.def Info: figuras/kodim13it8.pdf used on input line 299.
-(pdftex.def)             Requested size: 198.45662pt x 132.29861pt.
-
-Underfull \hbox (badness 1067) in paragraph at lines 299--299
-[]\T1/ptm/m/n/10 (d) |Ima-gem re-cons-truída. Taxa: 0,987 bpp.
- []
-
-[64 <./figuras/comp_gain_psnr.pdf>] [65 <./figuras/kodim20.pdf> <./figuras/kodi
-m20it10.pdf> <./figuras/kodim13.pdf> <./figuras/kodim13it8.pdf>]
-<figuras/kodim11.pdf, id=2858, 770.88pt x 513.92pt>
+Package pdftex.def Info: figuras/kodim13it8.pdf used on input line 326.
+(pdftex.def)             Requested size: 441.01772pt x 294.01176pt.
+ [65] [66 <./figuras/comp_gain_psnr.pdf>] [67 <./figuras/kodim20.pdf> <./figura
+s/kodim20it10.pdf>] [68 <./figuras/kodim13.pdf> <./figuras/kodim13it8.pdf>] <fi
+guras/kodim11.pdf, id=3077, 770.88pt x 513.92pt>
 File: figuras/kodim11.pdf Graphic file (type pdf)
- <use figuras/kodim11.pdf>
-Package pdftex.def Info: figuras/kodim11.pdf used on input line 351.
-(pdftex.def)             Requested size: 198.45662pt x 132.29861pt.
 
-<figuras/kodim11targ_1_2431.pdf, id=2859, 770.88pt x 513.92pt>
+<use figuras/kodim11.pdf>
+Package pdftex.def Info: figuras/kodim11.pdf used on input line 377.
+(pdftex.def)             Requested size: 441.01772pt x 294.01176pt.
+
+<figuras/kodim11targ_1_2431.pdf, id=3078, 770.88pt x 513.92pt>
 File: figuras/kodim11targ_1_2431.pdf Graphic file (type pdf)
 
 <use figuras/kodim11targ_1_2431.pdf>
-Package pdftex.def Info: figuras/kodim11targ_1_2431.pdf used on input line 353.
+Package pdftex.def Info: figuras/kodim11targ_1_2431.pdf used on input line 379.
 
-(pdftex.def)             Requested size: 198.45662pt x 132.29861pt.
+(pdftex.def)             Requested size: 441.01772pt x 294.01176pt.
 
-Underfull \hbox (badness 1067) in paragraph at lines 353--353
-[]\T1/ptm/m/n/10 (b) |Ima-gem re-cons-truída. Taxa: 0,741 bpp,
- []
 
-<figuras/kodim11targ30.pdf, id=2864, 770.88pt x 513.92pt>
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 384.
+
+<figuras/kodim11targ30.pdf, id=3083, 770.88pt x 513.92pt>
 File: figuras/kodim11targ30.pdf Graphic file (type pdf)
 
 <use figuras/kodim11targ30.pdf>
-Package pdftex.def Info: figuras/kodim11targ30.pdf used on input line 355.
-(pdftex.def)             Requested size: 198.45662pt x 132.29861pt.
+Package pdftex.def Info: figuras/kodim11targ30.pdf used on input line 385.
+(pdftex.def)             Requested size: 441.01772pt x 294.01176pt.
 
-Underfull \hbox (badness 1132) in paragraph at lines 355--355
-[]\T1/ptm/m/n/10 (c) |Ima-gem re-cons-truída. Taxa: 0,782 bpp,
- []
-
-<figuras/kodim11it7.pdf, id=2869, 770.88pt x 513.92pt>
+<figuras/kodim11it7.pdf, id=3088, 770.88pt x 513.92pt>
 File: figuras/kodim11it7.pdf Graphic file (type pdf)
 
 <use figuras/kodim11it7.pdf>
-Package pdftex.def Info: figuras/kodim11it7.pdf used on input line 357.
-(pdftex.def)             Requested size: 198.45662pt x 132.29861pt.
+Package pdftex.def Info: figuras/kodim11it7.pdf used on input line 387.
+(pdftex.def)             Requested size: 441.01772pt x 294.01176pt.
 
-Underfull \hbox (badness 1067) in paragraph at lines 357--357
-[]\T1/ptm/m/n/10 (d) |Ima-gem re-cons-truída. Taxa: 0,754 bpp,
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figuras/com_vr.pdf, id=2878, 831.105pt x 433.62pt>
+<figuras/com_vr.pdf, id=3097, 831.105pt x 433.62pt>
 File: figuras/com_vr.pdf Graphic file (type pdf)
  <use figuras/com_vr.pdf>
-Package pdftex.def Info: figuras/com_vr.pdf used on input line 366.
+Package pdftex.def Info: figuras/com_vr.pdf used on input line 396.
 (pdftex.def)             Requested size: 441.01772pt x 230.0954pt.
 
-[66] [67 <./figuras/kodim11.pdf> <./figuras/kodim11targ_1_2431.pdf> <./figuras/
-kodim11targ30.pdf> <./figuras/kodim11it7.pdf> <./figuras/com_vr.pdf>]
-<figuras/comp_codecs.pdf, id=2984, 650.43pt x 433.62pt>
+[69] [70 <./figuras/kodim11.pdf> <./figuras/kodim11targ_1_2431.pdf>] [71 <./fig
+uras/kodim11targ30.pdf> <./figuras/kodim11it7.pdf>]
+<figuras/comp_codecs.pdf, id=3139, 650.43pt x 433.62pt>
 File: figuras/comp_codecs.pdf Graphic file (type pdf)
 
 <use figuras/comp_codecs.pdf>
-Package pdftex.def Info: figuras/comp_codecs.pdf used on input line 382.
+Package pdftex.def Info: figuras/comp_codecs.pdf used on input line 412.
 (pdftex.def)             Requested size: 441.01772pt x 294.0174pt.
 
-<figuras/comp_codecs_ssim.pdf, id=2987, 650.43pt x 433.62pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figuras/comp_codecs_ssim.pdf, id=3142, 650.43pt x 433.62pt>
 File: figuras/comp_codecs_ssim.pdf Graphic file (type pdf)
 
 <use figuras/comp_codecs_ssim.pdf>
-Package pdftex.def Info: figuras/comp_codecs_ssim.pdf used on input line 389.
+Package pdftex.def Info: figuras/comp_codecs_ssim.pdf used on input line 419.
 (pdftex.def)             Requested size: 441.01772pt x 294.0174pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figuras/comp_codecs_msssim.pdf, id=2990, 650.43pt x 433.62pt>
+<figuras/comp_codecs_msssim.pdf, id=3145, 650.43pt x 433.62pt>
 File: figuras/comp_codecs_msssim.pdf Graphic file (type pdf)
 
 <use figuras/comp_codecs_msssim.pdf>
-Package pdftex.def Info: figuras/comp_codecs_msssim.pdf used on input line 397.
+Package pdftex.def Info: figuras/comp_codecs_msssim.pdf used on input line 427.
 
 (pdftex.def)             Requested size: 441.01772pt x 294.0174pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figuras/bd-rate_ref_JPEG2k.pdf, id=2993, 867.24pt x 650.43pt>
-File: figuras/bd-rate_ref_JPEG2k.pdf Graphic file (type pdf)
-
-<use figuras/bd-rate_ref_JPEG2k.pdf>
-Package pdftex.def Info: figuras/bd-rate_ref_JPEG2k.pdf used on input line 406.
-
-(pdftex.def)             Requested size: 441.01772pt x 330.76213pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figuras/bd-rate_ref_JPEG.pdf, id=2996, 867.24pt x 650.43pt>
-File: figuras/bd-rate_ref_JPEG.pdf Graphic file (type pdf)
-
-<use figuras/bd-rate_ref_JPEG.pdf>
-Package pdftex.def Info: figuras/bd-rate_ref_JPEG.pdf used on input line 415.
-(pdftex.def)             Requested size: 441.01772pt x 330.76213pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./parts/capt_05.tex [68
-
- <./figuras/comp_codecs.pdf>] [69 <./figuras/comp_codecs_ssim.pdf> <./figuras/c
-omp_codecs_msssim.pdf
+ [72 <./figuras/com_vr.pdf>])
+(./parts/capt_05.tex [73 <./figuras/comp_codecs.pdf> <./figuras/comp_codecs_mss
+sim.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/comp_codecs_msssim.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->] [70 <./figuras/bd-rate_ref_JPEG2k.pdf>] [71 <./figuras/bd-rate_ref_JPEG.pdf>
-]
+>] [74 <./figuras/comp_codecs_ssim.pdf>]
 Cap\'{\i }tulo 6.
 
 Overfull \hbox (220.50885pt too wide) in paragraph at lines 1--1
@@ -2954,17 +2916,17 @@ Overfull \hbox (0.75713pt too wide) in paragraph at lines 13--14
 -si-de-ra-vel-mente in-fe-rior quando
  []
 
-[72
+[75
 
-]) (./thesis.bbl [73]
+]) (./thesis.bbl [76]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 70.
- [74
+ [77
 
-] [75] [76] [77])
+] [78] [79] [80])
 
 AED: pageslts setting LastPage 
-[78
+[81
 runsystem(makeindex -s thesis.ist -t thesis.glg -o thesis.gls thesis.glo)...exe
 cuted safely (allowed).
 
@@ -2994,18 +2956,14 @@ Package pageslts Info: Total number of pages is odd.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 2FC784718CA0F0E6F9CDBB5527F7722D;3828.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: E017DD0ECC7ECF16270803F0C979EAE4;3832.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
- 39500 strings out of 494929
- 733610 string characters out of 6180141
- 894715 words of memory out of 5000000
- 41503 multiletter control sequences out of 15000+600000
+ 39510 strings out of 494929
+ 733755 string characters out of 6180141
+ 895018 words of memory out of 5000000
+ 41507 multiletter control sequences out of 15000+600000
  88228 words of font info for 97 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  63i,23n,94p,10443b,1036s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3025,10 +2983,10 @@ live/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (93 pages, 3331176 bytes).
+Output written on thesis.pdf (97 pages, 3339069 bytes).
 PDF statistics:
- 3638 PDF objects out of 4296 (max. 8388607)
- 2363 compressed objects within 24 object streams
- 492 named destinations out of 1000 (max. 500000)
+ 3723 PDF objects out of 4296 (max. 8388607)
+ 2417 compressed objects within 25 object streams
+ 498 named destinations out of 1000 (max. 500000)
  684 words of extra memory for PDF output out of 10000 (max. 10000000)
 

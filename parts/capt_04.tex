@@ -2,11 +2,11 @@
 \chapter{Resultados}
 Nessa seção apresentamos os principais resultados na elaboração desse trabalho. Eles são referentes a análise da base de dados, da função de custo, codificação de entropia e alocação dinâmica de bits. 
 
-%A nossa hipótese é que a performance do autoencoder está relacionado com características da entropia da base de dados utilizado no treinamento.
+%A nossa hipótese é que o desempenho do autoencoder está relacionado com características da entropia da base de dados utilizado no treinamento.
 
 \section{Análise da Base de Dados}
 
-Treinamos 5 modelos do autocodificador para cada base de dados apresentada em \ref{list:bds} e usando a função \acrshort{mae} sobre os resíduos como função de custo. Além disso, os seguintes hiper-parâmetros da rede foram adotados neste experimento: 
+Treinamos 5 modelos do autocodificador para cada base de dados apresentada em \ref{list:bds} e usando a função \acrshort{mae} sobre os resíduos como função de custo. Além disso, os seguintes hiperparâmetros da rede foram adotados neste experimento: 
 
 \begin{enumerate}
 	\label{enum:hiper_param}
@@ -22,33 +22,58 @@ Calculamos os valores médios de \acrshort{psnr}, \acrshort{ssim} e \acrshort{ms
 
 \begin{table}[htbp]
 	\centering
-	\caption[Comparação das base de dados]{Comparação das base de dados.}
-	\begin{tabular}{|l|l|l|l|}
+	\caption[Comparação das bases de dados]{Comparação das bases de dados.}
+	\begin{tabular}{|c|c|c|c|}
 		\hline
 		\textbf{Base de dados} & \textbf{PSNR(dB)}    & \textbf{SSIM}   & \textbf{MS-SSIM}\\\hline
-		\textbf{0}            & 25,4268          & 0,6978          & 0,9177           \\\hline
-		\textbf{1}            & 31,9458          & 0,9201          & 0,9874           \\\hline
-		\textbf{2}            & 34,3622          & 0,9444          & 0,9900           \\\hline
-		\textbf{3}            & 32,9632	       & 0,9327          & 0,9890           \\\hline
+		0            & 25,4268          & 0,6978          & 0,9177           \\\hline
+		1            & 31,9458          & 0,9201          & 0,9874           \\\hline
+		2            & 34,3622          & 0,9444          & 0,9900           \\\hline
+		3            & 32,9632	       & 0,9327          & 0,9890           \\\hline
 		\textbf{4}            & \textbf{34,3903} & \textbf{0,9473} & \textbf{0,9913}     
 		\\ \hline
 	\end{tabular}
 	\label{table:comp_datasets}
 \end{table}
 
-Conforme esperado, uma base de dados de alta entropia é indicada para treinar o modelo. A hipótese é que essa característica otimiza a rede para aprender padrões não triviais das imagens e evitar o sobre-ajuste do modelo. A base de dados 4, nessa tabela, obteve o melhor resultado, por uma pequena margem em relação à BD2. 
-Para temos uma comparação mais ampla, calculamos as áreas abaixo das curvas de \acrshort{psnr} $\times$ taxa, \acrshort{ssim} $\times$ taxa e  \acrshort{msssim} $\times$ taxa dos modelos treinados por DB2 e DB4. Todas  as curvas têm 16 pontos, com taxas nominais no intervalo de 0,125 a 2,0 bpp e incrementos constantes de 0,125 bpp. A Figura \ref{fig:auc1} é mais um indicativo que o modelo treinado pela BD4 apresenta a melhor performance. 
-\begin{figure}
+Conforme esperado, uma base de dados de alta entropia é indicada para treinar o modelo. A hipótese é que essa característica otimiza a rede a aprender padrões não triviais das imagens e evitar o sobre-ajuste do modelo. A base de dados 4, nessa tabela, obteve o melhor resultado, por uma pequena margem em relação à BD2.
+
+As figuras \ref{fig:psnr_db2_db4} \ref{fig:ssim_db2_db4} e \ref{fig:msssim_db2_db4} ilustram os resultados do autocodificador treinado pelas bases de dados 2 e 4 em relação às métricas \acrshort{psnr}, \acrshort{ssim} e \acrshort{msssim} para taxas nominais no intervalo de 0,125 a 2,0 bpp com incrementos constantes de 0,125 bpp. Elas indicam que o modelo treinado pela BD4 apresenta um melhor desempenho. 
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{figuras/auc1.pdf}
-	\caption[Comparação dos resultados das bases de dados 2 e 4.]{Essa Figura mostra resultados das áreas abaixo da curvas de \acrshort{psnr}, \acrshort{ssim} e \acrshort{msssim} em função das taxas nominais, usando os modelos treinados por DB2 e DB4.}
-	\label{fig:auc1}
+	\includegraphics[width=0.9\textwidth]{figuras/psnr_db2_db4.pdf}
+	\caption[Comparação dos resultados das bases de dados 2 e 4 em relação à \acrshort{psnr}]{Comparação dos modelos obtidos pelas bases de dados 2 e 4 em relação à \acrshort{psnr} para várias taxas.} 
+	\label{fig:psnr_db2_db4}
 \end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figuras/ssim_db2_db4.pdf}
+	\caption[Comparação dos resultados das bases de dados 2 e 4 em relação à \acrshort{ssim}]{Comparação dos modelos obtidos pelas bases de dados 2 e 4 em relação à \acrshort{ssim} para várias taxas.} 
+	\label{fig:ssim_db2_db4}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figuras/msssim_db2_db4.pdf}
+	\caption[Comparação dos resultados das bases de dados 2 e 4 em relação à \acrshort{msssim}]{Comparação dos modelos obtidos pelas bases de dados 2 e 4 em relação à \acrshort{msssim} para várias taxas.} 
+	\label{fig:msssim_db2_db4}
+\end{figure}
+
+
+
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\textwidth]{figuras/auc1.pdf}
+%	\caption[Comparação dos resultados das bases de dados 2 e 4.]{Essa Figura mostra resultados das áreas abaixo da curvas de \acrshort{psnr}, \acrshort{ssim} e \acrshort{msssim} em função das taxas nominais, usando os modelos treinados por DB2 e DB4.}
+%	\label{fig:auc1}
+%\end{figure}
 
 %A BD4 obteve os melhores resultados nas 3 métricas nesse conjunto de teste e será %aplicada nas próximas análises.
 
 \section{Treinamentos em Muitas Épocas}
-O próximo passo foi analisar a performance no modelo à medida que aumentarmos o número de épocas de treinamento.
+O próximo passo foi analisar o desempenho no modelo à medida que aumentarmos o número de épocas de treinamento.
 
 
 Treinamos a rede por 13 épocas usando a base de dados 4. Os parâmetros do novo treinamento foram definidos conforme itens citados em \ref{enum:hiper_param}, exceto o número de épocas. A evolução do modelo ao passar das épocas pode ser vista na Figura \ref{fig:psnr_13epocas}. 
@@ -60,26 +85,26 @@ Treinamos a rede por 13 épocas usando a base de dados 4. Os parâmetros do novo
 	\label{fig:psnr_13epocas}
 \end{figure}		
 
-Usando o modelo obtido na 13ª época, plotamos as curvas de distorção nas métricas \acrshort{ssim} e \acrshort{msssim} em conjunto com o JPEG(4:2:0) e o trabalho de Toderici et. al. \cite{FullResolution2017Toderici}. Essas Figuras estão disponíveis em \ref{fig:ssim_ae_jpeg_toderici} e  \ref{fig:msssim_ae_jpeg_toderici}. 
-Nessas métricas, e na média das imagens da Kodak, nosso modelo supera o trabalho \cite{FullResolution2017Toderici} e o JPEG
-Acreditamos que esse resultado se deve a metodologia para a obtenção da base de dados de treinamento.
-Todavia, a Figura \ref{fig:psnr_ae_jpeg} indica que na métrica \acrshort{psnr} o JPEG(4:2:0) supera o nosso modelo para a maioria das taxas calculadas. 
+Usando o modelo obtido na 13ª época, plotamos as curvas de distorção nas métricas \acrshort{ssim} e \acrshort{msssim} em conjunto com o \acrshort{jpeg}(4:2:0) e o trabalho de Toderici et. al. \cite{FullResolution2017Toderici}. Essas Figuras estão disponíveis em \ref{fig:ssim_ae_jpeg_toderici} e  \ref{fig:msssim_ae_jpeg_toderici}. 
+Nessas métricas e na média das imagens da Kodak, nosso modelo supera o trabalho \cite{FullResolution2017Toderici} e o \acrshort{jpeg}. Acreditamos que esse resultado se deve a metodologia para a obtenção da base de dados de treinamento, proposta em \cite{DeliverableJuly}, e duas mudanças propostas na arquitetura original. Essas alterações incluem o processo de treinamento da rede, ao empregarmos a equação \ref{eq:model_1it} ao invés de \ref{eq:ae_full}, e a utilização da \acrshort{mae} ao invés da norma \textit{$L_1$} como função de custo.  
+
+
+Todavia, a Figura \ref{fig:psnr_ae_jpeg} indica que na métrica \acrshort{psnr} o \acrshort{jpeg}(4:2:0) supera o nosso modelo para a maioria das taxas calculadas. 
 %Pela Figura \ref{fig:psnr_13epocas} verificamos uma tendência de saturação do modelo, em torno de 36 dB na taxa de 2 bpp, ao passar das épocas de treinamento. 
 
 % que não passaram por processos de compressão com perdas e decimação.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.9\textwidth]{figuras/ssim_ae_jpeg_toderici.pdf}
-	\caption[Curva \acrshort{ssim} por Taxa.]{Desempenho do modelo treinado em 16 épocas e otimizado por \acrshort{mae} em \acrshort{ssim}. Nas taxas apresentadas, obtemos melhores resultados em relação ao JPEG e a referência principal do nosso trabalho.}
+	\caption[Curva \acrshort{ssim} por Taxa.]{Desempenho do modelo treinado em 16 épocas e otimizado por \acrshort{mae} em \acrshort{ssim}. Nas taxas apresentadas, obtemos melhores resultados em relação ao \acrshort{jpeg} e o trabalho de Toderici et al. \cite{FullResolution2017Toderici}.}
 	\label{fig:ssim_ae_jpeg_toderici}
 \end{figure}	
-
 
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.9\textwidth]{figuras/msssim_ae_jpeg_toderici.pdf}
-	\caption[Curva \acrshort{msssim} por Taxa.]{Comparação do modelo, treinado em 16 épocas e otimizado por \acrshort{mae}, com o JPEG e a referência principal deste trabalho.}
+	\caption[Curva \acrshort{msssim} por Taxa.]{Comparação do modelo, treinado em 16 épocas e otimizado por \acrshort{mae}, com o \acrshort{jpeg} e o trabalho de Toderici et al. \cite{FullResolution2017Toderici}.}
 	\label{fig:msssim_ae_jpeg_toderici}
 \end{figure}	
 
@@ -88,7 +113,7 @@ Todavia, a Figura \ref{fig:psnr_ae_jpeg} indica que na métrica \acrshort{psnr} 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.9\textwidth]{figuras/psnr_ae_jpeg.pdf}
-	\caption[Curva \acrshort{psnr} por Taxa]{Comparação do modelo treinado por 16 épocas com o JPEG. O modelo supera o JPEG em \acrshort{psnr} apenas em baixas taxas.}
+	\caption[Curva \acrshort{psnr} por Taxa]{Comparação do modelo treinado por 16 épocas com o \acrshort{jpeg}. O modelo supera o \acrshort{jpeg} em \acrshort{psnr} apenas em baixas taxas.}
 	\label{fig:psnr_ae_jpeg}
 \end{figure}	
 
@@ -114,7 +139,7 @@ Todavia, a Figura \ref{fig:psnr_ae_jpeg} indica que na métrica \acrshort{psnr} 
 Esta seção apresenta os testes realizados para diferentes funções de custos de distorção. Também analisamos dois método para calcular a informação residual, citados em \ref{sec:arq}.    
 
 
-A Tabela \ref{table:comp_loss} apresenta resultados para 7 funções de custo relacionadas a distorção entre duas imagens.  Os valores foram calculados pela média das imagens da Kodak, codificadas a 2 bpp. A rede foi treinada com a base de dados 4 e parâmetros listados em \ref{enum:hiper_param}. Nessa tabela, $R$, $R'$, $X$ e $X'$ foram definidos na Equação \ref{eq:model_1it}, omitindo-se a dependência temporal. A medida $X-X'$ é o resíduo em relação à imagem original  $X$.  
+A Tabela \ref{table:comp_loss} apresenta resultados para 7 funções de custo relacionadas a distorção entre duas imagens.  Os valores foram calculados pela média das imagens da Kodak, codificadas a 2 bpp. A rede foi treinada com a base de dados 4 e parâmetros listados em \ref{enum:hiper_param}. Nessa tabela, $R$, $R'$, $X$ e $X'$ foram definidos na Equação \ref{eq:model_1it}, omitindo-se a dependência temporal. A medida $X-X'$ é o resíduo em relação à imagem original $X$.  
 O subíndice \textit{y} e \textit{$C_bC_r$} são para indicar a componente de luminância e o par crominância azul e vermelho, respectivamente. Nos testes 3 e 4, modificamos o treinamento para rede operar no espaço $YC_bC_r$. O objetivo foi penalizar, predominante, o erro da componente de luminância (que contém informações mais sensíveis ao olho humano) no ajuste da rede, em comparação com as componentes de crominância.
 No teste 7, utilizamos uma medida de dissimilaridade estrutural entre duas imagens, obtida a partir da \acrshort{ssim} e implementada em \cite{su2017}.  A distorção calculada pela \acrshort{mse} aplicada no resíduos de reconstruções a nível de iteração ($R-R'$) forneceu os melhores resultados em todas as métricas avaliadas. 
 
@@ -123,17 +148,17 @@ No teste 7, utilizamos uma medida de dissimilaridade estrutural entre duas image
 	\centering
 	\caption{Comparação das funções de custo.}
 	\scalebox{0.9}{
-		\begin{tabular}{|l|l|l|l|l|l|l|}
+		\begin{tabular}{|c|c|c|c|c|c|c|}
 			\hline
 			\textbf{Teste} & \textbf{Função de custo}                                                                                        & \textbf{Espaco} & \textbf{PNSR (dB)} & \textbf{PNSR Y (dB)} & \textbf{SSIM}   & \textbf{MS-SIM} \\ \hline
-			\textbf{1}     & $MAE(R-R’)$                                                                                                     & RGB             & 33,0872            & 33,8443              & 0,9309          & 0,9876          \\ \hline
-			\textbf{2}     & $MAE^{2}(R-R’)$                                                                                                 & RGB             & 34,1766            & 34,9706              & 0,9444          & 0,9892          \\ \hline
-			\textbf{3}     & \begin{tabular}[c]{@{}l@{}}$MAE^{2}(R_{y}-R_{y}’) +$\\ $+ 0.25 \times \acrshort{mae}^{2}(R_{CbCr}-R_{CbCr}’)$\end{tabular} & YCbCr           & 33,3555            & 35,3253              & 0,9445          & 0,9857          \\ \hline
-			\textbf{4}     & \begin{tabular}[c]{@{}l@{}}$MSE(R_{y}-R_{y}’) +$\\ $+ 0.25 \times \acrshort{mse}(R_{CbCr}-R_{CbCr}’)$\end{tabular}         & YCbCr           & 33,5249            & 35,1863              & 0,9390          & 0,9858          \\ \hline
+			1     & $MAE(R-R’)$                                                                                                     & RGB             & 33,0872            & 33,8443              & 0,9309          & 0,9876          \\ \hline
+			2     & $MAE^{2}(R-R’)$                                                                                                 & RGB             & 34,1766            & 34,9706              & 0,9444          & 0,9892          \\ \hline
+			3     & \begin{tabular}[c]{@{}l@{}}$MAE^{2}(R_{y}-R_{y}’) +$\\ $+ 0.25 \times \acrshort{mae}^{2}(R_{CbCr}-R_{CbCr}’)$\end{tabular} & YCbCr           & 33,3555            & 35,3253              & 0,9445          & 0,9857          \\ \hline
+			4     & \begin{tabular}[c]{@{}l@{}}$MSE(R_{y}-R_{y}’) +$\\ $+ 0.25 \times \acrshort{mse}(R_{CbCr}-R_{CbCr}’)$\end{tabular}         & YCbCr           & 33,5249            & 35,1863              & 0,9390          & 0,9858          \\ \hline
 			\textbf{5}     & $MSE(R-R’)$                                                                                                     & RGB             & \textbf{34,9259}   & \textbf{35,9066}     & \textbf{0,9474} & \textbf{0,9907} \\ \hline
-			\textbf{6}     & $MSE(X-X’)$                                                                                                     & RGB             & 33,7662            & 34,6014              & 0,9321          & 0,9866          \\ \hline
-			\textbf{7}     & $1 - \acrshort{ssim} (X -X’)$                                                                                              & RGB             & 33,2754            & 34,0755              & 0,9352          & 0,9896          \\ \hline
-		\end{tabular}}
+			6     & $MSE(X-X’)$                                                                                                     & RGB             & 33,7662            & 34,6014              & 0,9321          & 0,9866          \\ \hline
+			7     & $1 - \acrshort{ssim} (X -X’)$                                                                                              & RGB             & 33,2754            & 34,0755              & 0,9352          & 0,9896          \\ \hline
+	\end{tabular}}
 	\label{table:comp_loss}
 \end{table}
 
@@ -143,7 +168,7 @@ A segunda etapa na escolha de uma função de perdas foi considerar, de forma im
 \lambda(t) = 3,5 \times 10^{-7} \times e^{-0,1 \times (t+1)}  
 \end{equation}
 
-Para o treinamento usamos a base de dados 5 e alteramos o número de estágios de 16 para 28. Esse aumento visa obter imagens mais precisas pela adição de novos resíduos. Acreditamos que o aumento da taxa nominal seja compensado pela codificação com o GZIP.  Resumindo, no novo treinamento da rede teremos,
+Para o treinamento usamos a base de dados 5 e alteramos o número de estágios de 16 para 28. Esse aumento visa obter imagens mais precisas pela adição de novos resíduos. Acreditamos que o aumento da taxa nominal seja compensado pela codificação com o GZIP. No novo treinamento da rede teremos:
 
 \begin{enumerate}
 	\label{enum:hiper_param2}
@@ -152,13 +177,13 @@ Para o treinamento usamos a base de dados 5 e alteramos o número de estágios d
 	\item Número de iterações no treinamento: 28;
 	\item Número de iterações durante os testes: 22;
 	\item Número de épocas: 27;
-	\item Taxa de aprendizado: $5 \times {10}^{-4}$ com decaimento por um fator de 0,5 caso a média da função de perdas em uma época seja maior que na época anterior.
+	\item Taxa de aprendizado: $5 \times {10}^{-4}$ com decaimento por um fator de 0,5 caso a média da função de custo em uma época seja maior que na época anterior.
 \end{enumerate}
 
 
-\section{Análise da Codificação de Entropia no Desempenho do Autocodificador Recorrente e Esparso}
+\section{Análise da Codificação de Entropia para o Desempenho do Autocodificador Recorrente e Esparso}
 
-Esta seção aborda os resultados do modelo baseados em esparsidade do código binário. Medimos a eficiência dessa abordagem pela redução das taxas nominais usando a codificação de entropia fornecida pelo GZIP, em conjunto com a distorção obtida.    
+Esta seção aborda os resultados do modelo baseados em esparsidade do código binário. Medimos a eficiência dessa abordagem pela redução das taxas nominais usando a codificação de entropia fornecida pelo GZIP, e pela distorção das imagens obtida após a compressão.    
 
 
 A Figura \ref{fig:gain_gzip_meida} apresenta resultados após a codificação de entropia do GZIP. As curvas de \acrshort{psnr} e \acrshort{ssim} se deslocam para esquerda em virtude de taxas reais serem menores que as nominais. O ganho do GZIP é maior para altas taxas. Isso é esperado tendo em vista que, em geral, os codificadores de entropia são mais eficientes em conjuntos maiores de dados. Nos próximos testes, as taxas empregadas serão sempre a real.    
@@ -170,18 +195,17 @@ A Figura \ref{fig:gain_gzip_meida} apresenta resultados após a codificação de
 	\label{fig:gain_gzip_meida}
 \end{figure}
 
-A Figura \ref{fig:taxa_bd} mostra como a performance, em termos de \acrshort{bdrate}, (em relação ao JPEG) se comporta durante o treinamento do modelo. O treinamento em várias épocas melhora, significativamente, o seu desempenho, como visto anteriormente. É verdade também que a velocidade na qual o modelo apresenta melhores resultados reduz ao passar das épocas. A economia do \acrshort{codec} na 26ª época em relação à primeira é de, aproximadamente, 17\%. 
-A arquitetura treinada até a 26ª época possui os melhores resultados. 
+A Figura \ref{fig:taxa_bd} mostra como o desempenho, em termos de \acrshort{bdrate}, (em relação ao \acrshort{jpeg}) se comporta durante o treinamento do modelo. O treinamento em várias épocas melhora, significativamente, o seu desempenho, como visto anteriormente. É verdade também que a velocidade na qual o modelo apresenta melhores resultados reduz ao passar das épocas. A economia do \acrshort{codec} na 26ª época em relação à primeira é de, aproximadamente, 17\%. A arquitetura treinada até a 26ª época possui os melhores resultados. 
 
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{figuras/taxa_bd_27epocas.pdf}
-	\caption[Curva de \acrshort{bdrate} por época de treinamento.]{Ilustração da porcentagem da \acrshort{bdrate} média sobre a base de dados da Kodak e tendo o JPEG como âncora.  Valores cada vez mais negativos indicam que a economia média de taxa de bits do nosso modelo em relação ao JPEG aumenta para uma dada qualidade equivalente de \acrshort{psnr} na média das imagens da Kodak.}  
+	\caption[Curva de \acrshort{bdrate} por época de treinamento.]{Ilustração da porcentagem da \acrshort{bdrate} média sobre a base de dados da Kodak e tendo o \acrshort{jpeg} como âncora.  Valores cada vez mais negativos indicam que a economia média de taxa de bits do nosso modelo em relação ao \acrshort{jpeg} aumenta para uma dada qualidade equivalente de \acrshort{psnr} na média das imagens da Kodak.}  
 	\label{fig:taxa_bd}
 \end{figure}	
 
-Nas figuras em \ref{fig:metricas_3ep} podemos observar a otimização em 3 épocas através de curvas taxa-distorção. Nesse teste, a qualidade melhora e a taxa real é reduzida seguindo a época 1, 6 e 26. A qualidade aqui é modelada pelas curvas de \acrshort{psnr} (a), \acrshort{psnr} Y (b)  \acrshort{ssim} (c) e  \acrshort{msssim} (d). Esse resultado indica que a nossa função realiza uma otimização conjunta de distorção e taxa. 
+Nas Figuras em \ref{fig:metricas_3ep} podemos observar a otimização em 3 épocas através de curvas taxa-distorção. Nesse teste, a qualidade melhora e a taxa real é reduzida seguindo a época 1, 6 e 26. A qualidade aqui é dada pelas curvas de \acrshort{psnr} (a), \acrshort{psnr} Y (b)  \acrshort{ssim} (c) e  \acrshort{msssim} (d). Esses resultados mostram que a nossa função realiza uma otimização conjunta de distorção e taxa. 
 %Todavia, não temos uma fundamentação na direção do melhor método para otimização taxa-distorção.  
 
 \begin{figure}
@@ -191,7 +215,7 @@ Nas figuras em \ref{fig:metricas_3ep} podemos observar a otimização em 3 époc
 	\label{fig:metricas_3ep}
 \end{figure}
 
-A Figura \ref{fig:gain_medio_bpp} apresenta o ganho médio percentual da taxa real (fornecida pelo GZIP) em relação a nominal, em  função do número de iterações nas quais as imagens foram reconstruídas. Os resultados mostram que, aproximadamente, nos primeiros 3 níveis de reconstrução o modelo mais treinado tem ganho médio menor em relação aos modelos com \textit{underfitting}.  
+A Figura \ref{fig:gain_medio_bpp} apresenta o ganho médio percentual da taxa real (fornecida pelo GZIP) em relação a nominal, em  função do número de iterações nas quais as imagens foram reconstruídas. Os resultados mostram que nos primeiros 3 níveis de reconstrução o modelo de melhor desempenho (modelo26) tem ganho médio de taxa menor em relação aos modelos com \textit{underfitting}.  
 
 
 \begin{figure}
@@ -203,14 +227,14 @@ A Figura \ref{fig:gain_medio_bpp} apresenta o ganho médio percentual da taxa re
 
 %, ainda que temos um conjunto maior de bits para realizar compressão.
 
-A justificativa pode ser que, durante o treinamento, para esse nível de reconstrução a função da distorção é significativamente superior ao valor da função de esparsidade. Ao priorizar a reconstrução o código binário assume apresenta menor redundância. Isso implica em menor margem para a redução das taxas nominais após codificação de entropia. 
-A partir da 4ª iteração a curva de ganho do modelo final ultrapassa as demais. À medida que a reconstrução é feita, esperamos que, em um momento, a relevância da distorção medida pela \acrshort{mse} e usada para o aprendizagem da rede sofra redução. Vamos usar o modelo de melhor ajuste (treinado por 26 épocas) para realizar as próximas análises.  
+A justificativa pode ser que durante o treinamento, para esse nível de reconstrução a função da distorção é significativamente superior ao valor da função de esparsidade. Ao priorizar a reconstrução o código binário deve apresentar menor redundância. Isso implica em menor margem para a redução das taxas nominais após codificação de entropia. 
+A partir da 4ª iteração a curva de ganho do modelo final ultrapassa as demais. Acreditamos que, conforme a reconstrução é feita, a relevância da distorção medida pela \acrshort{mse} sofra redução e consequentemente a função de esparsidade reduza, consideravelmente, a entropia de primeira ordem do código binário. Vamos usar o modelo de melhor ajuste (modelo26) para realizar as próximas análises.  
 
-
-
-A Tabela em \ref{table:entrop} apresenta quantidades percentuais de bits 1 e -1 no fluxo de bits por nível de iteração e na média das imagens da Kodak. A cada iteração 49152 bits são adicionados ao fluxo. 
+A Tabela em \ref{table:entrop} apresenta quantidades percentuais de bits 1 e 0 no fluxo de bits por nível de iteração e na média das imagens da Kodak. A cada iteração 49152 bits são adicionados ao fluxo de dados enviados ao decodificador. 
 É interessante observar como o modelo penaliza a ocorrência do bit de valor 1. À medida que reconstruímos uma imagem e montamos o fluxo de bits, menor é a porcentagem de ocorrência desse bit.  Portanto, a entropia de primeira ordem é um função decrescente do número de iterações, conforme apresentado na quinta coluna dessa tabela.  A nossa  abordagem foi eficaz para promover esparsidade no código binário. 
-Fato a destacar é que nas primeiras 3 iterações na Figura \ref{fig:gain_medio_bpp} o ganho de taxa é sucessivamente menor, contudo nesse mesmo intervalo a proporção de bits -1 é progressivamente menor.  Ou seja, ainda que nossa função de custo esteja promovendo esparsidade (e reduzindo a entropia de ordem 1) isso não significou, nesse intervalo, que a codificação de entropia seja mais eficiente.  
+Fato a destacar é que nas primeiras 3 iterações na Figura \ref{fig:gain_medio_bpp} o ganho de taxa é sucessivamente menor, contudo nesse mesmo intervalo a proporção de bits 0 é progressivamente menor.  Ou seja, ainda que nossa função de custo esteja promovendo esparsidade (e reduzindo a entropia de primeira ordem) isso não significou, nesse intervalo, que a codificação de entropia seja mais eficiente.  
+Logo, a redução na entropia de primeira ordem não implica, necessariamente, em uma codificação de entropia mais eficiente através do GZIP. 
+
 
 %Logo, faz se necessário um estudo mais fundamentado para modelar  a entropia do código binário e obtemos melhores estimativas da entropia real da fonte. 
 %e a eficácia de codificação de entropia. 
@@ -223,7 +247,7 @@ Fato a destacar é que nas primeiras 3 iterações na Figura \ref{fig:gain_medio
 	\scalebox{0.9}{
 		\begin{tabular}{ccccc}
 			\hline
-			\textbf{Iteração} & \textbf{\begin{tabular}[c]{@{}c@{}}Quantidade \\ de Bits\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Quantidade de\\ Bits 1  (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Quantidade de \\ Bits -1  (\%)\end{tabular}} & \textbf{Entropia (b/s)} \\ \hline
+			\textbf{Iteração} & \textbf{\begin{tabular}[c]{@{}c@{}}Quantidade \\ de Bits\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Quantidade de\\ Bits 1  (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Quantidade de \\ Bits 0  (\%)\end{tabular}} & \textbf{Entropia (b/s)} \\ \hline
 			1                 & 49152                                                                  & 36,43                                                                        & 63,57                                                                             & 0,946                   \\ \hline
 			2                 & 98304                                                                  & 33,50                                                                        & 66,50                                                                             & 0,920                   \\ \hline
 			3                 & 147456                                                                 & 32,34                                                                        & 67,66                                                                             & 0,908                   \\ \hline
@@ -269,12 +293,12 @@ Fato a destacar é que nas primeiras 3 iterações na Figura \ref{fig:gain_medio
 %\end{figure}
 
 
-Nas Figuras em \ref{fig:comp_gain_psnr} apresentamos 3 curvas de \acrshort{psnr} e ganho dado pelo GZIP. Na base de dado de teste, a kodim13  obteve o menor ganho, a kodim20 o maior, e a kodim6 tem ganho aproximadamente próximo da média. 
+Nas Figuras em \ref{fig:comp_gain_psnr} apresentamos 3 curvas de \acrshort{psnr} e ganho dado pelo GZIP. Na base de dado de teste, a imagem 13 da kodak (\textit{kodim13})  obteve o menor ganho, a \textit{kodim20} o maior, e a \textit{kodim6} tem ganho aproximadamente próximo da média. 
 Acreditamos que os códigos binários possuem maior redundância nas imagens com conteúdos ``suaves'', (por exemplo céu, mar, etc) como na Figura \ref{fig:kodim20}. 
-De forma análoga, imagens com muita informação de alta frequência é de ``difícil compressão'' 
-de modo que a estatística dos seus bits não favorece alto fator de compactação. A kodim13, ilustrada na Figura \ref{fig:kodim13}, exemplifica uma imagem com alta taxa de variação da intensidade por pixel. 
+De forma análoga, imagens com muita informação de alta frequência é de ``difícil compressão'', 
+de modo que a estatística dos seus bits não favorece um alto fator de compactação. A \textit{kodim13}, ilustrada na Figura \ref{fig:kodim13}, exemplifica uma imagem com alta taxa de variação da intensidade por \textit{pixel}. 
 
-Uma limitação do nosso modelo é obter altas taxas para algumas imagens mesmo aumentando o número iterações. Por exemplo, na kodim20  em relação a uma dada iteração, a qualidade e taxa começam a reduzir (contra-intuitivamente). A nossa hipótese é que a rede tem dificuldade para reconstruir resíduos com valores pequenos, como foi discutido em \cite{FullResolution2017Toderici}.  Além disso, devido a otimização conjunta de distorção-taxa proposta, provavelmente estamos penalizando excessivamente a frequência de bits 1 em relação a função de distorção. Dessa forma, o modelo gera códigos com baixa entropia, contudo a reconstrução fica prejudicada.   
+Uma limitação do nosso modelo é obter altas taxas para algumas imagens mesmo aumentando o número iterações. Por exemplo, na \textit{kodim20}  em relação a uma dada iteração, a qualidade e taxa começam a reduzir à medida que novas iterações são feitas (contra-intuitivamente). A nossa hipótese é que a rede tem dificuldade para reconstruir resíduos com valores pequenos, como foi discutido em \cite{FullResolution2017Toderici}.  Além disso, devido a otimização conjunta de distorção e taxa, provavelmente estamos penalizando excessivamente a frequência de bits 1 em relação a função de distorção. Dessa forma, o modelo gera códigos com baixa entropia, contudo a reconstrução fica prejudicada.   
 
 
 \begin{figure}
@@ -289,15 +313,18 @@ Uma limitação do nosso modelo é obter altas taxas para algumas imagens mesmo 
 
 
 \begin{figure}
+	\subfloat[Imagem original]{\includegraphics[width=1.0\textwidth]{figuras/kodim20.pdf}}
+	\newline
+	\subfloat[{Imagem reconstruída. Taxa: 0,942 bpp. \acrshort{psnr}: 36,925 dB.}   ]{\includegraphics[width=1.0\textwidth]{figuras/kodim20it10.pdf}}
 	
-	\subfloat[Imagem original]{\includegraphics[width=0.45\textwidth]{figuras/kodim20.pdf}}
-	\hfill
-	\subfloat[{Imagem reconstruída. Taxa: 0,942 bpp. \acrshort{psnr}: 36,925 dB.}   ]{\includegraphics[width=0.45\textwidth]{figuras/kodim20it10.pdf}}
-	
-	\subfloat[Imagem original]{\includegraphics[width=0.45\textwidth]{figuras/kodim13.pdf}}
-	\hfill
-	\subfloat[{Imagem reconstruída. Taxa: 0,987 bpp. \acrshort{psnr}: 26,357 dB.}   ]{\includegraphics[width=0.45\textwidth]{figuras/kodim13it8.pdf}}
-	\caption[Imagens representativas com baixo e alto fator de compressão. ]{Em (a) temos a Kodim10 original em (b) sua versão reconstruída em 10 iterações. Em (c) está representado a kodim13 e em (d) sua versão reconstruída em 8 iterações.}
+	\caption[Imagem representativa com alto fator de compressão]{Em (a) temos a imagem 20 da Kodak (\textit{kodim20}) em (b) sua versão reconstruída em 10 iterações.}
+	\label{fig:kodim20}
+\end{figure}
+\begin{figure}	
+	\subfloat[Imagem original]{\includegraphics[width=1.0\textwidth]{figuras/kodim13.pdf}}
+	\newline
+	\subfloat[{Imagem reconstruída. Taxa: 0,987 bpp. \acrshort{psnr}: 26,357 dB.}   ]{\includegraphics[width=1.0\textwidth]{figuras/kodim13it8.pdf}}
+	\caption[Imagem representativa com baixo fator de compressão]{Em (a) está representado a \textit{kodim13} e em (b) sua versão reconstruída em 8 iterações.}
 	\label{fig:kodim13}
 \end{figure}
 
@@ -342,21 +369,24 @@ Definimos dois testes principais para aplicar o método de alocação dinâmica 
 \end{table}
 
 
-Contudo, tal procedimento gera artefatos de blocos em evidência, como podemos observar na Figura \ref{fig:artefatos}. 
-Então, fazemos $k_{min}=1$ para codificar as imagens pelo modeloVR na tentativa de minimizar o surgimento desses artefatos de compressão. Também nessa figura há um exemplo de reconstrução com o esse modelo.  
+Contudo, tal procedimento gera artefatos de blocos em evidência, como podemos observar na Figura \ref{fig:artefatos1}. 
+Então, fazemos $k_{min}=5$ para codificar as imagens pelo modeloVR na tentativa de minimizar o surgimento desses artefatos de compressão. Na figura \ref{fig:artefatos2} há um exemplo de reconstrução com esse modelo e outro sem utilizar a alocação de bits.  
 
 
-\begin{figure}[h]
-	\centering
-	\subfloat[Imagem original.]{\includegraphics[width=0.45\textwidth]{figuras/kodim11.pdf}}
-	\hfill
-	\subfloat[{Imagem reconstruída. Taxa: 0,741 bpp, \acrshort{psnr}: 32,190dB, \acrshort{ssim}: 0,8675.}   ]{\includegraphics[width=0.45\textwidth]{figuras/kodim11targ_1_2431.pdf}}
-	
-	\subfloat[Imagem reconstruída. Taxa: 0,782 bpp, \acrshort{psnr}: 32,687dB, \acrshort{ssim}: 0,8939]{\includegraphics[width=0.45\textwidth]{figuras/kodim11targ30.pdf}}
-	\hfill
-	\subfloat[{Imagem reconstruída. Taxa: 0,754 bpp, \acrshort{psnr}: 31,621dB, \acrshort{ssim}:0,8985 }   ]{\includegraphics[width=0.45\textwidth]{figuras/kodim11it7.pdf}}
-	\caption[Surgimento de artefatos de blocos no método alocação de bits.]{Em (a) temos a kodim11 original. A figura (b) é uma reconstrução com o modeloVR0. Em (c) a imagem é codificada pelo modeloVR de alocação de bits. Por fim, em (d) é sua reconstrução com o modelo26 usando 7 níveis de resíduo.}
-		\label{fig:artefatos}
+\begin{figure}
+	\subfloat[Imagem original.]{\includegraphics[width=1\textwidth]{figuras/kodim11.pdf}}
+	\newline
+	\subfloat[{Imagem reconstruída. Taxa: 0,741 bpp, \acrshort{psnr}: 32,190dB, \acrshort{ssim}: 0,8675.}   ]{\includegraphics[width=1\textwidth]{figuras/kodim11targ_1_2431.pdf}}
+	\caption[Surgimento de artefatos de blocos no método alocação de bits usando o modeloVR0]{Em (a) temos a \textit{kodim11} original. A figura (b) é uma reconstrução com o modeloVR0.}
+	\label{fig:artefatos1}
+\end{figure}
+
+\begin{figure}[]
+	\subfloat[Imagem reconstruída. Taxa: 0,782 bpp, \acrshort{psnr}: 32,687dB, \acrshort{ssim}: 0,8939]{\includegraphics[width=1.0\textwidth]{figuras/kodim11targ30.pdf}}
+	\newline
+	\subfloat[{Imagem reconstruída. Taxa: 0,754 bpp, \acrshort{psnr}: 31,621dB, \acrshort{ssim}:0,8985 }   ]{\includegraphics[width=1.0\textwidth]{figuras/kodim11it7.pdf}}
+	\caption[Surgimento de artefatos de blocos no método alocação de bits usando o modeloVR]{Em (a) apresentamos a \textit{kodim11} codificada pelo modeloVR, em (b) está ilustrado sua reconstrução com o modelo (sem alocação de bits) usando 7 níveis de resíduo.}
+	\label{fig:artefatos2}
 \end{figure}
 
 A Figura em \ref{fig:comp_vr} compara os modelos baseados com taxas nominais variáveis e fixas. O modeveloVR0 apresenta o pior resultado na métrica \acrshort{ssim}. Em virtude dos artefatos de blocos a qualidade perceptiva da imagem caí drasticamente. No modeloVR, o número mínimo de iterações não permite atingirmos baixas taxas de compressão. Ele supera o nosso modelo de taxas nominais fixas em \acrshort{psnr}, contudo, sofre com a perda de qualidade em \acrshort{ssim}.      
@@ -370,52 +400,52 @@ A Figura em \ref{fig:comp_vr} compara os modelos baseados com taxas nominais var
 
 \section{Comparação com JPEG e JPEG2000}
 
-Nessa seção comparamos os nossos melhores resultados com o JPEG e JPEG2000 nas métricas \acrshort{ssim}, \acrshort{msssim}, \acrshort{psnr} e \acrshort{bdrate}. 
+Nessa seção comparamos os nossos melhores resultados com o \acrshort{jpeg} e \acrshort{jpeg}2000 nas métricas \acrshort{ssim}, \acrshort{msssim} e \acrshort{psnr}. 
 
 
-As Figuras em \ref{fig:comp_psnr},\ref{fig:comp_ssim} e \ref{fig:comp_msssim} compara os nossos melhores resultado nas abordagem usando alocação dinâmica de bits ou não com o JPEG e JPEG2000. De forma, nossos modelos superam o JPEG e, especialmente em altas taxas, temos resultados competitivos com o JPEG2000.  
-Nas Figuras  \ref{fig:comp_jp2k} e \ref{fig:comp_jp2k_vr} comparamos a performance dos nossos resultados com o JPEG2000 pela \acrshort{bdrate} e usando as 24 imagens da Kodak. A barra de índice m refere-se a média de \acrshort{bdrate}. Nessas figuras a imagem kodim23 pode ser considerado um ponto fora da curva. Nela, o JPEG2000 consegue \acrshort{psnr} de 42,57 dB a 1,584 bpp, enquanto nosso modelo chega a 41,040 dB usando 1,591 bpp (sem alocação de bits).  
+As Figuras em \ref{fig:comp_psnr}, \ref{fig:comp_ssim} e \ref{fig:comp_msssim} comparam os nossos melhores resultados nas abordagem usando ou não a alocação dinâmica de bits com o \acrshort{jpeg} e \acrshort{jpeg}2000. Na base de teste da Kodak, nossos modelos superam o \acrshort{jpeg} em todas as métricas apresentadas e para qualquer taxa. Em relação ao JPEG2000, temos resultados competitivos, principalmente em altas taxas. Para baixas taxas o \acrshort{jpeg}2000 tem melhor desempenho.  
+
 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figuras/comp_codecs.pdf}
-	\caption[Comparações de autocodificadores com o JPEG e JPEG2000 em \acrshort{psnr}.]{Curvas \acrshort{psnr} $\times$ Taxa.}  	
+	\caption[Comparações de autocodificadores com o \acrshort{jpeg} e \acrshort{jpeg}2000 em \acrshort{psnr}.]{Curvas \acrshort{psnr} $\times$ Taxa.}  	
 	\label{fig:comp_psnr}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figuras/comp_codecs_ssim.pdf}
-	\caption[Comparações de autocodificadores com o JPEG e JPEG2000 em \acrshort{ssim}]{Curvas \acrshort{ssim} $\times$ Taxa.}  	
+	\caption[Comparações de autocodificadores com o \acrshort{jpeg} e \acrshort{jpeg}2000 em \acrshort{ssim}]{Curvas \acrshort{ssim} $\times$ Taxa.}  	
 	\label{fig:comp_ssim}
 \end{figure}
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figuras/comp_codecs_msssim.pdf}
-	\caption[Comparações de autocodificadores com o JPEG e JPEG2000 em \acrshort{msssim}]{Curvas \acrshort{msssim} $\times$ Taxa.}  	
+	\caption[Comparações de autocodificadores com o \acrshort{jpeg} e \acrshort{jpeg}2000 em \acrshort{msssim}]{Curvas \acrshort{msssim} $\times$ Taxa.}  	
 	\label{fig:comp_msssim}
 \end{figure}
 
 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1.0\textwidth]{figuras/bd-rate_ref_JPEG2k.pdf}
-	\caption[Comparação do modelo26 com JPEG2000 em \acrshort{bdrate}]{Desempenho do nosso Modelo treinado por 26 épocas em relação ao JPEG2000. Na média, estamos usando 14,98\% a mais de taxa em relação ao JPEG2000 para realizar compressão em uma qualidade equivalente de \acrshort{psnr}.}  	
-	\label{fig:comp_jp2k}
-\end{figure}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=1.0\textwidth]{figuras/bd-rate_ref_JPEG2k.pdf}
+%	\caption[Comparação do modelo26 com \acrshort{jpeg}2000 em \acrshort{bdrate}]{Desempenho do nosso Modelo treinado por 26 épocas em relação ao \acrshort{jpeg}2000. Na média, estamos usando 14,98\% a mais de taxa em relação ao \acrshort{jpeg}2000 para realizar compressão em uma qualidade equivalente de \acrshort{psnr}.}  	
+%	\label{fig:comp_jp2k}
+%\end{figure}
 
 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1.0\textwidth]{figuras/bd-rate_ref_JPEG.pdf}
-	\caption[Comparação do modeloVR com JPEG2000 em \acrshort{bdrate}]{Desempenho do nosso modelo de taxa variável em relação ao JPEG2000. Aqui, nossos resultados se mostram mais competitivos. Em 11 imagens da Kodak economizamos bits, nas demais consumimos mais bits do que seria requisitado pelo JPEG2000.}  	
-	\label{fig:comp_jp2k_vr}
-\end{figure}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=1.0\textwidth]{figuras/bd-rate_ref_JPEG.pdf}
+%	\caption[Comparação do modeloVR com \acrshort{jpeg}2000 em \acrshort{bdrate}]{Desempenho do nosso modelo de taxa variável em relação ao \acrshort{jpeg}2000. Aqui, nossos resultados se mostram mais competitivos. Em 11 imagens da Kodak economizamos bits, nas demais consumimos mais bits do que seria requisitado pelo \acrshort{jpeg}2000.}  	
+%	\label{fig:comp_jp2k_vr}
+%\end{figure}
 
 
 
