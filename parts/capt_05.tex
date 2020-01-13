@@ -14,9 +14,9 @@ Neste trabalho usamos um autocodificador baseado em redes convolucionais e recor
 	
 \end{enumerate} 
 
-Em trabalhos posteriores, podemos realizar um estudo da entropia dos dados binários. Ao levantar correlações estatísticas é possível projetar um codificador de entropia otimizado para esses dados. 
-Por outro lado, talvez seja possível propor uma nova função de custo para promover padrões formados por conjuntos ou sequências de bits. Sobre esses dados, os codificadores comerciais de entropia são bastante eficientes.
-Para melhorar o desempenho em baixas taxas podemos adicionar uma método, baseado ou não em \acrshort{rna}, para realizar a primeira previsão de um bloco a partir do seus vizinhos. Isso foi explorado \cite{SpatiallyAdaptive2018Minnen}. Acreditamos ser possível adicionar uma \acrshort{gan} para gerar a primeira previsão dos blocos.
-Para melhorar a alocação dinâmica de bits é essencial a formulação de novas heurísticas para contornar os problemas de artefatos de compressão.  
-
+Em trabalhos futuros, podemos realizar um estudo da entropia dos dados binários. Ao levantar correlações estatísticas é possível projetar um codificador de entropia otimizado para esses dados. 
+Por outro lado, talvez seja possível propor uma nova função de custo para promover padrões formados por conjuntos ou sequências de bits. Sobre esses dados, os codificadores comerciais de entropia são eficientes.
+Para melhorar o desempenho em baixas taxas podemos adicionar uma método, baseado ou não em \acrshort{rna}, para realizar a primeira previsão de um bloco a partir dos seus vizinhos. Isso foi explorado \cite{SpatiallyAdaptive2018Minnen}. Acreditamos ser possível adicionar uma \acrshort{gan} para gerar a primeira previsão dos blocos.
+O método de alocação dinâmica de bits pode ser aperfeiçoado ao adotar a \acrshort{mse} em substituição à \acrshort{psnr} como alvo de qualidade. Além disso, é essencial a formulação de novas heurísticas para contornar os problemas de artefatos de compressão.  
+Em novos trabalhos, podemos comparar o modelo com o JPEG interpolativo. Este \acrshort{codec}, assim como nosso modelo, é baseado em processos de \textit{downsampling} e \textit{upsampling}. 
 

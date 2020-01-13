@@ -33,34 +33,34 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Histograma de alta entropia - DB2}}{48}{figure.caption.31}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Histograma da entropia aleat\IeC {\'o}ria - DB3}}{49}{figure.caption.32}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Histograma de alta entropia - DB4}}{49}{figure.caption.33}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces M\IeC {\'e}todo para aloca\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de bit}}{53}{figure.caption.34}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces M\IeC {\'e}todo para aloca\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de bit}}{52}{figure.caption.34}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o dos resultados das bases de dados 2 e 4 em rela\IeC {\c c}\IeC {\~a}o \IeC {\`a} \acrshort {psnr}}}{56}{figure.caption.36}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o dos resultados das bases de dados 2 e 4 em rela\IeC {\c c}\IeC {\~a}o \IeC {\`a} \acrshort {ssim}}}{57}{figure.caption.37}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o dos resultados das bases de dados 2 e 4 em rela\IeC {\c c}\IeC {\~a}o \IeC {\`a} \acrshort {msssim}}}{57}{figure.caption.38}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Performance do modelo em fun\IeC {\c c}\IeC {\~a}o do n\IeC {\'u}mero de \IeC {\'e}pocas de treinamento}}{58}{figure.caption.39}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Curva \acrshort {ssim} por Taxa.}}{59}{figure.caption.40}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Curva \acrshort {msssim} por Taxa.}}{59}{figure.caption.41}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Curva \acrshort {psnr} por Taxa}}{60}{figure.caption.42}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Curvas antes e ap\IeC {\'o}s codifica\IeC {\c c}\IeC {\~a}o com o GZIP}}{62}{figure.caption.44}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Curva de \acrshort {bdrate} por \IeC {\'e}poca de treinamento.}}{63}{figure.caption.45}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Curvas de qualidade por taxa em 3 \IeC {\'e}pocas distintas}}{64}{figure.caption.46}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Ganho do GZIP por n\IeC {\'\i }vel de reconstru\IeC {\c c}\IeC {\~a}o}}{64}{figure.caption.47}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o em 3 imagens representativas da Kodak.}}{66}{figure.caption.49}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Imagem representativa com alto fator de compress\IeC {\~a}o}}{67}{figure.caption.50}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem original}}}{67}{subfigure.13.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,942 bpp. \acrshort {psnr}: 36,925 dB.} }}}{67}{subfigure.13.2}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Imagem representativa com baixo fator de compress\IeC {\~a}o}}{68}{figure.caption.51}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem original}}}{68}{subfigure.14.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,987 bpp. \acrshort {psnr}: 26,357 dB.} }}}{68}{subfigure.14.2}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Surgimento de artefatos de blocos no m\IeC {\'e}todo aloca\IeC {\c c}\IeC {\~a}o de bits usando o modeloVR0}}{70}{figure.caption.53}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem original.}}}{70}{subfigure.15.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,741 bpp, \acrshort {psnr}: 32,190dB, \acrshort {ssim}: 0,8675.} }}}{70}{subfigure.15.2}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Surgimento de artefatos de blocos no m\IeC {\'e}todo aloca\IeC {\c c}\IeC {\~a}o de bits usando o modeloVR}}{71}{figure.caption.54}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem reconstru\IeC {\'\i }da. Taxa: 0,782 bpp, \acrshort {psnr}: 32,687dB, \acrshort {ssim}: 0,8939}}}{71}{subfigure.16.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,754 bpp, \acrshort {psnr}: 31,621dB, \acrshort {ssim}:0,8985 } }}}{71}{subfigure.16.2}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o dos modelos de taxa vari\IeC {\'a}vel e taxa fixa.}}{72}{figure.caption.55}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Compara\IeC {\c c}\IeC {\~o}es de autocodificadores com o \acrshort {jpeg} e \acrshort {jpeg}2000 em \acrshort {psnr}.}}{73}{figure.caption.56}
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Compara\IeC {\c c}\IeC {\~o}es de autocodificadores com o \acrshort {jpeg} e \acrshort {jpeg}2000 em \acrshort {msssim}}}{73}{figure.caption.58}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Compara\IeC {\c c}\IeC {\~o}es de autocodificadores com o \acrshort {jpeg} e \acrshort {jpeg}2000 em \acrshort {ssim}}}{74}{figure.caption.57}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o dos resultados das bases de dados 2 e 4 em rela\IeC {\c c}\IeC {\~a}o \IeC {\`a} \acrshort {psnr}}}{55}{figure.caption.36}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o dos resultados das bases de dados 2 e 4 em rela\IeC {\c c}\IeC {\~a}o \IeC {\`a} \acrshort {ssim}}}{56}{figure.caption.37}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o dos resultados das bases de dados 2 e 4 em rela\IeC {\c c}\IeC {\~a}o \IeC {\`a} \acrshort {msssim}}}{56}{figure.caption.38}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Performance do modelo em fun\IeC {\c c}\IeC {\~a}o do n\IeC {\'u}mero de \IeC {\'e}pocas de treinamento}}{57}{figure.caption.39}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Curva \acrshort {ssim} por Taxa.}}{58}{figure.caption.40}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Curva \acrshort {msssim} por Taxa.}}{58}{figure.caption.41}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Curva \acrshort {psnr} por Taxa}}{59}{figure.caption.42}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Curvas antes e ap\IeC {\'o}s codifica\IeC {\c c}\IeC {\~a}o com o GZIP}}{61}{figure.caption.44}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Curva de \acrshort {bdrate} por \IeC {\'e}poca de treinamento.}}{62}{figure.caption.45}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Curvas de qualidade por taxa em 3 \IeC {\'e}pocas distintas}}{63}{figure.caption.46}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Ganho do GZIP por n\IeC {\'\i }vel de reconstru\IeC {\c c}\IeC {\~a}o}}{63}{figure.caption.47}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o em 3 imagens representativas da Kodak.}}{65}{figure.caption.49}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Imagem representativa com alto fator de compress\IeC {\~a}o}}{66}{figure.caption.50}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem original}}}{66}{subfigure.13.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,942 bpp. \acrshort {psnr}: 36,925 dB.} }}}{66}{subfigure.13.2}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Imagem representativa com baixo fator de compress\IeC {\~a}o}}{67}{figure.caption.51}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem original}}}{67}{subfigure.14.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,987 bpp. \acrshort {psnr}: 26,357 dB.} }}}{67}{subfigure.14.2}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Surgimento de artefatos de blocos no m\IeC {\'e}todo aloca\IeC {\c c}\IeC {\~a}o de bits usando o modeloVR0}}{69}{figure.caption.53}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem original.}}}{69}{subfigure.15.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,741 bpp, \acrshort {psnr}: 32,190dB, \acrshort {ssim}: 0,8675.} }}}{69}{subfigure.15.2}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Surgimento de artefatos de blocos no m\IeC {\'e}todo aloca\IeC {\c c}\IeC {\~a}o de bits usando o modeloVR}}{70}{figure.caption.54}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Imagem reconstru\IeC {\'\i }da. Taxa: 0,782 bpp, \acrshort {psnr}: 32,687dB, \acrshort {ssim}: 0,8939}}}{70}{subfigure.16.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{Imagem reconstru\IeC {\'\i }da. Taxa: 0,754 bpp, \acrshort {psnr}: 31,621dB, \acrshort {ssim}:0,8985 } }}}{70}{subfigure.16.2}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o dos modelos de taxa vari\IeC {\'a}vel e taxa fixa.}}{71}{figure.caption.55}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Compara\IeC {\c c}\IeC {\~o}es de autocodificadores com o \acrshort {jpeg} e \acrshort {jpeg}2000 em \acrshort {psnr}.}}{72}{figure.caption.56}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Compara\IeC {\c c}\IeC {\~o}es de autocodificadores com o \acrshort {jpeg} e \acrshort {jpeg}2000 em \acrshort {msssim}}}{72}{figure.caption.58}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Compara\IeC {\c c}\IeC {\~o}es de autocodificadores com o \acrshort {jpeg} e \acrshort {jpeg}2000 em \acrshort {ssim}}}{73}{figure.caption.57}
 \addvspace {10\p@ }

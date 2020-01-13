@@ -102,7 +102,7 @@ Na prática, para tornar esse processo estocástico,  definimos um valor $u$ ent
 \right. \\
 \end{aligned}
 \end{equation}
-A binarização será feita com os símbolos -1 e 1, que serão referidos como os bits 0 e 1, respectivamente. Usamos o método apresentado em \ref{subsec:bin} para conseguir treinar o modelo com essa camada não diferenciável. 
+A binarização será feita com os símbolos -1 e 1, que serão referidos como os bits 0 e 1, respectivamente. Usamos o método apresentado em \ref{subsec:bin} para conseguir treinar o modelo com essa operação não diferenciável. 
 
 %\section{Taxas de compressão}
 
@@ -145,7 +145,7 @@ Nesta seção explicamos o processo de construção das bases de dados de treina
 
 %Essa é uma das principais escolhas para treinar qualquer algoritmo de redes neurais.  
 
-Idealmente, desejamos obter uma base de dados de treinamento a fim de tornar o modelo capaz de comprimir satisfatoriamente (desempenho semelhante ao JPEG2000) imagens naturais com diferentes características de tamanho, componentes de frequência, entropia etc. Primeiro, selecionamos imagens de bases de dados distintas que não passaram por nenhum processo de compressão com perdas. Assim, preservamos as componentes de frequência das imagens naturais. Essas imagens foram obtidas dos seguintes conjuntos de dados:
+Idealmente, desejamos obter uma base de dados de treinamento a fim de tornar o modelo capaz de comprimir satisfatoriamente (desempenho semelhante ao \acrshort{jpeg}2000) imagens naturais com diferentes características de tamanho, componentes de frequência, entropia etc. Primeiro, selecionamos imagens de bases de dados distintas que não passaram por nenhum processo de compressão com perdas. Assim, preservamos as componentes de frequência das imagens naturais. Essas imagens foram obtidas dos seguintes conjuntos de dados:
 
 \begin{enumerate}
 	\item Conjunto de dados CLIC \cite{bib:clic} (\textit{Challenge on Learned Image Compression}) - Imagens de alta qualidade.
@@ -220,14 +220,14 @@ Os histogramas dessas bases, exceto a 5, estão ilustrados nas Figuras \ref{fig:
 \label{fig:database2}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.80\textwidth]{figuras/hist3.eps}
 \caption[Histograma da entropia aleatória - DB3]{Histograma de entropia aleatória - DB3.}
 \label{fig:database3}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]{figuras/hist4.eps}
 \caption[Histograma de alta entropia - DB4]{Histograma de alta entropia - DB4.}

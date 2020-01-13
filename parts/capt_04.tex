@@ -1,6 +1,6 @@
 
 \chapter{Resultados}
-Nessa seção apresentamos os principais resultados na elaboração desse trabalho. Eles são referentes a análise da base de dados, da função de custo, codificação de entropia e alocação dinâmica de bits. 
+Nessa seção apresentamos os principais resultados na elaboração deste trabalho. Eles são referentes as análises das bases de dados, das funções de custos, codificação de entropia e alocação dinâmica de bits no desempenho do modelo. 
 
 %A nossa hipótese é que o desempenho do autoencoder está relacionado com características da entropia da base de dados utilizado no treinamento.
 
@@ -136,7 +136,7 @@ Todavia, a Figura \ref{fig:psnr_ae_jpeg} indica que na métrica \acrshort{psnr} 
 
 \section{Função de Custo}
 
-Esta seção apresenta os testes realizados para diferentes funções de custos de distorção. Também analisamos dois método para calcular a informação residual, citados em \ref{sec:arq}.    
+Esta seção apresenta os testes realizados para diferentes funções de custos para medir a distorção entre imagens. Também analisamos dois método para calcular a informação residual, citados em \ref{sec:arq}.    
 
 
 A Tabela \ref{table:comp_loss} apresenta resultados para 7 funções de custo relacionadas a distorção entre duas imagens.  Os valores foram calculados pela média das imagens da Kodak, codificadas a 2 bpp. A rede foi treinada com a base de dados 4 e parâmetros listados em \ref{enum:hiper_param}. Nessa tabela, $R$, $R'$, $X$ e $X'$ foram definidos na Equação \ref{eq:model_1it}, omitindo-se a dependência temporal. A medida $X-X'$ é o resíduo em relação à imagem original $X$.  
@@ -183,7 +183,7 @@ Para o treinamento usamos a base de dados 5 e alteramos o número de estágios d
 
 \section{Análise da Codificação de Entropia para o Desempenho do Autocodificador Recorrente e Esparso}
 
-Esta seção aborda os resultados do modelo baseados em esparsidade do código binário. Medimos a eficiência dessa abordagem pela redução das taxas nominais usando a codificação de entropia fornecida pelo GZIP, e pela distorção das imagens obtida após a compressão.    
+Esta seção aborda os resultados do modelo baseados em esparsidade do código binário. Medimos a eficiência dessa abordagem pela redução das taxas nominais usando a codificação de entropia fornecida pelo GZIP, e pela distorção das imagens obtida após a compressão. A otimização de distorção e, implicitamente, de taxa é, possivelmente, a principal contribuição deste trabalho.    
 
 
 A Figura \ref{fig:gain_gzip_meida} apresenta resultados após a codificação de entropia do GZIP. As curvas de \acrshort{psnr} e \acrshort{ssim} se deslocam para esquerda em virtude de taxas reais serem menores que as nominais. O ganho do GZIP é maior para altas taxas. Isso é esperado tendo em vista que, em geral, os codificadores de entropia são mais eficientes em conjuntos maiores de dados. Nos próximos testes, as taxas empregadas serão sempre a real.    
@@ -243,7 +243,7 @@ Logo, a redução na entropia de primeira ordem não implica, necessariamente, e
 
 \begin{table}[]
 	\centering
-	\caption{Estatística do Fluxo De Bits na Compressão das Imagens de Teste}
+	\caption{Estatística do fluxo de bits na compressão das imagens de teste}
 	\scalebox{0.9}{
 		\begin{tabular}{ccccc}
 			\hline
@@ -403,7 +403,7 @@ A Figura em \ref{fig:comp_vr} compara os modelos baseados com taxas nominais var
 Nessa seção comparamos os nossos melhores resultados com o \acrshort{jpeg} e \acrshort{jpeg}2000 nas métricas \acrshort{ssim}, \acrshort{msssim} e \acrshort{psnr}. 
 
 
-As Figuras em \ref{fig:comp_psnr}, \ref{fig:comp_ssim} e \ref{fig:comp_msssim} comparam os nossos melhores resultados nas abordagem usando ou não a alocação dinâmica de bits com o \acrshort{jpeg} e \acrshort{jpeg}2000. Na base de teste da Kodak, nossos modelos superam o \acrshort{jpeg} em todas as métricas apresentadas e para qualquer taxa. Em relação ao JPEG2000, temos resultados competitivos, principalmente em altas taxas. Para baixas taxas o \acrshort{jpeg}2000 tem melhor desempenho.  
+As Figuras em \ref{fig:comp_psnr}, \ref{fig:comp_ssim} e \ref{fig:comp_msssim} comparam os nossos melhores resultados nas abordagem usando ou não a alocação dinâmica de bits com o \acrshort{jpeg} e \acrshort{jpeg}2000. Na base de teste da Kodak, nossos modelos superam o \acrshort{jpeg} em todas as métricas apresentadas e para qualquer taxa. Em relação ao \acrshort{jpeg}2000, temos resultados competitivos, principalmente em altas taxas. Para baixas taxas o \acrshort{jpeg}2000 tem melhor desempenho.  
 
 
 
